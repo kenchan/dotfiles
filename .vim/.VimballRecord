@@ -1,0 +1,1 @@
+rails.vba: call delete('/home/ubuntu/.vim/plugin/rails.vim')|call delete('/home/ubuntu/.vim/doc/rails.txt')
