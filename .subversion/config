@@ -39,6 +39,7 @@
 
 ### Section for configuring tunnel agents.
 [tunnels]
+ssh_p = ssh -p 2222
 ### Configure svn protocol tunnel schemes here.  By default, only
 ### the 'ssh' scheme is defined.  You can define other schemes to
 ### be used with 'svn+scheme://hostname/path' URLs.  A scheme
