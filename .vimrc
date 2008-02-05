@@ -10,7 +10,7 @@ set fencs=utf-8,iso-2022-jp,euc-jp,cp932
 set fileformats=unix,dos
 
 "--- Tab ---
-set expandtab
+"set expandtab
 set smartindent
 set ts=2 sw=2
 
