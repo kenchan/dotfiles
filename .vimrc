@@ -2,6 +2,7 @@ set number
 set hlsearch
 set backup
 set backupdir=$HOME/.backup
+set wildmode=longest:list
 
 "-----------------------------------------------------------------------
 set enc=utf-8
