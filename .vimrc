@@ -15,8 +15,7 @@ nnoremap j gj
 nnoremap k gk
 
 "backup
-set backup
-set backupdir=$HOME/.backup
+set nobackup
 set wildmode=longest:list
 
 "encoding
