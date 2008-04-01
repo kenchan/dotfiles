@@ -38,6 +38,9 @@ set ignorecase
 set smartcase
 set incsearch
 
+" for autocomplpop
+
+
 " 全角空白と行末の空白の色を変える
 highlight WideSpace ctermbg=blue guibg=blue
 highlight EOLSpace ctermbg=red guibg=red
