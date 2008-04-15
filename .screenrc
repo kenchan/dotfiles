@@ -1,6 +1,6 @@
 startup_message off
 vbell off
-escape ^t^t
+escape ^Tt
 hardstatus alwayslastline "[%02c] %`%-w%{=b bw}%n %t%{-}%+w"
 defbce "on"
 term xterm-256color
