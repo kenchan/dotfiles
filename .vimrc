@@ -70,3 +70,6 @@ autocmd QuickfixCmdPost lmake,lgrep,lgrepadd,lvimgrep,lvimgrepadd lwin
 
 "for yankring.vim
 set viminfo+=!
+
+"辞書補完設定
+autocmd FileType actionscript :set dictionary=~/.vim/dict/actionscript3.dict
