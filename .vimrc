@@ -16,7 +16,6 @@ nnoremap k gk
 
 "backup
 set nobackup
-set wildmode=longest:list
 
 "encoding
 set enc=utf-8
