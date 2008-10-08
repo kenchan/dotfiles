@@ -72,3 +72,6 @@ set viminfo+=!
 
 "辞書補完設定
 autocmd FileType actionscript :set dictionary=~/.vim/dict/actionscript3.dict
+
+"cofs's fsync
+autocmd BufNewFile,BufRead /mnt/windows/* set nofsync

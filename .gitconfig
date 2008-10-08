@@ -1,3 +1,11 @@
 [user]
-	email = kenichi.taka@gmail.com
-	name = kenchan
+  email = kenichi.taka@gmail.com
+  name = kenchan
+[color]
+  status = auto
+  diff = auto
+[alias]
+  co = checkout
+  ci = commit -a
+  st = status
+  up = pull --rebase
