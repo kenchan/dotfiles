@@ -12,7 +12,7 @@ SAVEHIST=100000
 
 # complement
 autoload -U compinit; compinit
-#autoload predict-on; predict-on
+setopt list_packed
 
 # Ctrl-D
 set IGNORE_EOF
@@ -32,7 +32,6 @@ export PATH=$GEM_HOME/bin:$PATH
 setopt auto_cd
 setopt auto_pushd
 setopt correct
-setopt list_packed
 setopt extended_history
 setopt share_history
 
