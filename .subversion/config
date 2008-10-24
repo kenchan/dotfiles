@@ -36,6 +36,7 @@
 ### Set diff3-has-program-arg to 'true' or 'yes' if your 'diff3'
 ###   program accepts the '--diff-program' option.
 # diff3-has-program-arg = [true | false]
+diff-cmd = colordiff
 
 ### Section for configuring tunnel agents.
 [tunnels]
