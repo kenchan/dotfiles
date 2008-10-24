@@ -1,4 +1,4 @@
-function! Rspec ()
+function! RspecE ()
   let rails_spec_pat = '\<spec/\(models\|controllers\|views\|helpers\)/.*_spec\.rb$'
 
   let opts = '--format=s --color '
@@ -19,4 +19,4 @@ function! Rspec ()
 
 endfunction
 
-au BufRead,BufNewFile *_spec.rb :command! Rspec :call Rspec()
+au BufRead,BufNewFile *_spec.rb :command! RspecE :call RspecE()
