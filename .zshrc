@@ -41,3 +41,10 @@ function chpwd() { ls }
 # EDITOR
 export EDITOR=vi
 bindkey -e
+
+# For Git
+case "${OSTYPE}" in
+  linux*)
+  export GIT_PAGER="less -RE"
+  ;;
+esac
