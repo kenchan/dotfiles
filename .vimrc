@@ -2,6 +2,8 @@ if filereadable($VIMRUNTIME . '/vimrc_example.vim')
   source $VIMRUNTIME/vimrc_example.vim
 endif
 
+colorscheme rubyblue
+
 set ambiwidth=double
 set autoread
 set hidden
