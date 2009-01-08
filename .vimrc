@@ -12,6 +12,7 @@ set showmatch
 set ttymouse=xterm2
 set wildmode=longest:list
 set nocompatible
+set t_Co=256
 
 nnoremap j gj
 nnoremap k gk
