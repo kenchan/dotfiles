@@ -23,11 +23,10 @@ alias ll='ls -al --color=auto'
 alias la='ls -a --color=auto'
 alias vi='vim'
 alias apt='sudo aptitude'
-alias gem='sudo gem'
 
 # for ruby
-export GEM_HOME=/var/lib/gems/1.8
-export PATH=$GEM_HOME/bin:$PATH
+export JRUBY_HOME=/usr/local/jruby-1.1.5
+export PATH=$PATH:$JRUBY_HOME/bin
 
 setopt auto_cd
 setopt auto_pushd
