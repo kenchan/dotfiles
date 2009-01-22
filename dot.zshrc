@@ -25,9 +25,8 @@ alias vi='vim'
 alias apt='sudo aptitude'
 
 # for ruby
-export GEM_HOME=/var/lib/gems/1.8
 export LOCAL_GEM_HOME=/home/kenichi/.gem/ruby/1.8
-export PATH=$PATH:$GEM_HOME/bin:$LOCAL_GEM_HOME/bin
+export PATH=$PATH:$LOCAL_GEM_HOME/bin
 
 # for jruby
 export JRUBY_HOME=/usr/local/jruby-1.1.5
