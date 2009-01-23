@@ -1,0 +1,607 @@
+*vimwiki.txt*  A Personal Wiki for Vim
+
+     __  __  ______            __      __  ______   __  __   ______     ~
+    /\ \/\ \/\__  _\   /'\_/`\/\ \  __/\ \/\__  _\ /\ \/\ \ /\__  _\    ~
+    \ \ \ \ \/_/\ \/  /\      \ \ \/\ \ \ \/_/\ \/ \ \ \/'/'\/_/\ \/    ~
+     \ \ \ \ \ \ \ \  \ \ \__\ \ \ \ \ \ \ \ \ \ \  \ \ , <    \ \ \    ~
+      \ \ \_/ \ \_\ \__\ \ \_/\ \ \ \_/ \_\ \ \_\ \__\ \ \\`\   \_\ \__ ~
+       \ `\___/ /\_____\\ \_\\ \_\ `\___x___/ /\_____\\ \_\ \_\ /\_____\~
+        `\/__/  \/_____/ \/_/ \/_/'\/__//__/  \/_____/ \/_/\/_/ \/_____/~
+
+
+                            Let the help begins ...~
+
+                               Version: 0.5.3 ~
+
+==============================================================================
+CONTENTS                                                    *vimwiki-contents*
+
+  1. Intro ...................................|vimwiki|
+  2. Prerequisites ...........................|vimwiki-prerequisites|
+  3. Mappings ................................|vimwiki-mappings|
+    3.1. Global mappings .....................|vimwiki-global-mappings|
+    3.2. Local mappings ......................|vimwiki-local-mappings|
+  4. Commands ................................|vimwiki-commands|
+    4.1. Global commands .....................|vimwiki-global-commands|
+    4.2. Local commands ......................|vimwiki-local-commands|
+  5. Wiki syntax .............................|vimwiki-syntax|
+    5.1. Typeface ............................|vimwiki-typeface|
+    5.2. Links ...............................|vimwiki-links|
+    5.3. Headers .............................|vimwiki-headers|
+    5.4. Paragraphs...........................|vimwiki-paragraphs|
+    5.5. Lists ...............................|vimwiki-lists|
+    5.6. Tables ..............................|vimwiki-tables|
+    5.7. Pre .................................|vimwiki-pre|
+  6. Options .................................|vimwiki-options|
+  7. Help ....................................|vimwiki-help|
+  8. Author ..................................|vimwiki-author|
+  9. Changelog ...............................|vimwiki-changelog|
+  10. License ................................|vimwiki-license|
+
+
+==============================================================================
+1. Intro                                                             *vimwiki*
+
+Vimwiki being a personal wiki for Vim allows you to organize text information
+using hyper links. To do a quick start add the following to your vimrc: >
+    :let g:vimwiki_home = "~/mywiki/"
+
+Change "~/mywiki/" to whatever path you prefer. Make sure it exists and you
+can read and write to that path.
+
+Now restart Vim and press <Leader>ww to go to your index wiki file.
+Feed it with the following example (copy&paste without and between ---) :
+
+---
+! My knowledge base
+  * MyUrgentTasks -- things to be done _yesterday_!!!
+  * ProjectGutenberg -- good books are power.
+  * MusicILike, MusicIHate.
+---
+
+Notice that ProjectGutenberg, MyUrgentTasks, MusicILike and MusicIHate
+highlighted as errors. These WikiWords (WikiWord or WikiPage --
+capitalized word connected with other capitalized words) do not exist yet.
+
+Place cursor on ProjectGutenberg and press Enter. Now you are in 
+ProjectGutenberg. Edit and save it, then press Backspace to return
+to previous WikiPage. You should see the difference in highlighting now.
+
+Now begin to add your own information ...
+
+==============================================================================
+2. Prerequisites                                       *vimwiki-prerequisites*
+
+Make sure you have these settings in your vimrc file: >
+    set nocompatible
+    filetype plugin on
+    syntax on
+
+Without them Vimwiki will not work properly.
+
+
+==============================================================================
+3. Mappings                                                 *vimwiki-mappings*
+
+There are global and local mappings in vimwiki.
+
+------------------------------------------------------------------------------
+3.1. Global mappings                                 *vimwiki-global-mappings*
+
+<Leader>ww or <Plug>VimwikiGoHome
+        Open vimwiki's main file.
+        To redefine: >
+        :map <Leader>w <Plug>VimwikiGoHome
+< 
+See also|:VimwikiGoHome|
+
+<Leader>wt or <Plug>VimwikiTabGoHome
+        Open vimwiki's main file in a new tab.
+        To redefine: >
+        :map <Leader>t <Plug>VimwikiTabGoHome
+<
+See also|:VimwikiTabGoHome|
+
+<Leader>wh or <Plug>VimwikiExploreHome
+        Open vimwiki's home directory.
+        To redefine: >
+        :map <Leader>h <Plug>VimwikiExploreHome
+<
+See also|:VimwikiExploreHome|
+
+------------------------------------------------------------------------------
+3.1. Local mappings                                   *vimwiki-local-mappings*
+
+Normal mode (Keyboard):~
+<CR>                    Follow/Create WikiWord.
+                        Maps to|:VimwikiFollowWord|.
+
+<S-CR>                  Split and follow/create WikiWord
+                        Maps to|:VimwikiSplitWord|.
+
+<C-CR>                  Vertical split and follow/create WikiWord
+                        Maps to|:VimwikiVSplitWord|.
+
+<Backspace>             Go back to previous WikiWord
+                        Maps to|:VimwikiGoBackWord|.
+
+<Tab>                   Find next WikiWord
+                        Maps to|:VimwikiNextWord|.
+
+<S-Tab>                 Find previous WikiWord
+                        Maps to|:VimwikiPrevWord|.
+
+<Leader>wd              Delete WikiWord you are in. 
+                        Maps to|:VimwikiDeleteWord|.
+
+<Leader>wr              Rename WikiWord you are in.
+                        Maps to|:VimwikiRenameWord|.
+
+
+Normal mode (Mouse): ~
+<2-LeftMouse>           Follow/Create WikiWord
+<S-2-LeftMouse>         Split and follow/create WikiWord
+<C-2-LeftMouse>         Vertical split and follow/create WikiWord
+<RightMouse><LeftMouse> Go back to previous WikiWord
+
+Note: <2-LeftMouse> is just left double click.
+
+
+==============================================================================
+4. Commands                                                 *vimwiki-commands*
+
+------------------------------------------------------------------------------
+4.1. Global Commands                                 *vimwiki-global-commands*
+
+*:VimwikiGoHome*
+    Open vimwiki's main file.
+
+*:VimwikiTabGoHome*
+    Open vimwiki's main file in a new tab.
+
+*:VimwikiExploreHome*
+    Open vimwiki's home directory.
+
+------------------------------------------------------------------------------
+4.2. Local commands                                   *vimwiki-local-commands*
+
+*:VimwikiFollowWord*
+    Follow/create WikiWord.
+
+*:VimwikiGoBackWord*
+    Go back to previous WikiWord you come from.
+
+*:VimwikiSplitWord*
+    Split and follow/create WikiWord.
+
+*:VimwikiVSplitWord*
+    Vertical split and follow/create WikiWord.
+
+*:VimwikiNextWord*
+    Find next WikiWord.
+
+*:VimwikiPrevWord*
+    Find previous WikiWord.
+
+*:VimwikiDeleteWord*
+    Delete WikiWord you are in.
+
+*:VimwikiRenameWord*
+    Rename WikiWord you are in.
+
+*:Vimwiki2HTML*
+        Convert current WikiPage to HTML.
+
+*:VimwikiAll2HTML*
+        Convert all WikiPages to HTML.
+
+Note that in order 2HTML commands to work you should set up & create html
+directory.  By default it is g:vimwiki_home/html/ so just go to g:vimwiki_home
+and create html directory there.
+
+
+==============================================================================
+5. Wiki syntax                                                *vimwiki-syntax*
+
+There are a lot of different wikies out there. Most of them have their own
+syntax and vimwiki is not an exception here. Default vimwiki's syntax is quite
+similar to what google's wiki has. With the noticeable difference in headings
+markup.
+
+As for MediaWiki's syntax -- the most used wiki syntax in the world -- it is
+not that convenient for non English keyboard layouts to emphasize text as it
+uses a lot of '''''' to do it. You have to switch layouts every time you want
+some bold non English text. This is the answer to "Why not MediaWiki?"
+
+Nevertheless, there is MediaWiki syntax file included in the distribution (it
+doesn't have all the fancy stuff original MediaWiki syntax has though). As the
+Google's one. To switch add the following to your vimrc: >
+    let g:vimwiki_syntax = "media"
+or: >
+    let g:vimwiki_syntax = "google"
+
+
+------------------------------------------------------------------------------
+5.1. Typeface                                               *vimwiki-typeface*
+
+There are a few typefaces that gives you a bit of control on how your
+text should be decorated: >
+  *bold text*
+  _italic text_
+  ~~strikeout text~~
+  `code (no syntax) text`
+  super^script^
+  sub,,script,,
+
+------------------------------------------------------------------------------
+5.2. Links                                                     *vimwiki-links*
+
+Internal links:
+  CapitalizedWordsConnected
+or:
+  [[This is a link]]
+
+External links effects are visible after export to HTML.
+Plain link:
+  http://code.google.com/p/vimwiki
+
+Link with description
+  [http://habamax.ru/blog habamax home page]
+
+Image link is the link with one of jpg, png or gif endings.
+Plain image link:
+  http://someaddr.com/picture.jpg
+
+Image thumbnail link:
+  [http://someaddr.com/bigpicture.jpg http://someaddr.com/thumbnail.jpg]
+
+------------------------------------------------------------------------------
+5.3. Headers                                                 *vimwiki-headers*
+! Header level 1
+!! Header level 2
+!!! Header level 3
+!!!! Header level 4
+!!!!! Header level 5
+!!!!!! Header level 6
+
+------------------------------------------------------------------------------
+5.4. Paragraphs                                           *vimwiki-paragraphs*
+
+Every line started from column 0 (zero) is a paragraph if it is not a list,
+table or preformatted text.
+
+------------------------------------------------------------------------------
+5.5. Lists                                                     *vimwiki-lists*
+Indent lists with at least one space:
+  * Bulleted list item 1
+  * Bulleted list item 2
+    * Bulleted list sub item 1
+    * Bulleted list sub item 2
+    * more ...
+      * and more ...
+      * ...
+    * Bulleted list sub item 3
+    * etc.
+
+The same goes for numbered lists:
+  # Numbered list item 1
+  # Numbered list item 2
+    # Numbered list sub item 1
+    # Numbered list sub item 2
+    # more ...
+      # and more ...
+      # ...
+    # Numbered list sub item 3
+    # etc.
+
+It is possible to mix bulleted and numbered lists.
+
+------------------------------------------------------------------------------
+5.6. Tables                                                   *vimwiki-tables*
+
+Tables are created by entering the content of each cell separated by ||
+delimiters. You can insert other inline wiki syntax in table cells, including
+typeface formatting and links.
+For example:
+
+||*Year*s||*Temperature (low)*||*Temperature (high)*||
+||1900   ||-10                ||25                  ||
+||1910   ||-15                ||30                  ||
+||1920   ||-10                ||32                  ||
+||1930   ||_N/A_              ||_N/A_               ||
+||1940   ||-2                 ||40                  ||
+
+
+------------------------------------------------------------------------------
+5.7. Pre                                                         *vimwiki-pre*
+
+If the line started from whitespace and is not a list it is "preformatted" text.
+For example: >
+
+  Tyger! Tyger! burning bright
+   In the forests of the night,
+    What immortal hand or eye
+     Could frame thy fearful symmetry?
+  In what distant deeps or skies
+   Burnt the fire of thine eyes?
+    On what wings dare he aspire?
+     What the hand dare sieze the fire?
+  ...
+  ...
+
+Or use {{{ and }}} to define pre:
+{{{ >
+  Tyger! Tyger! burning bright
+   In the forests of the night,
+    What immortal hand or eye
+     Could frame thy fearful symmetry?
+  In what distant deeps or skies
+   Burnt the fire of thine eyes?
+    On what wings dare he aspire?
+     What the hand dare sieze the fire?
+}}}
+
+It could be started from column 0.
+
+
+==============================================================================
+6. Options                                                   *vimwiki-options*
+
+------------------------------------------------------------------------------
+Default: ""                                                   *g:vimwiki_home*
+Values: path
+
+Set your wiki files home directory: >
+    let g:vimwiki_home = "~/mywiki/"
+
+Change "~/mywiki/" to whatever you prefer -- "d:/vimwiki/" for example.
+Make sure it exists and you can read and write to that path.
+
+Note: this option is a MUST.
+
+------------------------------------------------------------------------------
+Default: g:vimwiki_home."html"                           *g:vimwiki_home_html*
+Values: path
+
+Set up directory for wiki files converted to HTML: >
+    let g:vimwiki_home_html = '~/my wiki/html/'
+
+------------------------------------------------------------------------------
+Default: "index"                                             *g:vimwiki_index*
+Values: filename without extension
+
+If you don't like index.wiki as the main wiki file change it: >
+    let g:vimwiki_index = "homesweethome"
+
+Note: there is NO .wiki extension
+
+------------------------------------------------------------------------------
+Default: ".wiki"                                               *g:vimwiki_ext*
+Values: file extension
+
+If you don't want .wiki extension change it: >
+    let g:vimwiki_ext = ".shmiki"
+
+
+------------------------------------------------------------------------------
+Default: "default"                                          *g:vimwiki_syntax*
+Values: "default", "media" or "google"
+
+You can use different markup languages (currently default vimwiki, google and
+MediaWiki) but only vimwiki's default markup could be converted to HTML at the
+moment.
+To use MediaWiki's wiki markup: >
+    let g:vimwiki_syntax = "media"
+
+To use google's wiki markup: >
+    let g:vimwiki_syntax = "google"
+
+------------------------------------------------------------------------------
+Default: "A-ZА-Я"                                            *g:vimwiki_upper*
+Values: Upper letters (ranges)
+
+This affects WikiWord detection.
+By default WikiWord detection uses English and Russian letters.
+You can set up your own: >
+    let g:vimwiki_upper="A-Z"
+
+------------------------------------------------------------------------------
+Default: "a-zа-я"                                            *g:vimwiki_lower*
+Values: Lower letters ranges
+
+See |g:vimwiki_upper|: >
+    let g:vimwiki_lower="a-z"
+
+------------------------------------------------------------------------------
+Default: 1                                                 *g:vimwiki_smartCR*
+Values: 0, 1, 2
+
+This option affects the behaviour of <CR> in INSERT mode while adding new
+|vimwiki-lists|items.
+
+let g:vimwiki_smartCR=1~
+Imagine you have the following list (cursor stands on | ): >
+  * List item 1
+  * List item 2 |
+
+Now if you press <CR>: >
+  * List item 1
+  * List item 2
+  * |
+
+New list item appear. Now press <CR> again: >
+  * List item 1
+  * List item 2
+  |
+
+It is disappeared. That's it. Try it with cursor on any part of the list. It
+also works for |o| and |O|.
+
+let g:vimwiki_smartCR=2~
+It only adds new list item. Nothing more. It uses Vim comments facility such
+as: >
+    :h comments
+    :h formatoptions.
+
+To turn it off: >
+    let g:vimwiki_smartCR = 0
+
+------------------------------------------------------------------------------
+Default: 1                                                   *g:vimwiki_maxhi*
+Values: 0, 1
+
+Non-existent WikiWord highlighting could be quite slow and if you don't want
+it set g:vimwiki_maxhi to 0: >
+    let g:vimwiki_maxhi = 0
+
+------------------------------------------------------------------------------
+Default: "_"                                              *g:vimwiki_stripsym*
+Values: symbol
+
+Change strip symbol -- in Windows you cannot use /*?<>:" in file names so
+vimwiki replaces them with symbol given below: (_ is default): >
+    let g:vimwiki_stripsym = '_'
+
+------------------------------------------------------------------------------
+Default: "split"                                            *g:vimwiki_gohome*
+Values: split, vsplit, tabe
+
+This option controls the way |:VimwikiGoHome| command works.
+For instance you have 'No write since last change' buffer. After <Leader>ww
+(or :VimwikiGoHome) vimwiki index file will be splitted with it. Or vertically
+splitted. Or opened in a new tab.
+
+
+==============================================================================
+7. Help                                                         *vimwiki-help*
+
+As you could see I am not native English speaker (not a writer as well).
+Please send me correct phrases instead of that incorrect stuff I have used
+here.
+
+Any help is really appreciated!
+
+==============================================================================
+8. Author                                                     *vimwiki-author*
+
+I live in Moscow and you may believe me -- there are no polar bears (no brown
+too) here in the streets.
+
+I do not do programming for a living. So don't blame me for an ugly
+ineffective code. :)
+
+Maxim Kim
+e-mail: habamax@gmail.com~
+
+Vimwiki's website: http://code.google.com/p/vimwiki/
+Vim plugins website: http://www.Vim.org/scripts/script.php?script_id=2226
+
+==============================================================================
+9. Changelog                                               *vimwiki-changelog*
+
+0.5.3
+  * [fix] Fixed |:VimwikiRenameWord|. Error when g:vimwiki_home had
+    whitespaces in path.
+  * [fix] |:VimwikiSplitWord| and |:VimwikiVSplitWord| didn't work.
+
+0.5.2
+  * [new] Added |:VimwikiGoHome|, |:VimwikiTabGoHome| and
+   |:VimwikiExploreHome| commands.
+  * [new] Added <Leader>wt mapping to open vimwiki index file in a new tab.
+  * [new] Added g:vimwiki_gohome option that controls how|:VimwikiGoHome|
+    works when current buffer is changed. (Thanks Timur Zaripov)
+  * [fix] Fixed |:VimwikiRenameWord|. Very bad behaviour when autochdir isn't
+    set up.
+  * [fix] Fixed commands :Wiki2HTML and :WikiAll2HTML to be available only for
+    vimwiki buffers.
+  * [fix] Renamed :Wiki2HTML and :WikiAll2HTML to |:Vimwiki2HTML| and
+   |:VimwikiAll2HTML| commands.
+  * [fix] Help file corrections.
+
+0.5.1
+  * [new] This help is created.
+  * [new] Now you can fold headers.
+  * [new] <Plug>VimwikiGoHome and <Plug>VimwikiExploreHome were added.
+  * [fix] Bug with {{{HelloWikiWord}}} export to HTML is fixed.
+  * [del] Sync option removed from: Syntax highlighting for preformatted text
+    {{{ }}}.
+
+0.5
+  * [new] vimwiki default markup to HTML conversion improved.
+  * [new] Added basic GoogleWiki and MediaWiki markup languages.
+  * [new] Chinese [[complex wiki words]].
+
+0.4
+  * [new] vimwiki=>HTML converter in plain Vim language.
+  * [new] Plugin autoload.
+
+0.3.4
+  * [fix] Backup files (.wiki~) caused a bunch of errors while opening wiki
+    files.
+
+0.3.3
+  * FIXED: [[wiki word with dots at the end...]] didn't work.
+  * [new] Added error handling for delete wiki word function.
+  * [new] Added keybindings o and O for list items when g:vimwiki_smartCR=1.
+  * [new] Added keybinding <Leader>wh to visit wiki home directory.
+
+0.3.2
+  * [fix] Renaming -- error if complex wiki word contains %.
+  * [fix] Syntax highlighting for preformatted text {{{ }}}. Sync option
+    added.
+  * [fix] smartCR bug fix.
+
+0.3.1
+  * [fix] Renaming -- [[hello world?]] to [[hello? world]] links are not
+    updated.
+  * [fix] Buffers menu is a bit awkward after renaming.
+  * [new] Use mouse to follow links. Left double-click to follow WikiWord,
+    Rightclick then Leftclick to go back.
+
+0.3
+  * [new] Highlight non-existent WikiWords.
+  * [new] Delete current WikiWord (<Leader>wd).
+  * [new] g:vimwiki_smartCR=2 => use Vim comments (see :h comments :h
+    formatoptions) feature to deal with list items. (thx -- Dmitry Alexandrov)
+  * [new] Highlight TODO:, DONE:, FIXED:, FIXME:.
+  * [new] Rename current WikiWord -- be careful on Windows you cannot rename
+    wikiword to WikiWord. After renaming update all links to that renamed
+    WikiWord.
+  * [fix] Bug -- do not duplicate WikiWords in wiki history.
+  * [fix] after renaming [[wiki word]] twice buffers are not deleted.
+  * [fix] when renaming from [[wiki word]] to WikiWord result is [[WikiWord]]
+  * [fix] more than one complex words on one line is bugging each other when
+    try go to one of them. [[bla bla bla]] [[dodo dodo dodo]] becomes 
+    bla bla bla]] [[dodo dodo dodo.
+
+
+0.2.2
+  * [new] Added keybinding <S-CR> -- split WikiWord
+  * [new] Added keybinding <C-CR> -- vertical split WikiWord
+
+0.2.1
+  * [new] Install on Linux now works.
+
+0.2
+  * [new] Added part of Google's Wiki syntax.
+  * [new] Added auto insert # with ENTER.
+  * [new] On/Off auto insert bullet with ENTER.
+  * [new] Strip [[complex wiki name]] from symbols that cannot be used in file
+    names.
+  * [new] Links to non-wiki files. Non wiki files are files with extensions ie
+    [[hello world.txt]] or [[my homesite.html]]
+
+0.1
+  * First public version.
+
+==============================================================================
+10. License                                                   *vimwiki-license*
+
+GNU General Public License v2
+http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+
+To be frank I didn't read it myself. It is not that easy reading. But I hope
+it's free enough to suit your needs.
+
+
+ vim:tw=78:ts=8:ft=help:fdm=marker:

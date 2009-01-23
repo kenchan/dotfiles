@@ -1,1 +1,2 @@
 rails.vba: call delete('/home/ubuntu/.vim/plugin/rails.vim')|call delete('/home/ubuntu/.vim/doc/rails.txt')
+vimwiki_0_5_3.vba: call delete('/home/kenichi/.vim/autoload/vimwiki.vim')|call delete('/home/kenichi/.vim/doc/vimwiki.txt')|call delete('/home/kenichi/.vim/ftplugin/vimwiki.vim')|call delete('/home/kenichi/.vim/plugin/vimwiki.vim')|call delete('/home/kenichi/.vim/syntax/vimwiki.vim')|call delete('/home/kenichi/.vim/syntax/vimwiki_default.vim')|call delete('/home/kenichi/.vim/syntax/vimwiki_google.vim')|call delete('/home/kenichi/.vim/syntax/vimwiki_media.vim')

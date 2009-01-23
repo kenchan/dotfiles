@@ -2,7 +2,8 @@ if filereadable($VIMRUNTIME . '/vimrc_example.vim')
   source $VIMRUNTIME/vimrc_example.vim
 endif
 
-colorscheme rubyblue
+set t_Co=256
+colorscheme desert256
 
 set ambiwidth=double
 set autoread
@@ -12,7 +13,6 @@ set showmatch
 set ttymouse=xterm2
 set wildmode=longest:list
 set nocompatible
-set t_Co=256
 
 nnoremap j gj
 nnoremap k gk
@@ -41,7 +41,6 @@ set smartcase
 set incsearch
 
 " for autocomplpop
-
 
 " 全角空白と行末の空白の色を変える
 highlight WideSpace ctermbg=blue guibg=blue
@@ -81,3 +80,6 @@ autocmd BufNewFile,BufRead /mnt/windows/* set nofsync
 
 " clipboard
 set clipboard=unnamed
+
+" vimwiki
+let g:vimwiki_home="/home/kenichi/vimwiki/"
