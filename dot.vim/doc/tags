@@ -119,12 +119,14 @@ rails-:Rdestroy	rails.txt	/*rails-:Rdestroy*
 rails-:Rdoc	rails.txt	/*rails-:Rdoc*
 rails-:Rdoc!	rails.txt	/*rails-:Rdoc!*
 rails-:Redit	rails.txt	/*rails-:Redit*
+rails-:Renvironment	rails.txt	/*rails-:Renvironment*
 rails-:Rextract	rails.txt	/*rails-:Rextract*
 rails-:Rfind	rails.txt	/*rails-:Rfind*
 rails-:Rfixtures	rails.txt	/*rails-:Rfixtures*
 rails-:Rfunctionaltest	rails.txt	/*rails-:Rfunctionaltest*
 rails-:Rgenerate	rails.txt	/*rails-:Rgenerate*
 rails-:Rhelper	rails.txt	/*rails-:Rhelper*
+rails-:Rinitializer	rails.txt	/*rails-:Rinitializer*
 rails-:Rintegrationtest	rails.txt	/*rails-:Rintegrationtest*
 rails-:Rinvert	rails.txt	/*rails-:Rinvert*
 rails-:Rjavascript	rails.txt	/*rails-:Rjavascript*
@@ -143,7 +145,6 @@ rails-:Rpp	rails.txt	/*rails-:Rpp*
 rails-:Rpreview	rails.txt	/*rails-:Rpreview*
 rails-:Rpreview!	rails.txt	/*rails-:Rpreview!*
 rails-:Rproject	rails.txt	/*rails-:Rproject*
-rails-:Rproject!	rails.txt	/*rails-:Rproject!*
 rails-:Rrefresh	rails.txt	/*rails-:Rrefresh*
 rails-:Rrefresh!	rails.txt	/*rails-:Rrefresh!*
 rails-:Rrunner	rails.txt	/*rails-:Rrunner*
