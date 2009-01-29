@@ -416,3 +416,6 @@ awful.hooks.timer.register(1, function ()
     mytextbox.text = " " .. os.date() .. " "
 end)
 -- }}}
+
+-- XScreenSaver
+keybinding({ modkey, "Control" }, "l", function() awful.util.spawn("/usr/bin/xscreensaver-command -lock") end):add()
