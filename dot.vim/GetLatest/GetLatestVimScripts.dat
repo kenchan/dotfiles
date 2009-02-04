@@ -5,3 +5,5 @@ ScriptId SourceID Filename
 1879 9335 :AutoInstall: autocomplpop.vim
 1697 8283 :AutoInstall: surround.vim
 2386 9299 :AutoInstall: endwise.vim
+23 8319 :AutoInstall: enhcommentify.tar.gz
+90 9279 :AutoInstall: vcscommand.vim
