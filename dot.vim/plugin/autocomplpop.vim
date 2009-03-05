@@ -470,7 +470,8 @@ endfunction
 function! s:PopupFeeder.on_popup_post()
   if pumvisible()
     " a command to restore to original text and select the first match
-    return "\<C-p>\<Down>"
+    "return "\<C-p>\<Down>"
+    return "\<C-p>"
   elseif exists('self.behavs[1]')
     call remove(self.behavs, 0)
     return printf("\<C-e>%s\<C-r>=%sGetPopupFeeder().on_popup_post()\<CR>",
