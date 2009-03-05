@@ -83,3 +83,7 @@ set clipboard=unnamed
 
 " vimwiki
 let g:vimwiki_home="/home/kenichi/vimwiki/"
+
+" <Leader>
+inoremap <Leader>date <C-R>=strftime('%Y/%m/%d(%a)')<CR>
+inoremap <Leader>time <C-R>=strftime('%H:%M:%S')<CR>
