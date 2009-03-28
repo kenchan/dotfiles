@@ -101,6 +101,7 @@ cvscommand-changes	vcscommand.txt	/*cvscommand-changes*
 ds	surround.txt	/*ds*
 g:loaded_rails	rails.txt	/*g:loaded_rails*
 g:rails_abbreviations	rails.txt	/*g:rails_abbreviations*
+g:rails_ctags_arguments	rails.txt	/*g:rails_ctags_arguments*
 g:rails_dbext	rails.txt	/*g:rails_dbext*
 g:rails_default_database	rails.txt	/*g:rails_default_database*
 g:rails_default_file	rails.txt	/*g:rails_default_file*
@@ -195,6 +196,7 @@ rails-:Rlayout	rails.txt	/*rails-:Rlayout*
 rails-:Rlcd	rails.txt	/*rails-:Rlcd*
 rails-:Rlib	rails.txt	/*rails-:Rlib*
 rails-:Rlog	rails.txt	/*rails-:Rlog*
+rails-:Rmetal	rails.txt	/*rails-:Rmetal*
 rails-:Rmigration	rails.txt	/*rails-:Rmigration*
 rails-:Rmodel	rails.txt	/*rails-:Rmodel*
 rails-:Rnavcommand	rails.txt	/*rails-:Rnavcommand*

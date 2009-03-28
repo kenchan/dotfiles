@@ -1,6 +1,6 @@
 ScriptId SourceID Filename
 --------------------------
-1567 9854 :AutoInstall: rails.vim
+1567 10297 :AutoInstall: rails.vim
 1234 9731 :AutoInstall: yankring.vim
 1697 8283 :AutoInstall: surround.vim
 2386 9299 :AutoInstall: endwise.vim
