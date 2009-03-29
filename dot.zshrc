@@ -28,6 +28,7 @@ alias ll='ls -al --color=auto'
 alias la='ls -a --color=auto'
 alias vi='vim'
 alias apt='sudo aptitude'
+alias g='git'
 
 # for ruby
 export LOCAL_GEM_HOME=/home/kenichi/.gem/ruby/1.8
