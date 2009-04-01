@@ -8,3 +8,4 @@ ScriptId SourceID Filename
 90 9965 :AutoInstall: vcscommand.vim
 1879 9335 :AutoInstall: autocomplpop.vim
 2423 10198 :AutoInstall: gist.vim
+1664 10237 :AutoInstall: buftags.vim

@@ -60,11 +60,6 @@ set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V
 autocmd InsertEnter * highlight StatusLine ctermfg=red guifg=red
 autocmd InsertLeave * highlight StatusLine ctermfg=white guifg=white
 
-"minibufexpl
-let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplMapWindowNavArrows = 1
-let g:miniBufExplMapCTabSwitchBuffs = 1
-
 "自動的に QuickFix リストを表示する
 autocmd QuickfixCmdPost make,grep,grepadd,vimgrep,vimgrepadd cwin
 autocmd QuickfixCmdPost lmake,lgrep,lgrepadd,lvimgrep,lvimgrepadd lwin
@@ -90,3 +85,8 @@ inoremap <Leader>time <C-R>=strftime('%H:%M:%S')<CR>
 
 " for neocomplcache
 let g:NeoComplCache_EnableAtStartup = 1
+
+" buftabs
+let g:buftags_only_basename = 1
+set laststatus=2
+let g:buftabs_in_statusline = 1
