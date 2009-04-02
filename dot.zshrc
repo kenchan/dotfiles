@@ -2,7 +2,7 @@
 
 # PROMPT
 PROMPT="%n@%m%% "
-RPROMPT="[%~]"
+RPROMPT_DEFAULT="[%~]"
 SPROMPT="correct: %R -> %r ? "
 
 # history
@@ -44,9 +44,6 @@ setopt correct
 setopt extended_history
 setopt share_history
 
-# cd => ls
-function chpwd() { ls }
-
 # EDITOR
 export EDITOR=vi
 bindkey -e
@@ -57,3 +54,28 @@ case "${OSTYPE}" in
   export GIT_PAGER="less -RE"
   ;;
 esac
+
+typeset -ga chpwd_functions
+function _screen_title_chpwd() {
+  if [ "$TERM" = "screen" ]; then
+    echo -n "^[k[`basename $PWD`]^[\\"
+  fi
+}
+functions _set_rprompt_git() {
+  local -A git_res
+  git_res=`/usr/bin/git branch -a --no-color 2> /dev/null `
+  if [ $? != '0' ]; then
+    RPROMPT=$RPROMPT_DEFAULT
+  else
+    git_res=`echo $git_res|grep '^*'|tr -d '\* '`
+    RPROMPT=' %{[32m%}('$git_res')%{[00m%} '$RPROMPT_DEFAULT
+  fi
+}
+functions _xxx_ls() {
+  ls
+}
+chpwd_functions+=_xxx_ls
+chpwd_functions+=_screen_title_chpwd
+chpwd_functions+=_reg_pwd_screennum
+chpwd_functions+=_set_rprompt_git
+
