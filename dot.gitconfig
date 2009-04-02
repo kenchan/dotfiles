@@ -11,3 +11,7 @@
   ci = commit -a
   st = status
   up = pull --rebase
+  c = commit
+  a = add
+  b = branch
+  d = diff
