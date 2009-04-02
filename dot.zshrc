@@ -2,6 +2,7 @@
 
 # PROMPT
 PROMPT="%n@%m%% "
+RPROMPT="[%~]"
 RPROMPT_DEFAULT="[%~]"
 SPROMPT="correct: %R -> %r ? "
 
@@ -55,27 +56,20 @@ case "${OSTYPE}" in
   ;;
 esac
 
+function chpwd() { ls }
+
 typeset -ga chpwd_functions
-function _screen_title_chpwd() {
-  if [ "$TERM" = "screen" ]; then
-    echo -n "^[k[`basename $PWD`]^[\\"
-  fi
-}
-functions _set_rprompt_git() {
-  local -A git_res
-  git_res=`/usr/bin/git branch -a --no-color 2> /dev/null `
+typeset -ga preexec_functions
+
+function _set_rprompt_git() {
+  local git_branch
+  git_branch="${$(git symbolic-ref HEAD 2> /dev/null)#refs/heads/}"
   if [ $? != '0' ]; then
     RPROMPT=$RPROMPT_DEFAULT
   else
-    git_res=`echo $git_res|grep '^*'|tr -d '\* '`
-    RPROMPT=' %{[32m%}('$git_res')%{[00m%} '$RPROMPT_DEFAULT
+    RPROMPT=' %{[32m%}('$git_branch')%{[00m%} '$RPROMPT_DEFAULT
   fi
 }
-functions _xxx_ls() {
-  ls
-}
-chpwd_functions+=_xxx_ls
-chpwd_functions+=_screen_title_chpwd
-chpwd_functions+=_reg_pwd_screennum
-chpwd_functions+=_set_rprompt_git
 
+chpwd_functions+=_set_rprompt_git
+preexec_functions+=_set_rprompt_git
