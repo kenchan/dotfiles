@@ -1,5 +1,3 @@
-# Created by newuser for 4.3.2
-
 # PROMPT
 PROMPT="%n@%m%% "
 RPROMPT="[%~]"
@@ -10,6 +8,8 @@ SPROMPT="correct: %R -> %r ? "
 HISTFILE=$HOME/.zsh-history
 HISTSIZE=100000
 SAVEHIST=100000
+setopt hist_ignore_dups
+setopt share_history
 autoload history-search-end
 zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
