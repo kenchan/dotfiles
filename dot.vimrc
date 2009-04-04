@@ -65,9 +65,6 @@ autocmd InsertLeave * highlight StatusLine ctermfg=white guifg=white
 autocmd QuickfixCmdPost make,grep,grepadd,vimgrep,vimgrepadd cwin
 autocmd QuickfixCmdPost lmake,lgrep,lgrepadd,lvimgrep,lvimgrepadd lwin
 
-"辞書補完設定
-autocmd FileType actionscript :set dictionary=~/.vim/dict/actionscript3.dict
-
 " clipboard
 set clipboard=unnamed
 
