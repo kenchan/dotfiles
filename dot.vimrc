@@ -14,9 +14,6 @@ set ttymouse=xterm2
 set wildmode=longest:list
 set nocompatible
 
-nnoremap j gj
-nnoremap k gk
-
 "backup
 set nobackup
 
@@ -40,7 +37,13 @@ set ignorecase
 set smartcase
 set incsearch
 
-" for autocomplpop
+"statusline
+set laststatus=2
+set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
+
+" keymap
+nnoremap j gj
+nnoremap k gk
 
 " 全角空白と行末の空白の色を変える
 highlight WideSpace ctermbg=blue guibg=blue
@@ -52,11 +55,9 @@ function! HighlightSpace()
 endf
 
 call HighlightSpace()
+
 autocmd WinEnter * call HighlightSpace()
 
-"statusline
-set laststatus=2
-set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
 autocmd InsertEnter * highlight StatusLine ctermfg=red guifg=red
 autocmd InsertLeave * highlight StatusLine ctermfg=white guifg=white
 
@@ -64,14 +65,8 @@ autocmd InsertLeave * highlight StatusLine ctermfg=white guifg=white
 autocmd QuickfixCmdPost make,grep,grepadd,vimgrep,vimgrepadd cwin
 autocmd QuickfixCmdPost lmake,lgrep,lgrepadd,lvimgrep,lvimgrepadd lwin
 
-"for yankring.vim
-set viminfo+=!
-
 "辞書補完設定
 autocmd FileType actionscript :set dictionary=~/.vim/dict/actionscript3.dict
-
-"cofs's fsync
-autocmd BufNewFile,BufRead /mnt/windows/* set nofsync
 
 " clipboard
 set clipboard=unnamed
