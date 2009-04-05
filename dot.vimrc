@@ -45,6 +45,17 @@ set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V
 nnoremap j gj
 nnoremap k gk
 
+" Window
+nnoremap + <C-w>+
+nnoremap - <C-w>-
+nnoremap > <C-w>>
+nnoremap < <C-w><
+
+nnoremap wh <C-w>h
+nnoremap wj <C-w>j
+nnoremap wk <C-w>k
+nnoremap wl <C-w>l
+
 " 全角空白と行末の空白の色を変える
 highlight WideSpace ctermbg=blue guibg=blue
 highlight EOLSpace ctermbg=red guibg=red
