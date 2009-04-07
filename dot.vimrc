@@ -93,3 +93,7 @@ let g:NeoComplCache_EnableAtStartup = 1
 let g:buftags_only_basename = 1
 set laststatus=2
 let g:buftabs_in_statusline = 1
+
+" git-commit.vim
+let git_diff_spawn_mode = 1
+autocmd BufNewFile, BufRead COMMIT_EDITMSG set filetype=git
