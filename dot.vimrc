@@ -4,6 +4,7 @@ endif
 
 set t_Co=256
 colorscheme desert256
+hi Pmenu ctermbg=4
 
 set ambiwidth=double
 set autoread
