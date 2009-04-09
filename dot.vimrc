@@ -49,8 +49,6 @@ nnoremap k gk
 " Window
 nnoremap + <C-w>+
 nnoremap - <C-w>-
-nnoremap > <C-w>>
-nnoremap < <C-w><
 
 nnoremap wh <C-w>h
 nnoremap wj <C-w>j
@@ -61,14 +59,14 @@ nnoremap wl <C-w>l
 highlight WideSpace ctermbg=blue guibg=blue
 highlight EOLSpace ctermbg=red guibg=red
 
-function! HighlightSpace()
+function! s:highlight_spaces()
   match WideSpace "　"
   match EOLSpace /\s\+$/
 endf
 
-call HighlightSpace()
+call s:highlight_spaces()
 
-autocmd WinEnter * call HighlightSpace()
+autocmd WinEnter * call s:highlight_spaces()
 
 autocmd InsertEnter * highlight StatusLine ctermfg=red guifg=red
 autocmd InsertLeave * highlight StatusLine ctermfg=white guifg=white
@@ -89,11 +87,7 @@ inoremap <Leader>time <C-R>=strftime('%H:%M:%S')<CR>
 
 " for neocomplcache
 let g:NeoComplCache_EnableAtStartup = 1
-
-" buftabs
-let g:buftags_only_basename = 1
-set laststatus=2
-let g:buftabs_in_statusline = 1
+let g:AutoComplPop_NotEnableAtStatup = 1
 
 " git-commit.vim
 let git_diff_spawn_mode = 1
