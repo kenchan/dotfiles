@@ -25,7 +25,7 @@ set IGNORE_EOF
 
 # aliases
 alias ls='ls -F --color=auto'
-alias ll='ls -al --color=auto'
+alias ll='ls -alh --color=auto'
 alias la='ls -a --color=auto'
 alias vi='vim'
 alias apt='sudo aptitude'
