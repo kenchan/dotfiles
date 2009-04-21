@@ -1,2 +1,0 @@
-ProtocolKeepAlives 300
-Host * Ciphers aes128-ctr,aes192-ctr,aes256-ctr,arcfour128,arcfour256,arcfour
