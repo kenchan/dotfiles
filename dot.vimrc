@@ -87,7 +87,6 @@ inoremap <Leader>time <C-R>=strftime('%H:%M:%S')<CR>
 
 " for neocomplcache
 let g:NeoComplCache_EnableAtStartup = 1
-let g:AutoComplPop_NotEnableAtStatup = 1
 
 " git-commit.vim
 let git_diff_spawn_mode = 1
