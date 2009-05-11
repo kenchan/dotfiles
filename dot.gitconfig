@@ -8,11 +8,12 @@
   interactive = auto
 [alias]
   co = checkout
-  ci = commit -a
+  ca = commit -a
   st = status
-  up = pull --rebase
+  pr = pull --rebase
   c = commit
   a = add
   b = branch
   d = diff
   l = log --stat
+  lp = log -p
