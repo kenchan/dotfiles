@@ -56,6 +56,7 @@ function chpwd() { ls }
 
 typeset -ga chpwd_functions
 typeset -ga preexec_functions
+typeset -ga precmd_functions
 
 function _set_rprompt_git() {
   local git_branch
@@ -69,3 +70,4 @@ function _set_rprompt_git() {
 
 chpwd_functions+=_set_rprompt_git
 preexec_functions+=_set_rprompt_git
+precmd_functions+=_set_rprompt_git
