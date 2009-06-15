@@ -3,5 +3,5 @@ urxvt*saveLines:20000
 urxvt*scrollBar_right: true
 urxvt*foreground: gray
 urxvt*background: black
-urxvt*font: xft:M+1VM+IPAG circle:size=9:antialias=true
+urxvt*font: xft:M+1VM+IPAG circle:size=10:antialias=true
 urxvt*boldFont: xft:M+1VM+IPAG circle:bold:antialias=true
