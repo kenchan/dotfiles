@@ -17,3 +17,5 @@
   d = diff
   l = log --stat
   lp = log -p
+[log]
+	date = iso
