@@ -46,10 +46,6 @@ set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V
 nnoremap j gj
 nnoremap k gk
 
-" Window
-nnoremap + <C-w>+
-nnoremap - <C-w>-
-
 nnoremap wh <C-w>h
 nnoremap wj <C-w>j
 nnoremap wk <C-w>k
@@ -90,4 +86,3 @@ let g:NeoComplCache_EnableAtStartup = 1
 
 " git-commit.vim
 let git_diff_spawn_mode = 1
-autocmd BufNewFile, BufRead COMMIT_EDITMSG set filetype=git
