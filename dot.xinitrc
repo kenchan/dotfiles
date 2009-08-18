@@ -13,3 +13,7 @@ fi
 if test -x $HOME/.dropbox-dist/dropboxd; then
   $HOME/.dropbox-dist/dropboxd &
 fi
+
+if which wakoopa > /dev/null 2>&1; then
+  wakoopa &
+fi
