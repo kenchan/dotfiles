@@ -2,7 +2,7 @@
 PROMPT="%m%% "
 SPROMPT="correct: %R -> %r ? "
 
-autoloa -Uz vcs_info
+autoload -Uz vcs_info
 zstyle ':vcs_info:*' formats '(%b)'
 zstyle ':vcs_info:*' actionformats '(%s)-[%b|%a]'
 precmd() {
