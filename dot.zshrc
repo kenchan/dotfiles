@@ -1,8 +1,16 @@
 # PROMPT
 PROMPT="%m%% "
-RPROMPT="[%~]"
-RPROMPT_DEFAULT="[%~]"
 SPROMPT="correct: %R -> %r ? "
+
+autoloa -Uz vcs_info
+zstyle ':vcs_info:*' formats '(%b)'
+zstyle ':vcs_info:*' actionformats '(%s)-[%b|%a]'
+precmd() {
+  psvar=()
+  vcs_info
+  [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
+}
+RPROMPT="%1(v|%F{green}%1v%f[%~]|[%~])"
 
 # history
 HISTFILE=$HOME/.zsh-history
@@ -53,21 +61,3 @@ case "${OSTYPE}" in
 esac
 
 function chpwd() { ls }
-
-typeset -ga chpwd_functions
-typeset -ga preexec_functions
-typeset -ga precmd_functions
-
-function _set_rprompt_git() {
-  local git_branch
-  git_branch="${$(git symbolic-ref HEAD 2> /dev/null)#refs/heads/}"
-  if [ $? != '0' ]; then
-    RPROMPT=$RPROMPT_DEFAULT
-  else
-    RPROMPT=' %{[32m%}('$git_branch')%{[00m%} '$RPROMPT_DEFAULT
-  fi
-}
-
-chpwd_functions+=_set_rprompt_git
-preexec_functions+=_set_rprompt_git
-precmd_functions+=_set_rprompt_git
