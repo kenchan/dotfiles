@@ -4,8 +4,6 @@ require 'utility_belt'
 require 'irb/ext/save-history'
 require 'pp'
 
-UtilityBelt.equip(:all, :except => ["clipboard", "pastie", "google"])
-
 IRB.conf[:SAVE_HISTORY] = 100000
+IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb_history"
 IRB.conf[:PROMPT_MODE] = :DEFAULT
-IRB.conf[:AUTO_INDENT] = true
