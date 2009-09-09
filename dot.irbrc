@@ -1,8 +1,10 @@
-require 'rubygems'
-require 'irb/completion'
-require 'utility_belt'
-require 'irb/ext/save-history'
-require 'pp'
+%w[rubygems irb/completion irb/ext/save-history utility_belt pp].each do |g|
+  begin
+    require g
+  rescue LoadError
+  end
+end
+require 'hirb' if ENV['RAILS_ENV']
 
 IRB.conf[:SAVE_HISTORY] = 100000
 IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb_history"
