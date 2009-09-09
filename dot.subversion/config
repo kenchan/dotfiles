@@ -83,7 +83,7 @@ global-ignores = *.o *.lo *.la *.tmp *.swp #*# .*.rej *.rej .*~ *~ .#* .DS_Store
 ### Set enable-auto-props to 'yes' to enable automatic properties
 ### for 'svn add' and 'svn import', it defaults to 'no'.
 ### Automatic properties are defined in the section 'auto-props'.
-# enable-auto-props = yes
+enable-auto-props = yes
 
 ### Section for configuring automatic properties.
 [auto-props]
@@ -93,14 +93,14 @@ global-ignores = *.o *.lo *.la *.tmp *.swp #*# .*.rej *.rej .*~ *~ .#* .DS_Store
 ### '?').  All entries which match will be applied to the file.
 ### Note that auto-props functionality must be enabled, which
 ### is typically done by setting the 'enable-auto-props' option.
-# *.c = svn:eol-style=native
-# *.cpp = svn:eol-style=native
-# *.h = svn:eol-style=native
-# *.dsp = svn:eol-style=CRLF
-# *.dsw = svn:eol-style=CRLF
-# *.sh = svn:eol-style=native;svn:executable
-# *.txt = svn:eol-style=native
-# *.png = svn:mime-type=image/png
-# *.jpg = svn:mime-type=image/jpeg
-# Makefile = svn:eol-style=native
-
+*.c = svn:eol-style=native
+*.cpp = svn:eol-style=native
+*.h = svn:eol-style=native
+*.dsp = svn:eol-style=CRLF
+*.dsw = svn:eol-style=CRLF
+*.sh = svn:eol-style=native;svn:executable
+*.txt = svn:eol-style=native
+*.png = svn:mime-type=image/png
+*.jpg = svn:mime-type=image/jpeg
+Makefile = svn:eol-style=native
+*.txt = svn:mime-type=text/plain
