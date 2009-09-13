@@ -1,3 +1,7 @@
+if [ ~/.profile ]; then
+  source ~/.profile
+fi
+
 # PROMPT
 PROMPT="%m%% "
 SPROMPT="correct: %R -> %r ? "
