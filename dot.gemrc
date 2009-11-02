@@ -1,6 +1,7 @@
 ---
 gem: --no-ri --no-rdoc
 :sources:
+- http://gemcutter.org
 - http://gems.rubyforge.org/
 - http://gems.github.com
 :benchmark: false
