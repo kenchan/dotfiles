@@ -43,9 +43,8 @@ alias vi='vim'
 alias apt='sudo aptitude'
 alias g='git'
 
-# for ruby
-export LOCAL_GEM_HOME=/home/kenichi/.gem/ruby/1.8
-export PATH=$PATH:$LOCAL_GEM_HOME/bin
+#rubygems
+export PATH=$HOME/.gem/ruby/1.8/bin:$PATH
 
 setopt auto_cd
 setopt auto_pushd
