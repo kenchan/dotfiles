@@ -83,16 +83,12 @@ multiple-items-example	yankring.txt	/*multiple-items-example*
 rails	rails.txt	/*rails*
 rails-'cfu'	rails.txt	/*rails-'cfu'*
 rails-'completefunc'	rails.txt	/*rails-'completefunc'*
-rails-'efm'	rails.txt	/*rails-'efm'*
-rails-'errorformat'	rails.txt	/*rails-'errorformat'*
 rails-'et'	rails.txt	/*rails-'et'*
 rails-'expandtab'	rails.txt	/*rails-'expandtab'*
 rails-'filetype'	rails.txt	/*rails-'filetype'*
 rails-'ft'	rails.txt	/*rails-'ft'*
 rails-'includeexpr'	rails.txt	/*rails-'includeexpr'*
 rails-'inex'	rails.txt	/*rails-'inex'*
-rails-'makeprg'	rails.txt	/*rails-'makeprg'*
-rails-'mp'	rails.txt	/*rails-'mp'*
 rails-'pa'	rails.txt	/*rails-'pa'*
 rails-'path'	rails.txt	/*rails-'path'*
 rails-'shiftwidth'	rails.txt	/*rails-'shiftwidth'*
@@ -104,12 +100,14 @@ rails-'sua'	rails.txt	/*rails-'sua'*
 rails-'suffixesadd'	rails.txt	/*rails-'suffixesadd'*
 rails-'sw'	rails.txt	/*rails-'sw'*
 rails-:A	rails.txt	/*rails-:A*
+rails-:AD	rails.txt	/*rails-:AD*
 rails-:AE	rails.txt	/*rails-:AE*
 rails-:AS	rails.txt	/*rails-:AS*
 rails-:AT	rails.txt	/*rails-:AT*
 rails-:AV	rails.txt	/*rails-:AV*
 rails-:OpenURL	rails.txt	/*rails-:OpenURL*
 rails-:R	rails.txt	/*rails-:R*
+rails-:RD	rails.txt	/*rails-:RD*
 rails-:RE	rails.txt	/*rails-:RE*
 rails-:RS	rails.txt	/*rails-:RS*
 rails-:RT	rails.txt	/*rails-:RT*
@@ -125,7 +123,6 @@ rails-:Rcommand	rails.txt	/*rails-:Rcommand*
 rails-:Rconsole	rails.txt	/*rails-:Rconsole*
 rails-:Rcontroller	rails.txt	/*rails-:Rcontroller*
 rails-:Rdbext	rails.txt	/*rails-:Rdbext*
-rails-:Rdbext!	rails.txt	/*rails-:Rdbext!*
 rails-:Rdestroy	rails.txt	/*rails-:Rdestroy*
 rails-:Rdoc	rails.txt	/*rails-:Rdoc*
 rails-:Rdoc!	rails.txt	/*rails-:Rdoc!*
@@ -144,6 +141,7 @@ rails-:Rjavascript	rails.txt	/*rails-:Rjavascript*
 rails-:Rlayout	rails.txt	/*rails-:Rlayout*
 rails-:Rlcd	rails.txt	/*rails-:Rlcd*
 rails-:Rlib	rails.txt	/*rails-:Rlib*
+rails-:Rlocale	rails.txt	/*rails-:Rlocale*
 rails-:Rlog	rails.txt	/*rails-:Rlog*
 rails-:Rmetal	rails.txt	/*rails-:Rmetal*
 rails-:Rmigration	rails.txt	/*rails-:Rmigration*
@@ -168,6 +166,7 @@ rails-:Rspec	rails.txt	/*rails-:Rspec*
 rails-:Rstylesheet	rails.txt	/*rails-:Rstylesheet*
 rails-:Rtags	rails.txt	/*rails-:Rtags*
 rails-:Rtask	rails.txt	/*rails-:Rtask*
+rails-:Rtree	rails.txt	/*rails-:Rtree*
 rails-:Runittest	rails.txt	/*rails-:Runittest*
 rails-:Rview	rails.txt	/*rails-:Rview*
 rails-:Ry	rails.txt	/*rails-:Ry*
@@ -202,8 +201,9 @@ rails-navigation	rails.txt	/*rails-navigation*
 rails-options	rails.txt	/*rails-options*
 rails-partials	rails.txt	/*rails-partials*
 rails-plugin-author	rails.txt	/*rails-plugin-author*
-rails-project	rails.txt	/*rails-project*
 rails-rails-integration	rails.txt	/*rails-rails-integration*
+rails-rake	rails.txt	/*rails-rake*
+rails-rake-defaults	rails.txt	/*rails-rake-defaults*
 rails-refactoring	rails.txt	/*rails-refactoring*
 rails-related	rails.txt	/*rails-related*
 rails-rspec	rails.txt	/*rails-rspec*
