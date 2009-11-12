@@ -1,7 +1,5 @@
-if filereadable($VIMRUNTIME . '/vimrc_example.vim')
-  source $VIMRUNTIME/vimrc_example.vim
-endif
-
+filetype indent plugin on
+syntax enable
 
 set t_Co=256
 colorscheme desert256
