@@ -28,9 +28,6 @@ set fileformats=unix,dos
 set expandtab
 set smartindent
 set ts=2 sw=2 sts=2
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
 
 "search
 set nohlsearch
