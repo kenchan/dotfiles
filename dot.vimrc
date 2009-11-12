@@ -73,7 +73,7 @@ autocmd QuickfixCmdPost lmake,lgrep,lgrepadd,lvimgrep,lvimgrepadd lwin
 set clipboard=unnamed
 
 " vimwiki
-let g:vimwiki_home="/home/kenichi/vimwiki/"
+let g:vimwiki_home="~/vimwiki/"
 
 " <Leader>
 inoremap <Leader>date <C-R>=strftime('%Y/%m/%d(%a)')<CR>
