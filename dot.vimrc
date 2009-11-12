@@ -2,6 +2,7 @@ if filereadable($VIMRUNTIME . '/vimrc_example.vim')
   source $VIMRUNTIME/vimrc_example.vim
 endif
 
+
 set t_Co=256
 colorscheme desert256
 hi Pmenu ctermbg=4
@@ -52,14 +53,14 @@ nnoremap wl <C-w>l
 highlight WideSpace ctermbg=blue guibg=blue
 highlight EOLSpace ctermbg=red guibg=red
 
-function! s:highlight_spaces()
-  match WideSpace "　"
+function! s:HighlightSpaces()
+  match WideSpace /　/
   match EOLSpace /\s\+$/
 endf
 
-call s:highlight_spaces()
+call s:HighlightSpaces()
 
-autocmd WinEnter * call s:highlight_spaces()
+autocmd WinEnter * call s:HighlightSpaces()
 
 autocmd InsertEnter * highlight StatusLine ctermfg=red guifg=red
 autocmd InsertLeave * highlight StatusLine ctermfg=white guifg=white
