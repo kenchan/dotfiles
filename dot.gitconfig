@@ -13,9 +13,15 @@
   pr = pull --rebase
   c = commit
   a = add
+  al = add .
+  au = add -u
   b = branch
+  ba = branch -a
   d = diff
-  l = log --stat
+  dc = diff --cached
+  l = log
+  ls = log --stat
   lp = log -p
+  ru = remote update --prune
 [log]
 	date = iso
