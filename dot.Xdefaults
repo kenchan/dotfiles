@@ -1,4 +1,4 @@
-urxvt*termName:rxvt-256color
+urxvt*termName:xterm-256color
 urxvt*saveLines:20000
 urxvt*scrollBar_right: true
 urxvt*foreground: gray
