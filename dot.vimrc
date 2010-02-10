@@ -47,6 +47,8 @@ nnoremap wj <C-w>j
 nnoremap wk <C-w>k
 nnoremap wl <C-w>l
 
+nnoremap Y y$
+
 " 全角空白と行末の空白の色を変える
 highlight WideSpace ctermbg=blue guibg=blue
 highlight EOLSpace ctermbg=red guibg=red
