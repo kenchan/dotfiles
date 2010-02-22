@@ -6,6 +6,7 @@
   diff = auto
   branch = auto
   interactive = auto
+  grep = auto
 [alias]
   co = checkout
   ca = commit -a
