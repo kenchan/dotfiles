@@ -27,3 +27,5 @@
   tree = log --graph --pretty=oneline --abbrev-commit --decorate
 [log]
 	date = iso
+[push]
+	default = tracking
