@@ -6,5 +6,5 @@ export XMODIFIRES=@im=uim
 
 xmodmap $HOME/.Xmodmap
 xscreensaver -no-splash &
-[ropboxd &
+dropboxd &
 exec awesome
