@@ -1,4 +1,0 @@
-"xrandr --output LVDS1 --auto --output VGA1 --auto"
-XF86Launch1
-"xscreensaver-command -lock"
-XF86Launch4
