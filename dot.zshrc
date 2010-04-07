@@ -39,7 +39,7 @@ set IGNORE_EOF
 alias ls='ls -F --color=auto'
 alias ll='ls -alh --color=auto'
 alias la='ls -a --color=auto'
-alias vi='vim'
+alias v='vim'
 alias apt='sudo aptitude'
 alias g='git'
 
@@ -53,15 +53,8 @@ setopt extended_history
 setopt share_history
 
 # EDITOR
-export EDITOR=vi
+export EDITOR=vim
 bindkey -e
-
-# For Git
-case "${OSTYPE}" in
-  linux*)
-  export GIT_PAGER="less -RE"
-  ;;
-esac
 
 function chpwd() { ls }
 
