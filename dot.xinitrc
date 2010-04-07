@@ -2,7 +2,7 @@
 
 export LANG=ja_JP.UTF-8
 export GTK_IM_MODULE=uim
-export XMODIFIRES=@im=uim
+export XMODIFIERS=@im=uim
 
 xmodmap $HOME/.Xmodmap
 uim-xim &
