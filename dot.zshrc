@@ -36,9 +36,17 @@ setopt list_packed
 set IGNORE_EOF
 
 # aliases
-alias ls='ls -F --color=auto'
-alias ll='ls -alh --color=auto'
-alias la='ls -a --color=auto'
+case "${OSTYPE}" in
+darwin*)
+  alias ls='ls -FGw'
+  ;;
+linux*)
+  alias ls='ls -F --color=auto'
+  ;;
+esac
+
+alias la='ls -a'
+alias ll='ls -alh'
 alias v='vim'
 alias apt='sudo aptitude'
 alias g='git'
@@ -57,6 +65,5 @@ export EDITOR=vim
 bindkey -e
 
 function chpwd() { ls }
-
 
 if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
