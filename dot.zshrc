@@ -29,7 +29,9 @@ bindkey "^P" history-beginning-search-backward-end
 bindkey "^N" history-beginning-search-forward-end
 
 # complement
-autoload -U compinit; compinit
+autoload -U compinit promptinit
+compinit
+zstyle ':completion::complete:*' use-cache 1
 setopt list_packed
 
 # Ctrl-D
