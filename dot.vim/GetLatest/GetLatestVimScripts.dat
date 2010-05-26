@@ -5,5 +5,5 @@ ScriptId SourceID Filename
 1697 12566 :AutoInstall: surround.vim
 2386 9299 :AutoInstall: endwise.vim
 23 8319 :AutoInstall: enhcommentify.tar.gz
-2423 12732 :AutoInstall: gist.vim
+2423 13000 :AutoInstall: gist.vim
 1934 7990 :: git-commit.tar
