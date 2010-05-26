@@ -1,4 +1,2 @@
-if [ -d /usr/local/java ]; then
-  export JAVA_HOME=/usr/local/java
-  export PATH=$PATH:$JAVA_HOME/bin
-fi
+export ZDOTDIR=$HOME/.zsh
+export LANG=ja_JP.UTF-8

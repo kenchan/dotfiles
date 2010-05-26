@@ -13,6 +13,7 @@ precmd() {
   psvar=()
   vcs_info
   [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
+  [[ -n "$rvm_ruby_string" ]] && psvar[2]="$rvm_ruby_string"
 }
 RPROMPT="%1(v|%F{green}%1v%f[%~]|[%~])"
 
