@@ -26,6 +26,6 @@
   ru = remote update --prune
   tree = log --graph --pretty=oneline --abbrev-commit --decorate
 [log]
-	date = iso
+  date = iso
 [push]
-	default = tracking
+  default = tracking
