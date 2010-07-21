@@ -43,13 +43,13 @@ setopt list_packed
 # Ctrl-D
 set IGNORE_EOF
 
-# aliases
+alias v='vim'
+alias g='git'
+
 alias ls='ls -F --color=auto'
 alias ll='ls -alh'
 alias la='ls -a'
-alias v='vim'
 alias apt='sudo aptitude'
-alias g='git'
 
 #rubygems
 export PATH=$HOME/.gem/ruby/1.8/bin:$PATH
