@@ -3,6 +3,7 @@ if [ ~/.profile ]; then
 fi
 
 export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+#export LS_COLORS='di=01;34:ln=32:ex=35'
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
 # PROMPT
@@ -44,8 +45,8 @@ set IGNORE_EOF
 
 # aliases
 alias ls='ls -F --color=auto'
-alias ll='ls -alh --color=auto'
-alias la='ls -a --color=auto'
+alias ll='ls -alh'
+alias la='ls -a'
 alias v='vim'
 alias apt='sudo aptitude'
 alias g='git'
