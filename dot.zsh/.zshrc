@@ -51,6 +51,8 @@ alias ll='ls -alh'
 alias la='ls -a'
 alias apt='sudo aptitude'
 
+alias reload='source $ZDOTDIR/.zshrc'
+
 #rubygems
 export PATH=$HOME/.gem/ruby/1.8/bin:$PATH
 
