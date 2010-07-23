@@ -9,7 +9,6 @@
   grep = auto
 [alias]
   co = checkout
-  ca = commit -a
   st = status
   pr = pull --rebase
   c = commit
@@ -19,12 +18,14 @@
   b = branch
   ba = branch -a
   d = diff
-  dc = diff --cached
+  ds = diff --staged
   l = log
+  lo = log --oneline
   ls = log --stat
   lp = log -p
   ru = remote update --prune
-  tree = log --graph --pretty=oneline --abbrev-commit --decorate
+  tree = log --graph --oneline --abbrev-commit --decorate
+  gn = grep -n
 [log]
   date = iso
 [push]
