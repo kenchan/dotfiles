@@ -35,12 +35,14 @@ bindkey "^P" history-beginning-search-backward-end
 bindkey "^N" history-beginning-search-forward-end
 
 # complement
+fpath=($HOME/.zsh/functions $fpath)
 autoload -U compinit promptinit
 compinit
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion::complete:*' use-cache 1
 setopt list_packed
 
+autoload cdd; cdd > /dev/null
 # Ctrl-D
 set IGNORE_EOF
 
@@ -67,7 +69,9 @@ setopt share_history
 export EDITOR=vim
 bindkey -e
 
-function chpwd() { ls }
-
+function chpwd() {
+  ls
+  _reg_pwd_screennum
+}
 
 if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi

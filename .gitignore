@@ -1,4 +1,5 @@
 dot.zsh/.zcompdump
+dot.zsh/cdd_pwd_list*
 dot.subversion/auth/
 dot.config/autostart/
 dot.config/chromium/
