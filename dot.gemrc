@@ -1,5 +1,5 @@
 ---
-gem: --no-ri --no-rdoc
+gem: --no-ri --no-rdoc --user-install
 :sources:
 - http://rubygems.org
 - http://gems.github.com
