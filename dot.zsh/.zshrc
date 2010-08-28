@@ -65,6 +65,8 @@ setopt correct
 setopt extended_history
 setopt share_history
 
+stty stop undef
+
 # EDITOR
 export EDITOR=vim
 bindkey -e
