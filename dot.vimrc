@@ -84,3 +84,14 @@ let g:NeoComplCache_EnableAtStartup = 1
 
 " git-commit.vim
 let git_diff_spawn_mode = 1
+
+" spe-cuke
+function s:SetupSpeCuke()
+  command! RunTestFile exe '!sc ' . expand('%:p')
+  command! RunTestCase exe '!sc --line ' . line('.') . ' ' . expand('%:p')
+
+  nnoremap -tf :RunTestFile<CR>
+  nnoremap -tc :RunTestCase<CR>
+endfunction
+
+au BufRead,BufNewFile *_spec.rb,*.feature call s:SetupSpeCuke()
