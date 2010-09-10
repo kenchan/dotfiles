@@ -79,12 +79,6 @@ let g:vimwiki_home="~/vimwiki/"
 inoremap <Leader>date <C-R>=strftime('%Y/%m/%d(%a)')<CR>
 inoremap <Leader>time <C-R>=strftime('%H:%M:%S')<CR>
 
-" for neocomplcache
-let g:NeoComplCache_EnableAtStartup = 1
-
-" git-commit.vim
-let git_diff_spawn_mode = 1
-
 " spe-cuke
 function s:SetupSpeCuke()
   command! RunTestFile exe '!sc ' . expand('%:p')
@@ -95,3 +89,12 @@ function s:SetupSpeCuke()
 endfunction
 
 au BufRead,BufNewFile *_spec.rb,*.feature call s:SetupSpeCuke()
+
+" pathogen
+call pathogen#runtime_append_all_bundles()
+
+" for neocomplcache
+let g:NeoComplCache_EnableAtStartup = 1
+
+" git-commit.vim
+let git_diff_spawn_mode = 1
