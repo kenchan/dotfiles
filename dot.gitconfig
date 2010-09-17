@@ -26,6 +26,7 @@
   ru = remote update --prune
   tree = log --graph --oneline --abbrev-commit --decorate
   gn = grep -n
+  su = submodule update
 [log]
   date = iso
 [push]
