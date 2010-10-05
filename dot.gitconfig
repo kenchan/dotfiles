@@ -17,6 +17,7 @@
   au = add -u
   b = branch
   ba = branch -a
+  bm = branch --merged
   d = diff
   ds = diff --staged
   l = log
