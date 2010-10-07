@@ -36,7 +36,7 @@ set incsearch
 
 "statusline
 set laststatus=2
-set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
+let &statusline = '%f#%{cfi#get_func_name()} %m%r['.(&fenc!=''?&fenc:&enc).']%=%l,%c%V%6P'
 
 " keymap
 nnoremap j gj

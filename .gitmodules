@@ -22,3 +22,6 @@
 [submodule "dot.vim/bundle/vim-cucumber"]
 	path = dot.vim/bundle/vim-cucumber
 	url = git://github.com/tpope/vim-cucumber.git
+[submodule "dot.vim/bundle/current-func-info"]
+	path = dot.vim/bundle/current-func-info
+	url = git://github.com/tyru/current-func-info.vim.git
