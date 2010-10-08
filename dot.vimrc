@@ -1,4 +1,6 @@
-filetype indent plugin on
+filetype off
+call pathogen#runtime_append_all_bundles()
+filetype indent on
 syntax enable
 
 set t_Co=256
@@ -89,9 +91,6 @@ function s:SetupSpeCuke()
 endfunction
 
 au BufRead,BufNewFile *_spec.rb,*.feature call s:SetupSpeCuke()
-
-" pathogen
-call pathogen#runtime_append_all_bundles()
 
 " for neocomplcache
 let g:NeoComplCache_EnableAtStartup = 1

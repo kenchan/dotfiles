@@ -25,3 +25,6 @@
 [submodule "dot.vim/bundle/current-func-info"]
 	path = dot.vim/bundle/current-func-info
 	url = git://github.com/tyru/current-func-info.vim.git
+[submodule "dot.vim/bundle/vim-coffee-script"]
+	path = dot.vim/bundle/vim-coffee-script
+	url = git://github.com/kchmck/vim-coffee-script.git
