@@ -28,6 +28,7 @@
   tree = log --graph --oneline --abbrev-commit --decorate
   gn = grep -n
   su = submodule update
+  rh = reset HEAD^
 [log]
   date = iso
 [push]
