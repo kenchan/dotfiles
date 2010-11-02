@@ -82,7 +82,7 @@ inoremap <Leader>date <C-R>=strftime('%Y/%m/%d(%a)')<CR>
 inoremap <Leader>time <C-R>=strftime('%H:%M:%S')<CR>
 
 " spe-cuke
-function s:SetupSpeCuke()
+function! s:SetupSpeCuke()
   command! RunTestFile exe '!sc ' . expand('%:p')
   command! RunTestCase exe '!sc --line ' . line('.') . ' ' . expand('%:p')
 
