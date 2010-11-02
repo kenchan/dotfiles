@@ -76,5 +76,4 @@ export NODE_PATH=$HOME/.npm/libraries:$NODE_PATH
 export PATH=$HOME/.npm/bin:$PATH
 export MANPATH=$HOME/.npm/man:$MANPATH
 
-
 if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
