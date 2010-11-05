@@ -72,7 +72,7 @@ autocmd QuickfixCmdPost make,grep,grepadd,vimgrep,vimgrepadd cwin
 autocmd QuickfixCmdPost lmake,lgrep,lgrepadd,lvimgrep,lvimgrepadd lwin
 
 " clipboard
-set clipboard=unnamed
+set clipboard+=unnamed
 
 " vimwiki
 let g:vimwiki_home="~/vimwiki/"
