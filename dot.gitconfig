@@ -26,6 +26,7 @@
   su = submodule update
   rh = reset HEAD^
   sfu = submodule foreach "git fetch; git checkout origin/master"
+  m = merge --no-ff
 [log]
   date = iso
 [push]
