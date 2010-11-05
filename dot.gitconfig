@@ -2,11 +2,7 @@
   email = kenichi.taka@gmail.com
   name = Kenichi TAKAHASHI
 [color]
-  status = auto
-  diff = auto
-  branch = auto
-  interactive = auto
-  grep = auto
+  ui = auto
 [alias]
   co = checkout
   st = status
