@@ -31,3 +31,9 @@
 [submodule "dot.vim/bundle/neocomplcache"]
 	path = dot.vim/bundle/vim-neocomplcache
 	url = git://github.com/Shougo/neocomplcache.git
+[submodule "dot.vim/bundle/favstar-vim"]
+	path = dot.vim/bundle/favstar-vim
+	url = git://github.com/mattn/favstar-vim.git
+[submodule "dot.vim/bundle/webapi-vim"]
+	path = dot.vim/bundle/webapi-vim
+	url = git://github.com/mattn/webapi-vim.git
