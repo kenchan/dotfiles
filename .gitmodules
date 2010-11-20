@@ -37,3 +37,6 @@
 [submodule "dot.vim/bundle/webapi-vim"]
 	path = dot.vim/bundle/webapi-vim
 	url = git://github.com/mattn/webapi-vim.git
+[submodule "dot.vim/bundle/vim-markdown.git"]
+	path = dot.vim/bundle/vim-markdown.git
+	url = git://github.com/tpope/vim-markdown.git
