@@ -16,10 +16,10 @@
   bm = branch --merged
   d = diff
   ds = diff --staged
-  l = log
-  lo = log --oneline
-  ls = log --stat
-  lp = log -p
+  l = log --decorate
+  lo = log --oneline --decorate
+  ls = log --stat --decorate
+  lp = log -p --decorate
   ru = remote update --prune
   tree = log --graph --oneline --abbrev-commit --decorate
   gn = grep -n
