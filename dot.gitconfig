@@ -16,6 +16,7 @@
   bm = branch --merged
   d = diff
   ds = diff --staged
+  wd = diff --word-diff
   l = log --decorate
   lo = log --oneline --decorate
   ls = log --stat --decorate
