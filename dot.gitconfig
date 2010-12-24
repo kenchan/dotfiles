@@ -5,7 +5,7 @@
   ui = auto
 [alias]
   co = checkout
-  st = status
+  st = status -sb
   pr = pull --rebase
   c = commit
   a = add
