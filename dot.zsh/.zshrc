@@ -6,6 +6,7 @@ WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
 # PROMPT
 autoload -Uz vcs_info
+zstyle ':vcs_info:*' enable git svn hg
 zstyle ':vcs_info:*' formats '(%b)'
 zstyle ':vcs_info:*' actionformats '(%s)-[%b|%a]'
 setopt transient_rprompt
@@ -14,11 +15,9 @@ precmd() {
   psvar=()
   vcs_info
   [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
-  [[ -s $rvm_path/bin/rvm-prompt ]] && psvar[2]=`rvm-prompt`
+  [[ -s $rvm_path/bin/rvm-prompt ]] && psvar[2]=`rvm-prompt v p`
 }
-
-PROMPT="%B%F{green}%n@%m%f%b %B%F{blue}%#%f%b "
-RPROMPT="%1(V|[%~]%F{green}%1v%f|[%~])%2(V|%F{red}(%2v%)%f|)"
+PROMPT=$'%B%F{green}%n@%m%f %F{blue}%~%f%b %1(V|%F{green}%1v%f |)%2(V|%F{red}(%2v%)%f|)\n%B%F{blue}#%f%b '
 SPROMPT="correct: %R -> %r ? "
 
 # history
