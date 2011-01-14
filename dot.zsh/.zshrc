@@ -5,19 +5,21 @@ export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
 # PROMPT
-PROMPT="%m%% "
-SPROMPT="correct: %R -> %r ? "
-
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' formats '(%b)'
 zstyle ':vcs_info:*' actionformats '(%s)-[%b|%a]'
+setopt transient_rprompt
+
 precmd() {
   psvar=()
   vcs_info
   [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
-  [[ -n "$rvm_ruby_string" ]] && psvar[2]="$rvm_ruby_string"
+  [[ -s $rvm_path/bin/rvm-prompt ]] && psvar[2]=`rvm-prompt`
 }
-RPROMPT="%1(v|%F{green}%1v%f[%~]|[%~])"
+
+PROMPT="%B%F{green}%n@%m%f%b %B%F{blue}%#%f%b "
+RPROMPT="%1(V|[%~]%F{green}%1v%f|[%~])%2(V|%F{red}(%2v%)%f|)"
+SPROMPT="correct: %R -> %r ? "
 
 # history
 HISTFILE=$HOME/.zsh-history
