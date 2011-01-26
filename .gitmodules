@@ -46,3 +46,6 @@
 [submodule "dot.vim/bundle/unite.vim"]
 	path = dot.vim/bundle/unite.vim
 	url = git://github.com/Shougo/unite.vim.git
+[submodule "dot.vim/bundle/newspaper.vim"]
+	path = dot.vim/bundle/newspaper.vim
+	url = git://github.com/vim-scripts/newspaper.vim.git
