@@ -9,7 +9,7 @@ WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git svn hg
 zstyle ':vcs_info:*' formats '(%b)'
-zstyle ':vcs_info:*' actionformats '(%s)-[%b|%a]'
+zstyle ':vcs_info:*' actionformats '(%b|%a)'
 setopt transient_rprompt
 
 precmd() {
@@ -17,8 +17,9 @@ precmd() {
   vcs_info
   [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
   [[ -s $rvm_path/bin/rvm-prompt ]] && psvar[2]=`rvm-prompt`
+  [[ -e $PWD/.git/refs/stash ]] && psvar[3]="$(git stash list 2>/dev/null | wc -l) stashed"
 }
-PROMPT=$'%B%F{green}%n@%m%f %F{blue}%~%f%b %1(V|%F{green}%1v%f |)%2(V|%F{red}(%2v%)%f|)\n%B%F{blue}#%f%b '
+PROMPT=$'%B%F{green}%n@%m%f %F{blue}%~%f%b %1(V|%F{green}%1v%3(V| - %3v|)%f |)%2(V|%F{red}(%2v%)%f|)\n%B%F{blue}#%f%b '
 SPROMPT="correct: %R -> %r ? "
 
 # history
