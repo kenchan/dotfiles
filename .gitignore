@@ -9,6 +9,7 @@ dot.config/gtk-2.0/
 dot.config/menus/
 dot.config/xfce4/
 dot.config/nitrogen/
+dot.config/quassel-irc.org/
 monitors.xml
 dot.vim/GetLatest/Installed
 dot.vim/.netrwhist
