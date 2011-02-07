@@ -1,5 +1,21 @@
+set rtp+=~/.vim/vundle.git/
+call vundle#rc()
+
+Bundle 'Align'
+Bundle 'cucumber.zip'
+Bundle 'endwise.vim'
+Bundle 'haml.zip'
+Bundle 'git-commit'
+Bundle 'rails.vim'
+Bundle 'surround.vim'
+Bundle 'YankRing.vim'
+Bundle 'newspaper.vim'
+Bundle 'git://github.com/vim-ruby/vim-ruby.git'
+Bundle 'git://github.com/motemen/git-vim.git'
+Bundle 'git://github.com/Shougo/unite.vim.git'
+Bundle 'git://github.com/Shougo/neocomplcache.git'
+
 filetype off
-call pathogen#runtime_append_all_bundles()
 filetype indent on
 syntax enable
 
@@ -38,7 +54,7 @@ set incsearch
 
 "statusline
 set laststatus=2
-let &statusline = '%f#%{cfi#get_func_name()} %m%r['.(&fenc!=''?&fenc:&enc).']%=%l,%c%V%6P'
+set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}%=%l,%c%v%8p
 
 " keymap
 nnoremap j gj

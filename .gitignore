@@ -11,5 +11,4 @@ dot.config/xfce4/
 dot.config/nitrogen/
 dot.config/quassel-irc.org/
 monitors.xml
-dot.vim/GetLatest/Installed
-dot.vim/.netrwhist
+dot.vim/bundle
