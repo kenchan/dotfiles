@@ -9,4 +9,5 @@ uim-xim &
 thunar --daemon &
 xscreensaver -no-splash &
 dropboxd &
+textareaserver -c gvim &
 exec awesome
