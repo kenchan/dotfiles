@@ -32,6 +32,8 @@ set ttymouse=xterm2
 set wildmode=longest:list
 set nocompatible
 
+set directory-=.
+
 "backup
 set nobackup
 
