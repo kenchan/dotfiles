@@ -80,4 +80,3 @@ export PATH=$HOME/.npm/bin:$PATH
 export MANPATH=$HOME/.npm/man:$MANPATH
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-[[ -s "$HOME/Gentoo/usr/portage/scripts/bootstrap-prefix.sh" ]] && Gentoo/usr/portage/scripts/bootstrap-prefix.sh
