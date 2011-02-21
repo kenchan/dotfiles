@@ -57,6 +57,8 @@ alias apt='sudo aptitude'
 
 alias reload='source $ZDOTDIR/.zshrc'
 
+alias be='bundle exec'
+
 setopt auto_cd
 setopt auto_pushd
 setopt correct
