@@ -1,7 +1,6 @@
 set rtp+=~/.vim/vundle.git/
 call vundle#rc()
 
-Bundle 'Align'
 Bundle 'cucumber.zip'
 Bundle 'endwise.vim'
 Bundle 'haml.zip'
@@ -14,6 +13,7 @@ Bundle 'git://github.com/vim-ruby/vim-ruby.git'
 Bundle 'git://github.com/motemen/git-vim.git'
 Bundle 'git://github.com/Shougo/unite.vim.git'
 Bundle 'git://github.com/Shougo/neocomplcache.git'
+Bundle 'git://github.com/h1mesuke/vim-alignta.git'
 
 filetype off
 filetype indent on
