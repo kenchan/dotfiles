@@ -10,4 +10,5 @@ thunar --daemon &
 xscreensaver -no-splash &
 dropboxd &
 textareaserver -c gvim &
+dbus-launch gnome-do &
 exec awesome
