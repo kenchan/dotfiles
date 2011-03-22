@@ -3,5 +3,5 @@ vbell off
 escape ^Tt
 hardstatus alwayslastline "[%02c] %`%-w%{=b bw}%n %t%{-}%+w"
 attrcolor b ".I"
-termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm:ti@:te@'
 defbce "on"
