@@ -165,6 +165,7 @@ for s = 1, screen.count() do
         s == 1 and mysystray or nil,
         wifiwidget,
         volwidget,
+        batwidget,
         memwidget,
         cpuwidget,
         mytasklist[s],
