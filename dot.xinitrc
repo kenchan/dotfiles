@@ -8,7 +8,7 @@ xmodmap $HOME/.Xmodmap
 uim-xim &
 thunar --daemon &
 xscreensaver -no-splash &
-dropboxd &
+dropbox start &
 textareaserver -c gvim &
 dbus-launch gnome-do &
 exec awesome
