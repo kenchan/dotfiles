@@ -10,6 +10,7 @@ Bundle 'surround.vim'
 Bundle 'YankRing.vim'
 Bundle 'newspaper.vim'
 Bundle 'xoria256.vim'
+Bundle 'vimwiki'
 Bundle 'git://github.com/vim-ruby/vim-ruby.git'
 Bundle 'git://github.com/motemen/git-vim.git'
 Bundle 'git://github.com/Shougo/neocomplcache.git'
@@ -129,3 +130,6 @@ nnoremap <silent> ,uf :<C-u>Unite file<CR>
 nnoremap <silent> ,um :<C-u>Unite file_mru<CR>
 nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
 nnoremap <silent> ,uu :<C-u>Unite buffer file_mru<CR>
+
+" vimwiki
+let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki'}]
