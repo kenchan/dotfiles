@@ -11,6 +11,7 @@ Bundle 'YankRing.vim'
 Bundle 'newspaper.vim'
 Bundle 'xoria256.vim'
 Bundle 'vimwiki'
+Bundle 'smartchr'
 Bundle 'git://github.com/vim-ruby/vim-ruby.git'
 Bundle 'git://github.com/motemen/git-vim.git'
 Bundle 'git://github.com/Shougo/neocomplcache.git'
@@ -133,3 +134,8 @@ nnoremap <silent> ,uu :<C-u>Unite buffer file_mru<CR>
 
 " vimwiki
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki'}]
+
+" smartchr
+inoremap <expr> ,  smartchr#one_of(', ', ',')
+inoremap <expr> =  smartchr#one_of(' = ', '=', ' == ')
+inoremap <expr> =>  smartchr#one_of(' => ', '=>')
