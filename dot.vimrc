@@ -20,6 +20,7 @@ Bundle 'h1mesuke/vim-alignta'
 
 Bundle 'Shougo/unite.vim'
 Bundle 'tsukkee/unite-help'
+Bundle 'h1mesuke/unite-outline'
 
 filetype off
 filetype indent on
@@ -132,6 +133,7 @@ nnoremap <silent> ,uf :<C-u>Unite file<CR>
 nnoremap <silent> ,um :<C-u>Unite file_mru<CR>
 nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
 nnoremap <silent> ,uu :<C-u>Unite buffer file_mru<CR>
+nnoremap <silent> ,uo :<C-u>Unite outline<CR>
 
 " vimwiki
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki'}]
