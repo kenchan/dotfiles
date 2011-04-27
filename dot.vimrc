@@ -11,7 +11,6 @@ Bundle 'YankRing.vim'
 Bundle 'newspaper.vim'
 Bundle 'xoria256.vim'
 Bundle 'vimwiki'
-Bundle 'smartchr'
 
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'motemen/git-vim'
@@ -137,8 +136,3 @@ nnoremap <silent> ,uo :<C-u>Unite outline<CR>
 
 " vimwiki
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki'}]
-
-" smartchr
-inoremap <expr> ,  smartchr#one_of(', ', ',')
-inoremap <expr> =  smartchr#one_of(' = ', '=', ' == ')
-inoremap <expr> =>  smartchr#one_of(' => ', '=>')
