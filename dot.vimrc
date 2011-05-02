@@ -8,14 +8,16 @@ Bundle 'git-commit'
 Bundle 'rails.vim'
 Bundle 'surround.vim'
 Bundle 'YankRing.vim'
+Bundle 'vimwiki'
+
 Bundle 'newspaper.vim'
 Bundle 'xoria256.vim'
-Bundle 'vimwiki'
 
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'motemen/git-vim'
 Bundle 'Shougo/neocomplcache'
 Bundle 'h1mesuke/vim-alignta'
+Bundle 'Shougo/vimfiler'
 
 Bundle 'Shougo/unite.vim'
 Bundle 'tsukkee/unite-help'
