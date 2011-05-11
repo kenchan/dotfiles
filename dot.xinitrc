@@ -2,10 +2,11 @@
 
 export LANG=ja_JP.UTF-8
 export GTK_IM_MODULE=uim
+export QT_IM_MODULE=uim
 export XMODIFIERS=@im=uim
+export XIM_PROGRAM=uim-xim
 
 xmodmap $HOME/.Xmodmap
-uim-xim &
 thunar --daemon &
 xscreensaver -no-splash &
 dropbox start &
