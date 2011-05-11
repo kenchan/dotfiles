@@ -11,6 +11,7 @@ thunar --daemon &
 xscreensaver -no-splash &
 dropbox start &
 textareaserver -c gvim &
+google-ime-skk &
 dbus-launch gnome-do &
 dbus-launch nm-applet &
 command=awesome
