@@ -1,13 +1,11 @@
-set rtp+=~/.vim/vundle.git/
+filetype off
+set rtp+=~/.vim/vundle.git
 call vundle#rc()
 
-Bundle 'cucumber.zip'
-Bundle 'endwise.vim'
 Bundle 'haml.zip'
 Bundle 'git-commit'
-Bundle 'rails.vim'
-Bundle 'surround.vim'
 Bundle 'YankRing.vim'
+Bundle 'EasyMotion'
 Bundle 'vimwiki'
 
 Bundle 'newspaper.vim'
@@ -15,20 +13,30 @@ Bundle 'xoria256.vim'
 
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'motemen/git-vim'
-Bundle 'Shougo/neocomplcache'
-Bundle 'h1mesuke/vim-alignta'
-Bundle 'Shougo/vimfiler'
 
-Bundle 'Shougo/unite.vim'
 Bundle 'tsukkee/unite-help'
+
+Bundle 'kana/vim-textobj-user'
+
+Bundle 'Shougo/neocomplcache'
+Bundle 'Shougo/vimfiler'
+Bundle 'Shougo/unite.vim'
+
+Bundle 'h1mesuke/vim-alignta'
 Bundle 'h1mesuke/unite-outline'
 
-filetype off
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-cucumber'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-surround'
+
+Bundle 'ecomba/vim-ruby-refactoring'
+Bundle 'nelstrom/vim-textobj-rubyblock'
+
 filetype indent on
 syntax enable
 
 set t_Co=256
-set background=dark
 colorscheme xoria256
 hi Pmenu ctermbg=4
 
@@ -115,6 +123,7 @@ function! s:SetupSpeCuke()
 endfunction
 
 au BufRead,BufNewFile *_spec.rb,*.feature call s:SetupSpeCuke()
+au BufRead,BufNewFile *_spec.rb set filetype=ruby.rspec
 
 " git-commit.vim
 let git_diff_spawn_mode = 1
@@ -138,3 +147,5 @@ nnoremap <silent> ,uo :<C-u>Unite outline<CR>
 
 " vimwiki
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki'}]
+
+let g:EasyMotion_leader_key = '<Leader>m'
