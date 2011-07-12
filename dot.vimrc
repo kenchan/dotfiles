@@ -4,9 +4,11 @@ call vundle#rc()
 
 Bundle 'haml.zip'
 Bundle 'git-commit'
+
 Bundle 'YankRing.vim'
 Bundle 'EasyMotion'
 Bundle 'vimwiki'
+Bundle 'wincent/Command-T'
 
 Bundle 'newspaper.vim'
 Bundle 'xoria256.vim'
