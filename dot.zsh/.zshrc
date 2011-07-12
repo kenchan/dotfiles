@@ -27,6 +27,8 @@ HISTFILE=$HOME/.zsh-history
 HISTSIZE=100000
 SAVEHIST=100000
 setopt hist_ignore_dups
+setopt hist_ignore_space
+setopt hist_reduce_blanks
 setopt share_history
 autoload history-search-end
 zle -N history-beginning-search-backward-end history-search-end
