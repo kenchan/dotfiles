@@ -14,7 +14,6 @@ Bundle 'newspaper.vim'
 Bundle 'xoria256.vim'
 
 Bundle 'vim-ruby/vim-ruby'
-Bundle 'motemen/git-vim'
 
 Bundle 'tsukkee/unite-help'
 
@@ -31,6 +30,7 @@ Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-fugitive'
 
 Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'nelstrom/vim-textobj-rubyblock'
@@ -129,9 +129,6 @@ au BufRead,BufNewFile *_spec.rb set filetype=ruby.rspec
 
 " git-commit.vim
 let git_diff_spawn_mode = 1
-
-" git-vim
-let g:git_command_edit = 'rightbelow vnew'
 
 " neocomplcache
 let g:neocomplcache_enable_at_startup = 1
