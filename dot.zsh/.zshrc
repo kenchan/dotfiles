@@ -19,7 +19,7 @@ precmd() {
   [[ -s $HOME/bin/rvm-prompt ]] && psvar[2]=`rvm-prompt`
   [[ -e $PWD/.git/refs/stash ]] && psvar[3]="$(git stash list 2>/dev/null | wc -l) stashed"
 }
-PROMPT=$'%B%F{green}%n@%m%f %F{blue}%~%f%b %1(V|%F{green}%1v%3(V| - %3v|)%f |)%2(V|%F{red}(%2v%)%f|)\n%B%F{blue}#%f%b '
+PROMPT=$'%B%F{green}%n@%m%f %F{blue}%~%f%b %1(V|%F{green}%1v%3(V| - %3v|)%f |)%2(V|%F{red}(%2v%)%f|)\n%B%F{blue}$%f%b '
 SPROMPT="correct: %R -> %r ? "
 
 # history
