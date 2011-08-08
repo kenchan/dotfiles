@@ -1,3 +1,4 @@
+set nocompatible
 filetype off
 set rtp+=~/.vim/vundle.git
 call vundle#rc()
@@ -35,7 +36,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 
-filetype indent on
+filetype plugin indent on
 syntax enable
 
 set t_Co=256
