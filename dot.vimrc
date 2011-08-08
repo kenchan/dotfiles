@@ -89,6 +89,10 @@ nnoremap wl <C-w>l
 
 nnoremap Y y$
 
+cnoremap <C-a> <Home>
+cnoremap <C-x> <C-r>=expand('%:p:h')<CR>/
+cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
+
 " 全角空白と行末の空白の色を変える
 highlight WideSpace ctermbg=blue guibg=blue
 highlight EOLSpace ctermbg=red guibg=red
