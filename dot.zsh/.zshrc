@@ -71,8 +71,6 @@ setopt share_history
 
 stty stop undef
 
-# EDITOR
-export EDITOR=vim
 bindkey -e
 
 function chpwd() {
