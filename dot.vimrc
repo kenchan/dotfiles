@@ -40,6 +40,7 @@ filetype plugin indent on
 syntax enable
 
 set t_Co=256
+set background=dark
 colorscheme xoria256
 hi Pmenu ctermbg=4
 
