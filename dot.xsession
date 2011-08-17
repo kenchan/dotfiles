@@ -18,6 +18,7 @@ xscreensaver -no-splash &
 dropbox start &
 textareaserver -c gvim &
 gnome-do &
+gnome-power-manager &
 nm-applet &
 
 exec awesome
