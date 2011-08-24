@@ -14,11 +14,11 @@ export XMODIFIERS=@im=uim
 export XIM_PROGRAM=uim-xim
 
 xmodmap $HOME/.Xmodmap
-xscreensaver -no-splash &
 dropbox start &
 textareaserver -c gvim &
 gnome-do &
 gnome-power-manager &
+gnome-screensaver &
 nm-applet &
 
 exec awesome
