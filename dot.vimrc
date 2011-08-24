@@ -9,6 +9,7 @@ Bundle 'git-commit'
 Bundle 'YankRing.vim'
 Bundle 'EasyMotion'
 Bundle 'vimwiki'
+Bundle 'Rename'
 Bundle 'wincent/Command-T'
 
 Bundle 'newspaper.vim'
