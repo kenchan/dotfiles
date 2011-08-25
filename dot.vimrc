@@ -14,6 +14,7 @@ Bundle 'wincent/Command-T'
 
 Bundle 'newspaper.vim'
 Bundle 'xoria256.vim'
+Bundle 'kenchan/Tomorrow-Theme'
 
 Bundle 'vim-ruby/vim-ruby'
 
@@ -42,7 +43,7 @@ syntax enable
 
 set t_Co=256
 set background=dark
-colorscheme xoria256
+colorscheme Tomorrow-Night
 hi Pmenu ctermbg=4
 
 set ambiwidth=double
