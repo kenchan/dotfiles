@@ -9,7 +9,7 @@
   pr = pull --rebase
   c = commit
   a = add
-  al = add .
+  al = add -A .
   au = add -u
   b = branch
   ba = branch -a
