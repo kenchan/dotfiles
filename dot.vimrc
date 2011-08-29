@@ -43,7 +43,7 @@ syntax enable
 
 set t_Co=256
 set background=dark
-colorscheme Tomorrow-Night
+colorscheme xoria256
 hi Pmenu ctermbg=4
 
 set ambiwidth=double
