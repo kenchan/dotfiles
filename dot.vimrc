@@ -14,7 +14,6 @@ Bundle 'wincent/Command-T'
 
 Bundle 'newspaper.vim'
 Bundle 'xoria256.vim'
-Bundle 'kenchan/Tomorrow-Theme'
 
 Bundle 'vim-ruby/vim-ruby'
 
@@ -23,11 +22,15 @@ Bundle 'tsukkee/unite-help'
 Bundle 'kana/vim-textobj-user'
 
 Bundle 'Shougo/neocomplcache'
+Bundle 'Shougo/vimshell'
 Bundle 'Shougo/vimfiler'
+Bundle 'Shougo/vimproc'
 Bundle 'Shougo/unite.vim'
 
 Bundle 'h1mesuke/vim-alignta'
 Bundle 'h1mesuke/unite-outline'
+
+Bundle 'thinca/vim-quickrun'
 
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-cucumber'
@@ -126,18 +129,6 @@ set clipboard+=unnamed
 inoremap <Leader>date <C-R>=strftime('%Y/%m/%d(%a)')<CR>
 inoremap <Leader>time <C-R>=strftime('%H:%M:%S')<CR>
 
-" spe-cuke
-function! s:SetupSpeCuke()
-  command! RunTestFile exe '!sc ' . expand('%:p')
-  command! RunTestCase exe '!sc --line ' . line('.') . ' ' . expand('%:p')
-
-  nnoremap -tf :RunTestFile<CR>
-  nnoremap -tc :RunTestCase<CR>
-endfunction
-
-au BufRead,BufNewFile *_spec.rb,*.feature call s:SetupSpeCuke()
-au BufRead,BufNewFile *_spec.rb set filetype=ruby.rspec
-
 " git-commit.vim
 let git_diff_spawn_mode = 1
 
@@ -159,3 +150,28 @@ nnoremap <silent> ,uo :<C-u>Unite outline<CR>
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki'}]
 
 let g:EasyMotion_leader_key = '<Leader>m'
+
+" quickrun
+let g:quickrun_config = {}
+let g:quickrun_config = {
+\  'ruby.rspec': {
+\    'outputter/buffer/append' : 1,
+\    'outputter/buffer/split' : 'below 10',
+\    'runner' : 'remote',
+\    'runner/remote/vimproc' : 1,
+\    'command' : 'script/spec',
+\    'cmdopt' : "-cfn"
+\  },
+\  'cucumber' : {
+\    'outputter/buffer/append' : 1,
+\    'outputter/buffer/split' : 'below 10',
+\    'runner' : 'remote',
+\    'runner/remote/vimproc' : 1,
+\    'command' : 'cucumber',
+\  }
+\}
+au BufRead,BufNewFile *_spec.rb set filetype=ruby.rspec
+
+au FileType ruby.rspec nnoremap <silent> <space>rc :QuickRun -cmdopt "-cfn -l %{line('.')}"<CR>
+au FileType cucumber nnoremap <silent> <space>rc :QuickRun -cmdopt "-f pretty -l %{line('.')}"<CR>
+au FileType ruby.rspec,cucumber nnoremap <silent> <space>rf :QuickRun<CR>
