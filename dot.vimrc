@@ -111,17 +111,6 @@ function! s:HighlightSpaces()
   match EOLSpace /\s\+$/
 endf
 
-call s:HighlightSpaces()
-
-autocmd WinEnter * call s:HighlightSpaces()
-
-autocmd InsertEnter * highlight StatusLine ctermfg=red guifg=red
-autocmd InsertLeave * highlight StatusLine ctermfg=white guifg=white
-
-"自動的に QuickFix リストを表示する
-autocmd QuickfixCmdPost make,grep,grepadd,vimgrep,vimgrepadd cwin
-autocmd QuickfixCmdPost lmake,lgrep,lgrepadd,lvimgrep,lvimgrepadd lwin
-
 " clipboard
 set clipboard+=unnamed
 
@@ -170,8 +159,27 @@ let g:quickrun_config = {
 \    'command' : 'cucumber',
 \  }
 \}
-au BufRead,BufNewFile *_spec.rb set filetype=ruby.rspec
 
-au FileType ruby.rspec nnoremap <silent> <space>rc :QuickRun -cmdopt "-cfn -l %{line('.')}"<CR>
-au FileType cucumber nnoremap <silent> <space>rc :QuickRun -cmdopt "-f pretty -l %{line('.')}"<CR>
-au FileType ruby.rspec,cucumber nnoremap <silent> <space>rf :QuickRun<CR>
+augroup MyAutoCmd
+  autocmd!
+
+  autocmd BufRead * call s:HighlightSpaces()
+  autocmd WinEnter * call s:HighlightSpaces()
+
+  autocmd InsertEnter * highlight StatusLine ctermfg=red guifg=red
+  autocmd InsertLeave * highlight StatusLine ctermfg=white guifg=white
+
+  "自動的に QuickFix リストを表示する
+  autocmd QuickfixCmdPost make,grep,grepadd,vimgrep,vimgrepadd cwin
+  autocmd QuickfixCmdPost lmake,lgrep,lgrepadd,lvimgrep,lvimgrepadd lwin
+
+  autocmd BufRead,BufNewFile *_spec.rb set filetype=ruby.rspec
+
+  autocmd FileType ruby.rspec nnoremap <silent> <space>rc :QuickRun -cmdopt "-cfn -l %{line('.')}"<CR>
+  autocmd FileType cucumber nnoremap <silent> <space>rc :QuickRun -cmdopt "-f pretty -l %{line('.')}"<CR>
+  autocmd FileType ruby.rspec,cucumber nnoremap <silent> <space>rf :QuickRun<CR>
+
+  autocmd BufWritePost $MYVIMRC source $MYVIMRC | if has('gui_running') | source $MYGVIMRC
+  autocmd BufWritePost $MYGVIMRC if has('gui_running') | source $MYGVIMRC
+
+augroup END
