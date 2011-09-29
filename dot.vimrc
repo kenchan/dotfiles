@@ -20,6 +20,9 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'tsukkee/unite-help'
 
 Bundle 'kana/vim-textobj-user'
+Bundle 'kana/vim-textobj-fold'
+Bundle 'kana/vim-textobj-indent'
+Bundle 'kana/vim-textobj-lastpat'
 
 Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/vimshell'
