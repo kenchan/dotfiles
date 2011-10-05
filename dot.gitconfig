@@ -11,6 +11,7 @@
   a = add
   al = add -A .
   au = add -u
+  ap = add -p
   b = branch
   ba = branch -a
   bm = branch --merged
