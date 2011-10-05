@@ -12,6 +12,7 @@ export GTK_IM_MODULE=uim
 export QT_IM_MODULE=uim
 export XMODIFIERS=@im=uim
 export XIM_PROGRAM=uim-xim
+export BROWSER=google-chrome
 
 xmodmap $HOME/.Xmodmap
 dropbox start &
