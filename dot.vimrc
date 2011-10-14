@@ -137,6 +137,7 @@ nnoremap <silent> ,um :<C-u>Unite file_mru<CR>
 nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
 nnoremap <silent> ,uu :<C-u>Unite buffer file_mru<CR>
 nnoremap <silent> ,uo :<C-u>Unite outline<CR>
+nnoremap <silent> ,uh :<C-u>Unite help<CR>
 
 " vimwiki
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki'}]
