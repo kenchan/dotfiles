@@ -5,12 +5,12 @@ call vundle#rc()
 
 Bundle 'haml.zip'
 Bundle 'git-commit'
-
 Bundle 'YankRing.vim'
 Bundle 'EasyMotion'
 Bundle 'vimwiki'
 Bundle 'Rename'
 Bundle 'wincent/Command-T'
+Bundle 'jade.vim'
 
 Bundle 'newspaper.vim'
 Bundle 'xoria256.vim'
