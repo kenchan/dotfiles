@@ -1,7 +1,7 @@
 export EDITOR='vim'
-export GREP_OPTIONS='--color=auto -n -r -I'
+export GREP_OPTIONS='--color=auto -r -I'
 export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-export BROWSER='chromium-browser'
+export BROWSER='google-chrome'
 
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
@@ -39,7 +39,7 @@ bindkey '^R' history-incremental-pattern-search-backward
 bindkey '^S' history-incremental-pattern-search-forward
 
 # complement
-fpath=($HOME/.zsh/functions $fpath)
+fpath=($HOME/.zsh/functions $HOME/.zsh/zsh-completions $fpath)
 autoload -U compinit promptinit
 compinit
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
