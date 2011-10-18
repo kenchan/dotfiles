@@ -1,8 +1,8 @@
 dot.zsh/.zcompdump
+dot.zsh/.zcompcache
 dot.zsh/cdd_pwd_list*
 dot.subversion/auth/
 dot.config/autostart/
-dot.config/chromium/
 dot.config/google-chrome/
 dot.config/compiz/
 dot.config/enchant/
@@ -12,5 +12,6 @@ dot.config/xfce4/
 dot.config/nitrogen/
 dot.config/quassel-irc.org/
 dot.config/transmission/
+dot.config/dconf/
 monitors.xml
 dot.vim/bundle
