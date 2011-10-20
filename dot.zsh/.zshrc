@@ -63,6 +63,9 @@ alias reload='source $ZDOTDIR/.zshrc'
 
 alias be='bundle exec'
 
+alias -g L="| $PAGER"
+alias -g G="| grep"
+
 setopt auto_cd
 setopt auto_pushd
 setopt correct
