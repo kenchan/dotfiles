@@ -182,6 +182,7 @@ augroup MyAutoCmd
   autocmd QuickfixCmdPost lmake,lgrep,lgrepadd,lvimgrep,lvimgrepadd lwin
 
   autocmd BufRead,BufNewFile *_spec.rb set filetype=ruby.rspec
+  autocmd BufRead,BufNewFile COMMIT_EDITMSG set filetype=git
 
   autocmd FileType ruby.rspec nnoremap <silent> <space>rc :QuickRun -cmdopt "-cfn -l %{line('.')}"<CR>
   autocmd FileType cucumber nnoremap <silent> <space>rc :QuickRun -cmdopt "-f pretty -l %{line('.')}"<CR>
