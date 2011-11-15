@@ -1,9 +1,10 @@
 set nocompatible
 filetype off
-set rtp+=~/.vim/vundle.git
+set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-Bundle 'haml.zip'
+Bundle 'gmarik/vundle'
+
 Bundle 'git-commit'
 Bundle 'YankRing.vim'
 Bundle 'EasyMotion'
