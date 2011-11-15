@@ -26,16 +26,13 @@ Bundle 'kana/vim-textobj-indent'
 Bundle 'kana/vim-textobj-lastpat'
 
 Bundle 'Shougo/neocomplcache'
-Bundle 'Shougo/vimshell'
 Bundle 'Shougo/vimfiler'
-Bundle 'Shougo/vimproc'
 Bundle 'Shougo/unite.vim'
 
 Bundle 'h1mesuke/vim-alignta'
 Bundle 'h1mesuke/unite-outline'
 
-Bundle 'thinca/vim-quickrun'
-
+Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-endwise'
@@ -149,26 +146,6 @@ let g:EasyMotion_leader_key = '<Leader>m'
 let g:vimfiler_as_default_explorer = 1
 let g:vimfiler_safe_mode_by_default = 0
 
-" quickrun
-let g:quickrun_config = {}
-let g:quickrun_config = {
-\  'ruby.rspec': {
-\    'outputter/buffer/append' : 1,
-\    'outputter/buffer/split' : 'below 10',
-\    'runner' : 'remote',
-\    'runner/remote/vimproc' : 1,
-\    'command' : 'script/spec',
-\    'cmdopt' : "-cfn"
-\  },
-\  'cucumber' : {
-\    'outputter/buffer/append' : 1,
-\    'outputter/buffer/split' : 'below 10',
-\    'runner' : 'remote',
-\    'runner/remote/vimproc' : 1,
-\    'command' : 'cucumber',
-\  }
-\}
-
 augroup MyAutoCmd
   autocmd!
 
@@ -182,14 +159,8 @@ augroup MyAutoCmd
   autocmd QuickfixCmdPost make,grep,grepadd,vimgrep,vimgrepadd cwin
   autocmd QuickfixCmdPost lmake,lgrep,lgrepadd,lvimgrep,lvimgrepadd lwin
 
-  autocmd BufRead,BufNewFile *_spec.rb set filetype=ruby.rspec
   autocmd BufRead,BufNewFile COMMIT_EDITMSG set filetype=git
-
-  autocmd FileType ruby.rspec nnoremap <silent> <space>rc :QuickRun -cmdopt "-cfn -l %{line('.')}"<CR>
-  autocmd FileType cucumber nnoremap <silent> <space>rc :QuickRun -cmdopt "-f pretty -l %{line('.')}"<CR>
-  autocmd FileType ruby.rspec,cucumber nnoremap <silent> <space>rf :QuickRun<CR>
 
   autocmd BufWritePost $MYVIMRC source $MYVIMRC | if has('gui_running') | source $MYGVIMRC
   autocmd BufWritePost $MYGVIMRC if has('gui_running') | source $MYGVIMRC
-
 augroup END
