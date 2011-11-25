@@ -151,6 +151,9 @@ let g:vimfiler_safe_mode_by_default = 0
 augroup MyAutoCmd
   autocmd!
 
+  au BufRead,BufNewFile *.haml set ft=haml
+  au BufRead,BufNewFile *.sass set ft=sass
+
   autocmd BufRead * call s:HighlightSpaces()
   autocmd WinEnter * call s:HighlightSpaces()
 
