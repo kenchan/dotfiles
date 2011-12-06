@@ -42,7 +42,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'kenchan/vim-ruby-refactoring'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 
-Bundle 'mattn/hahhah-vim'
+Bundle 'basyura/unite-rails'
 
 filetype plugin indent on
 syntax enable
@@ -85,7 +85,7 @@ set incsearch
 
 "statusline
 set laststatus=2
-set statusline=%<%f\ %y\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}%=%l,%3c%{g:HahHah()}
+set statusline=%<%f\ %y\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}%=%l,%3c
 
 " keymap
 nnoremap j gj
