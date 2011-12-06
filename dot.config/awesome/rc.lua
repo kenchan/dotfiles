@@ -354,4 +354,4 @@ end)
 client.add_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.add_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
-os.execute("nitrogen --restore &")
+awful.util.spawn_with_shell("/home/kenichi/bin/dex-once")
