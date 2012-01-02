@@ -14,5 +14,7 @@ dot.config/quassel-irc.org/
 dot.config/transmission/
 dot.config/dconf/
 dot.config/ibus/
+dot.config/evince/
+dot.config/gnome-control-center
 monitors.xml
 dot.vim/bundle
