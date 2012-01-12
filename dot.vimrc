@@ -15,6 +15,7 @@ Bundle 'jade.vim'
 
 Bundle 'newspaper.vim'
 Bundle 'xoria256.vim'
+Bundle 'jpo/vim-railscasts-theme'
 
 Bundle 'vim-ruby/vim-ruby'
 
@@ -39,7 +40,7 @@ Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
 
-Bundle 'kenchan/vim-ruby-refactoring'
+Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 
 Bundle 'basyura/unite-rails'
