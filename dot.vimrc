@@ -61,7 +61,6 @@ set number
 set showmatch
 set ttymouse=xterm2
 set wildmode=longest:list
-set nocompatible
 
 set directory-=.
 
@@ -162,9 +161,6 @@ augroup MyAutoCmd
 
   autocmd BufRead * call s:HighlightSpaces()
   autocmd WinEnter * call s:HighlightSpaces()
-
-  autocmd InsertEnter * highlight StatusLine ctermfg=red guifg=red
-  autocmd InsertLeave * highlight StatusLine ctermfg=white guifg=white
 
   "自動的に QuickFix リストを表示する
   autocmd QuickfixCmdPost make,grep,grepadd,vimgrep,vimgrepadd cwin
