@@ -140,6 +140,11 @@ nnoremap <silent> ,uu :<C-u>Unite buffer file_mru<CR>
 nnoremap <silent> ,uo :<C-u>Unite outline<CR>
 nnoremap <silent> ,uh :<C-u>Unite help<CR>
 
+" Command-T
+nnoremap <silent> ,t :<C-u>CommandT<CR>
+nnoremap <silent> ,b :<C-u>CommandTBuffer<CR>
+let g:CommandTCancelMap = 'q'
+
 " vimwiki
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki'}]
 
