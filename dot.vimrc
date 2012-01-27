@@ -60,7 +60,7 @@ set hidden
 set number
 set showmatch
 set ttymouse=xterm2
-set wildmode=longest:list
+set wildmode=list:longest,list:full
 
 set directory-=.
 
@@ -133,8 +133,6 @@ let g:neocomplcache_min_syntax_length = 3
 
 " unite.vim
 nnoremap <silent> ,uf :<C-u>Unite file<CR>
-nnoremap <silent> ,um :<C-u>Unite file_mru<CR>
-nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
 nnoremap <silent> ,uu :<C-u>Unite buffer file_mru<CR>
 nnoremap <silent> ,uo :<C-u>Unite outline<CR>
 nnoremap <silent> ,uh :<C-u>Unite help<CR>
