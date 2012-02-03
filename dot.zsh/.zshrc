@@ -3,6 +3,8 @@ export GREP_OPTIONS='--color=auto -r -I'
 export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
 export BROWSER='google-chrome'
 
+bindkey -e
+
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
 # PROMPT
@@ -19,6 +21,7 @@ precmd() {
   [[ -s $HOME/bin/rvm-prompt ]] && psvar[2]=`rvm-prompt`
   [[ -e $PWD/.git/refs/stash ]] && psvar[3]="$(git stash list 2>/dev/null | wc -l) stashed"
 }
+
 PROMPT=$'%B%F{green}%n@%m%f %F{blue}%~%f%b %1(V|%F{green}%1v%3(V| - %3v|)%f |)%2(V|%F{red}(%2v%)%f|)\n%B%F{blue}$%f%b '
 SPROMPT="correct: %R -> %r ? "
 
@@ -73,8 +76,6 @@ setopt extended_history
 setopt share_history
 
 stty stop undef
-
-bindkey -e
 
 function chpwd() {
   ls
