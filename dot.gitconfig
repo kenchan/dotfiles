@@ -35,5 +35,3 @@
   default = tracking
 [core]
   excludesfile = ~/.gitignore
-[branch "master"]
-  mergeoptions = --no-ff
