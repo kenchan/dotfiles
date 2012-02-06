@@ -16,5 +16,6 @@ dot.config/dconf/
 dot.config/ibus/
 dot.config/evince/
 dot.config/gnome-control-center
+dot.config/xfburn
 monitors.xml
 dot.vim/bundle
