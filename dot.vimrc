@@ -46,7 +46,6 @@ Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 
 Bundle 'basyura/unite-rails'
-Bundle 'Lokaltog/vim-powerline'
 
 Bundle 'tsukkee/unite-tag'
 
