@@ -160,8 +160,7 @@ augroup MyAutoCmd
   au BufRead,BufNewFile *.haml set ft=haml
   au BufRead,BufNewFile *.sass set ft=sass
 
-  autocmd BufRead * call s:HighlightSpaces()
-  autocmd WinEnter * call s:HighlightSpaces()
+  autocmd BufRead,WinEnter * call s:HighlightSpaces()
 
   "自動的に QuickFix リストを表示する
   autocmd QuickfixCmdPost make,grep,grepadd,vimgrep,vimgrepadd cwin
