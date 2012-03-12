@@ -19,7 +19,7 @@
   ds = diff --staged
   wd = diff --word-diff
   l = log --decorate
-  lo = log --oneline --decorate
+  lo = log --oneline --decorate --graph
   ls = log --stat --decorate
   lp = log -p --decorate
   ru = remote update --prune
