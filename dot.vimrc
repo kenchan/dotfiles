@@ -48,6 +48,9 @@ Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'basyura/unite-rails'
 
 Bundle 'tsukkee/unite-tag'
+Bundle 'Lokaltog/vim-powerline'
+
+Bundle 'tangledhelix/vim-octopress'
 
 filetype plugin indent on
 syntax enable
@@ -116,9 +119,6 @@ function! s:HighlightSpaces()
   match WideSpace /　/
   match EOLSpace /\s\+$/
 endf
-
-" clipboard
-set clipboard+=unnamed
 
 " <Leader>
 inoremap <Leader>date <C-R>=strftime('%Y/%m/%d(%a)')<CR>
