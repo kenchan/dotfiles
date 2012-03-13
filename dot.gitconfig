@@ -23,11 +23,9 @@
   ls = log --stat --decorate
   lp = log -p --decorate
   ru = remote update --prune
-  tree = log --graph --oneline --abbrev-commit --decorate
   gn = grep -n
   su = submodule update
   rh = reset HEAD^
-  sfu = submodule foreach "git fetch; git checkout origin/master"
   ri = "!f() { git rebase -i HEAD~$1; }; f"
 [log]
   date = iso
