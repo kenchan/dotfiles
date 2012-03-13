@@ -26,7 +26,7 @@
   gn = grep -n
   su = submodule update
   rh = reset HEAD^
-  ri = "!f() { git rebase -i HEAD~$1; }; f"
+  ri = !sh -c 'git rebase -i HEAD~$0'
 [log]
   date = iso
 [push]
