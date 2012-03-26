@@ -52,6 +52,8 @@ Bundle 'Lokaltog/vim-powerline'
 
 Bundle 'tangledhelix/vim-octopress'
 
+Bundle 'csexton/trailertrash.vim'
+
 filetype plugin indent on
 syntax enable
 
@@ -111,15 +113,6 @@ cnoremap <C-a> <Home>
 cnoremap <C-x> <C-r>=expand('%:p:h')<CR>/
 cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
 
-" 全角空白と行末の空白の色を変える
-highlight WideSpace ctermbg=blue guibg=blue
-highlight EOLSpace ctermbg=red guibg=red
-
-function! s:HighlightSpaces()
-  match WideSpace /　/
-  match EOLSpace /\s\+$/
-endf
-
 " <Leader>
 inoremap <Leader>date <C-R>=strftime('%Y/%m/%d(%a)')<CR>
 inoremap <Leader>time <C-R>=strftime('%H:%M:%S')<CR>
@@ -159,8 +152,6 @@ augroup MyAutoCmd
 
   au BufRead,BufNewFile *.haml set ft=haml
   au BufRead,BufNewFile *.sass set ft=sass
-
-  autocmd BufRead,WinEnter * call s:HighlightSpaces()
 
   "自動的に QuickFix リストを表示する
   autocmd QuickfixCmdPost make,grep,grepadd,vimgrep,vimgrepadd cwin
