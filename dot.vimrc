@@ -54,6 +54,8 @@ Bundle 'tangledhelix/vim-octopress'
 
 Bundle 'csexton/trailertrash.vim'
 
+Bundle 'glidenote/octoeditor.vim'
+
 filetype plugin indent on
 syntax enable
 
@@ -146,6 +148,9 @@ let g:EasyMotion_leader_key = '<Leader>m'
 " vimfiler
 let g:vimfiler_as_default_explorer = 1
 let g:vimfiler_safe_mode_by_default = 0
+
+" octopress
+let g:octopress_path = "~/git/diary"
 
 augroup MyAutoCmd
   autocmd!
