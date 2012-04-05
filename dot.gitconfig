@@ -27,6 +27,7 @@
   su = submodule update
   rh = reset HEAD^
   ri = !sh -c 'git rebase -i HEAD~$0'
+  rmrf = !sh -c 'git branch -d $0 && git push origin :$0'
 [log]
   date = iso
 [push]
