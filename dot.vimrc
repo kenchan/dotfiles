@@ -10,9 +10,10 @@ Bundle 'YankRing.vim'
 Bundle 'EasyMotion'
 Bundle 'vimwiki'
 Bundle 'Rename'
-Bundle 'wincent/Command-T'
 Bundle 'jade.vim'
 Bundle 'taglist.vim'
+Bundle 'repeat.vim'
+
 Bundle 'scrooloose/syntastic'
 
 Bundle 'newspaper.vim'
