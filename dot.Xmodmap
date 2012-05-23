@@ -3,3 +3,4 @@ add Control = Caps_Lock
 keysym Caps_Lock = Control_L
 
 keysym Muhenkan = Super_L
+keysym Henkan = Return
