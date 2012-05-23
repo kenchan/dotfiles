@@ -21,8 +21,8 @@ Bundle 'xoria256.vim'
 Bundle 'jpo/vim-railscasts-theme'
 
 Bundle 'vim-ruby/vim-ruby'
-
-Bundle 'tsukkee/unite-help'
+Bundle 'ecomba/vim-ruby-refactoring'
+Bundle 'nelstrom/vim-textobj-rubyblock'
 
 Bundle 'kana/vim-textobj-user'
 Bundle 'kana/vim-textobj-fold'
@@ -31,10 +31,14 @@ Bundle 'kana/vim-textobj-lastpat'
 
 Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/vimfiler'
+
 Bundle 'Shougo/unite.vim'
+Bundle 'tsukkee/unite-help'
 
 Bundle 'h1mesuke/vim-alignta'
 Bundle 'h1mesuke/unite-outline'
+Bundle 'basyura/unite-rails'
+Bundle 'tsukkee/unite-tag'
 
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-rails'
@@ -43,12 +47,6 @@ Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
 
-Bundle 'ecomba/vim-ruby-refactoring'
-Bundle 'nelstrom/vim-textobj-rubyblock'
-
-Bundle 'basyura/unite-rails'
-
-Bundle 'tsukkee/unite-tag'
 Bundle 'Lokaltog/vim-powerline'
 
 Bundle 'tangledhelix/vim-octopress'
