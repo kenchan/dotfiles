@@ -19,7 +19,7 @@ precmd() {
   psvar=()
   vcs_info
   [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
-  [[ -s $HOME/bin/rvm-prompt ]] && psvar[2]=`rvm-prompt`
+  [[ -s $HOME/.rvm/bin/rvm-prompt ]] && psvar[2]=`rvm-prompt`
   [[ -e $PWD/.git/refs/stash ]] && psvar[3]="$(git stash list 2>/dev/null | wc -l) stashed"
 }
 
