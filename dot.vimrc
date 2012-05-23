@@ -154,14 +154,9 @@ let g:octopress_path = "~/git/diary"
 augroup MyAutoCmd
   autocmd!
 
-  au BufRead,BufNewFile *.haml set ft=haml
-  au BufRead,BufNewFile *.sass set ft=sass
-
   "自動的に QuickFix リストを表示する
   autocmd QuickfixCmdPost make,grep,grepadd,vimgrep,vimgrepadd cwin
   autocmd QuickfixCmdPost lmake,lgrep,lgrepadd,lvimgrep,lvimgrepadd lwin
-
-  autocmd BufRead,BufNewFile COMMIT_EDITMSG set filetype=git
 
   autocmd BufWritePost $MYVIMRC source $MYVIMRC | if has('gui_running') | source $MYGVIMRC
   autocmd BufWritePost $MYGVIMRC if has('gui_running') | source $MYGVIMRC
