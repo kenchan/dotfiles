@@ -55,6 +55,8 @@ Bundle 'csexton/trailertrash.vim'
 
 Bundle 'glidenote/octoeditor.vim'
 
+Bundle 'kchmck/vim-coffee-script'
+
 filetype plugin indent on
 syntax enable
 
