@@ -57,6 +57,9 @@ Bundle 'glidenote/octoeditor.vim'
 
 Bundle 'kchmck/vim-coffee-script'
 
+Bundle 'mattn/gist-vim'
+Bundle 'mattn/webapi-vim'
+
 filetype plugin indent on
 syntax enable
 

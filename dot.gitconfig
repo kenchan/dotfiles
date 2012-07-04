@@ -34,3 +34,5 @@
   default = tracking
 [core]
   excludesfile = ~/.gitignore
+[github]
+	user = kenchan
