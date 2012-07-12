@@ -19,6 +19,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'newspaper.vim'
 Bundle 'xoria256.vim'
 Bundle 'jpo/vim-railscasts-theme'
+Bundle '29decibel/codeschool-vim-theme'
 
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'ecomba/vim-ruby-refactoring'
@@ -59,6 +60,8 @@ Bundle 'kchmck/vim-coffee-script'
 
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
+
+Bundle 'hail2u/vim-css3-syntax'
 
 filetype plugin indent on
 syntax enable
