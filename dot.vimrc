@@ -154,6 +154,10 @@ let g:vimfiler_safe_mode_by_default = 0
 " octopress
 let g:octopress_path = "~/git/diary"
 
+" show invisibles
+nmap <leader>l :set list!<CR>
+set listchars=tab:▸\ ,eol:¬
+
 augroup MyAutoCmd
   autocmd!
 
