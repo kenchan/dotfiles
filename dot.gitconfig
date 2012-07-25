@@ -14,7 +14,7 @@
   ap = add -p
   b = branch
   ba = branch -a
-  bm = branch --merged
+  bm = branch -a --merged
   d = diff
   ds = diff --staged
   wd = diff --word-diff
