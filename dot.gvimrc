@@ -1,5 +1,5 @@
-set gfn=Ricty\ 12
+set gfn=Ricty\ 13
 set guioptions-=aegimrLtT
 set t_vb=
 
-colorscheme railscasts
+colorscheme codeschool

@@ -5,9 +5,12 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
+Bundle 'xoria256.vim'
+Bundle 'jpo/vim-railscasts-theme'
+Bundle '29decibel/codeschool-vim-theme'
+
 Bundle 'git-commit'
 Bundle 'YankRing.vim'
-Bundle 'EasyMotion'
 Bundle 'vimwiki'
 Bundle 'Rename'
 Bundle 'jade.vim'
@@ -15,11 +18,6 @@ Bundle 'taglist.vim'
 Bundle 'repeat.vim'
 
 Bundle 'scrooloose/syntastic'
-
-Bundle 'newspaper.vim'
-Bundle 'xoria256.vim'
-Bundle 'jpo/vim-railscasts-theme'
-Bundle '29decibel/codeschool-vim-theme'
 
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'ecomba/vim-ruby-refactoring'
@@ -33,10 +31,10 @@ Bundle 'kana/vim-textobj-lastpat'
 Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/vimfiler'
 
+Bundle 'h1mesuke/vim-alignta'
+
 Bundle 'Shougo/unite.vim'
 Bundle 'tsukkee/unite-help'
-
-Bundle 'h1mesuke/vim-alignta'
 Bundle 'h1mesuke/unite-outline'
 Bundle 'basyura/unite-rails'
 Bundle 'tsukkee/unite-tag'
@@ -144,8 +142,6 @@ nnoremap <silent> ,uh :<C-u>Unite help<CR>
 
 " vimwiki
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki'}]
-
-let g:EasyMotion_leader_key = '<Leader>m'
 
 " vimfiler
 let g:vimfiler_as_default_explorer = 1
