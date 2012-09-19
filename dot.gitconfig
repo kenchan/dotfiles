@@ -35,4 +35,4 @@
 [core]
   excludesfile = ~/.gitignore
 [github]
-	user = kenchan
+  user = kenchan
