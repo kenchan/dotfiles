@@ -7,6 +7,7 @@
   co = checkout
   st = status -sb
   pr = pull --rebase
+  pd = push --delete
   c = commit
   a = add
   al = add -A .
