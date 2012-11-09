@@ -113,6 +113,9 @@ nnoremap wl <C-w>l
 
 nnoremap Y y$
 
+nnoremap ; :
+nnoremap : ;
+
 nnoremap <Space>. :<C-u>edit $MYVIMRC<CR>
 nnoremap <Space>s. :<C-u>source $MYVIMRC<CR>
 
