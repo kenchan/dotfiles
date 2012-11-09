@@ -37,3 +37,5 @@
   excludesfile = ~/.gitignore
 [github]
   user = kenchan
+[help]
+  autocorrect = 1
