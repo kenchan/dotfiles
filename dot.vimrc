@@ -9,7 +9,6 @@ Bundle 'xoria256.vim'
 Bundle 'jpo/vim-railscasts-theme'
 Bundle '29decibel/codeschool-vim-theme'
 
-Bundle 'git-commit'
 Bundle 'YankRing.vim'
 Bundle 'vimwiki'
 Bundle 'Rename'
@@ -127,9 +126,6 @@ cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
 inoremap <Leader>date <C-R>=strftime('%Y/%m/%d(%a)')<CR>
 inoremap <Leader>time <C-R>=strftime('%H:%M:%S')<CR>
 
-" git-commit.vim
-let git_diff_spawn_mode = 1
-
 " neocomplcache
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_smart_case = 1
@@ -172,4 +168,5 @@ augroup MyAutoCmd
 
   autocmd BufWritePost $MYVIMRC source $MYVIMRC | if has('gui_running') | source $MYGVIMRC
   autocmd BufWritePost $MYGVIMRC if has('gui_running') | source $MYGVIMRC
+  autocmd FileType gitcommit DiffGitCached | wincmd J
 augroup END
