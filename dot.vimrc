@@ -15,6 +15,7 @@ Bundle 'Rename'
 Bundle 'jade.vim'
 Bundle 'taglist.vim'
 Bundle 'repeat.vim'
+Bundle 'matchit.zip'
 
 Bundle 'scrooloose/syntastic'
 
