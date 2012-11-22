@@ -9,7 +9,6 @@ Bundle 'xoria256.vim'
 Bundle 'jpo/vim-railscasts-theme'
 Bundle '29decibel/codeschool-vim-theme'
 
-Bundle 'YankRing.vim'
 Bundle 'vimwiki'
 Bundle 'Rename'
 Bundle 'jade.vim'
@@ -60,6 +59,8 @@ Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
 
 Bundle 'hail2u/vim-css3-syntax'
+
+Bundle 'maxbrunsfeld/vim-yankstack'
 
 filetype plugin indent on
 syntax enable
@@ -160,6 +161,9 @@ let g:octopress_path = "~/git/diary"
 " show invisibles
 nmap <leader>l :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
+
+" yankstack
+nmap <C-p> <Plug>yankstack_substitute_older_paste
 
 augroup MyAutoCmd
   autocmd!
