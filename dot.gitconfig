@@ -7,7 +7,7 @@
   co = checkout
   st = status -sb
   pd = push --delete
-  c = commit
+  c = commit -v
   a = add
   al = add -A .
   au = add -u
