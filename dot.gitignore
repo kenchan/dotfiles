@@ -1,5 +1,2 @@
 .rvmrc
-dot.config/Thunar
-dot.config/Trolltech.conf
-dot.config/gpicview
-user-dirs.dirs
+zeus.json
