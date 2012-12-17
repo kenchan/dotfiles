@@ -165,12 +165,15 @@ set listchars=tab:▸\ ,eol:¬
 " yankstack
 nmap <C-p> <Plug>yankstack_substitute_older_paste
 
+" syntastic
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_loc_list_height = 3
+
 augroup MyAutoCmd
   autocmd!
 
   "自動的に QuickFix リストを表示する
   autocmd QuickfixCmdPost make,grep,grepadd,vimgrep,vimgrepadd cwin
-  autocmd QuickfixCmdPost lmake,lgrep,lgrepadd,lvimgrep,lvimgrepadd lwin
 
   autocmd BufWritePost $MYVIMRC source $MYVIMRC | if has('gui_running') | source $MYGVIMRC
   autocmd BufWritePost $MYGVIMRC if has('gui_running') | source $MYGVIMRC
