@@ -28,6 +28,7 @@
   rh = reset HEAD^
   ri = !sh -c 'git rebase -i HEAD~$0'
   rmrf = !sh -c 'git branch -d $0 && git push origin :$0'
+  cob = !sh -c 'git checkout origin/$0 -b $0'
 [log]
   date = iso
 [push]
