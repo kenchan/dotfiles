@@ -40,6 +40,7 @@ end
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
 beautiful.init("/usr/share/awesome/themes/default/theme.lua")
+beautiful.wallpaper = "Dropbox/wallpaper/wallpaper1440x900.jpg"
 
 -- This is used later as the default terminal and editor to run.
 terminal = "gnome-terminal"
