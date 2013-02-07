@@ -35,6 +35,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
+_Z_CMD=j
+. /usr/bin/z.sh
+
 unsetopt correct_all
 
 alias -g G="| grep"
