@@ -5,7 +5,11 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
+" colorschema
 Bundle 'xoria256.vim'
+Bundle 'pyte'
+Bundle 'Solarized'
+Bundle 'aereal/vim-magica-colors'
 Bundle 'jpo/vim-railscasts-theme'
 Bundle '29decibel/codeschool-vim-theme'
 
@@ -67,8 +71,8 @@ syntax enable
 
 set term=screen-256color
 set t_Co=256
-set background=dark
-colorscheme xoria256
+set background=light
+colorscheme solarized
 hi Pmenu ctermbg=4
 
 set ambiwidth=double
