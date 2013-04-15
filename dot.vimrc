@@ -19,6 +19,7 @@ Bundle 'jade.vim'
 Bundle 'taglist.vim'
 Bundle 'repeat.vim'
 Bundle 'matchit.zip'
+Bundle 'SuperTab'
 
 Bundle 'scrooloose/syntastic'
 
@@ -31,7 +32,6 @@ Bundle 'kana/vim-textobj-fold'
 Bundle 'kana/vim-textobj-indent'
 Bundle 'kana/vim-textobj-lastpat'
 
-Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/vimfiler'
 
 Bundle 'h1mesuke/vim-alignta'
