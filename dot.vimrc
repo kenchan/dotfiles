@@ -66,6 +66,8 @@ Bundle 'hail2u/vim-css3-syntax'
 
 Bundle 'maxbrunsfeld/vim-yankstack'
 
+Bundle 'slim-template/vim-slim'
+
 filetype plugin indent on
 syntax enable
 
