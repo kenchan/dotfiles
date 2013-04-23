@@ -2,6 +2,8 @@
 Pry.config.should_load_plugins = false
 Pry.plugins["doc"].activate!
 
+Pry.config.history.file = '~/.irb_history'
+
 # Launch Pry with access to the entire Rails stack.
 # If you have Pry in your Gemfile, you can pass: ./script/console --irb=pry instead.
 # If you don't, you can load it through the lines below :)
