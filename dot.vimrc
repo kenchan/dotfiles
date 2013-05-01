@@ -171,4 +171,6 @@ augroup MyAutoCmd
 
   autocmd BufWritePost $MYVIMRC source $MYVIMRC | if has('gui_running') | source $MYGVIMRC
   autocmd BufWritePost $MYGVIMRC if has('gui_running') | source $MYGVIMRC
+
+  autocmd BufWritePre * :Trim
 augroup END
