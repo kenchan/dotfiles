@@ -55,8 +55,6 @@ Bundle 'tangledhelix/vim-octopress'
 
 Bundle 'csexton/trailertrash.vim'
 
-Bundle 'glidenote/octoeditor.vim'
-
 Bundle 'kchmck/vim-coffee-script'
 
 Bundle 'mattn/gist-vim'
@@ -153,9 +151,6 @@ let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki', 'syntax': 'markdown', 'ext':
 " vimfiler
 let g:vimfiler_as_default_explorer = 1
 let g:vimfiler_safe_mode_by_default = 0
-
-" octopress
-let g:octopress_path = "~/git/diary"
 
 " show invisibles
 nmap <leader>l :set list!<CR>
