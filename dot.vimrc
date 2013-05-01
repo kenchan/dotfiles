@@ -135,13 +135,6 @@ cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
 inoremap <Leader>date <C-R>=strftime('%Y/%m/%d(%a)')<CR>
 inoremap <Leader>time <C-R>=strftime('%H:%M:%S')<CR>
 
-" neocomplcache
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_smart_case = 1
-let g:neocomplcache_enable_camel_case_completion = 0
-let g:neocomplcache_enable_underbar_completion = 1
-let g:neocomplcache_min_syntax_length = 3
-
 " unite.vim
 nnoremap <silent> ,uf :<C-u>Unite file<CR>
 nnoremap <silent> ,uu :<C-u>Unite buffer file_mru<CR>
