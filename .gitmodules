@@ -1,9 +1,0 @@
-[submodule "dot.vim/vundle.git"]
-	path = dot.vim/vundle.git
-	url = git://github.com/gmarik/vundle.git
-[submodule "dot.config/awesome/vicious"]
-	path = dot.config/awesome/vicious
-	url = http://git.sysphere.org/vicious
-[submodule "dot.zsh/zsh-completions"]
-	path = dot.zsh/zsh-completions
-	url = git://github.com/zsh-users/zsh-completions.git
