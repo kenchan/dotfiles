@@ -3,6 +3,6 @@ dot.zsh/.zcompcache
 dot.zsh/cdd_pwd_list*
 dot.subversion/auth/
 dot.config/*
-dot.config/awesome
+!dot.config/awesome
 monitors.xml
 dot.vim/bundle
