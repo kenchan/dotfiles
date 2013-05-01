@@ -1,3 +1,3 @@
 set gfn=Ricty\ 12
-set guioptions-=aegimrLtT
+set guioptions=aei
 set t_vb=
