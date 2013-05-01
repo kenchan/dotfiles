@@ -15,7 +15,6 @@ Bundle '29decibel/codeschool-vim-theme'
 
 Bundle 'vimwiki'
 Bundle 'Rename'
-Bundle 'jade.vim'
 Bundle 'taglist.vim'
 Bundle 'repeat.vim'
 Bundle 'matchit.zip'
@@ -48,10 +47,6 @@ Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
-
-Bundle 'Lokaltog/vim-powerline'
-
-Bundle 'tangledhelix/vim-octopress'
 
 Bundle 'csexton/trailertrash.vim'
 
