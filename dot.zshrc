@@ -50,3 +50,5 @@ eval "$(rbenv init -)"
 
 autoload -Uz zmv
 alias zmv='noglob zmv -W'
+
+export TERM='xterm-256color'
