@@ -165,7 +165,7 @@ augroup MyAutoCmd
   "自動的に QuickFix リストを表示する
   autocmd QuickfixCmdPost make,grep,grepadd,vimgrep,vimgrepadd cwin
 
-  autocmd BufWritePost $MYVIMRC source $MYVIMRC | if has('gui_running') | source $MYGVIMRC
+  autocmd BufWritePost $MYVIMRC nested source $MYVIMRC | if has('gui_running') | source $MYGVIMRC
   autocmd BufWritePost $MYGVIMRC if has('gui_running') | source $MYGVIMRC
 
   autocmd BufWritePre * :Trim
