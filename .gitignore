@@ -1,3 +1,2 @@
 dot.config/*
 !dot.config/awesome
-dot.vim/bundle
