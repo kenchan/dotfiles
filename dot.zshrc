@@ -34,21 +34,21 @@ plugins=(autojump cap git gnu-utils heroku knife rails3 rake rbenv ruby screen t
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+#
+export TERM='xterm-256color'
 
 _Z_CMD=j
 . /usr/share/z/z.sh
 
+autoload -Uz zmv
 unsetopt correct_all
 
 alias -g G="| grep"
+alias zmv='noglob zmv -W'
+alias git=hub
+
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}("
-
 PROMPT=$'%(!.%{$fg_bold[red]%}.%{$fg_bold[green]%}%n@)%m %{$fg_bold[blue]%}%(!.%1~.%~)%{$reset_color%} $(git_prompt_info)\n%{$fg_bold[blue]%}$%{$reset_color%} '
 
 eval "$(rbenv init -)"
-
-autoload -Uz zmv
-alias zmv='noglob zmv -W'
-
-export TERM='xterm-256color'
