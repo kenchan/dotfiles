@@ -104,6 +104,8 @@ set incsearch
 "statusline
 set laststatus=2
 
+set clipboard=unnamedplus
+
 " keymap
 nnoremap j gj
 nnoremap k gk
