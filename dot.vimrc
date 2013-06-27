@@ -12,6 +12,8 @@ Bundle 'Solarized'
 Bundle 'aereal/vim-magica-colors'
 Bundle 'jpo/vim-railscasts-theme'
 Bundle '29decibel/codeschool-vim-theme'
+Bundle 'mayansmoke'
+Bundle 'Lucius'
 
 Bundle 'vimwiki'
 Bundle 'Rename'
@@ -68,7 +70,7 @@ set term=screen-256color
 set t_Co=256
 set background=light
 let g:solarized_termtrans=1
-colorscheme solarized
+colorscheme lucius
 hi Pmenu ctermbg=4
 
 set ambiwidth=double
