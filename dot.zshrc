@@ -29,7 +29,7 @@ ZSH_THEME="gentoo"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(autojump cap git gnu-utils heroku knife rails3 rake rbenv ruby screen thor vundle zeus)
+plugins=(bundler autojump cap git gnu-utils heroku knife rails3 rake rbenv ruby screen thor)
 
 source $ZSH/oh-my-zsh.sh
 
