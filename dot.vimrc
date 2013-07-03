@@ -158,9 +158,6 @@ let g:vimfiler_safe_mode_by_default = 0
 nmap <leader>l :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
 
-" yankstack
-nmap <C-p> <Plug>yankstack_substitute_older_paste
-
 " syntastic
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_loc_list_height = 3
