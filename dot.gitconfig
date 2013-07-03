@@ -18,6 +18,8 @@
   d = diff
   ds = diff --staged
   wd = diff --word-diff
+  dt = difftool -d
+  dst = difftool --staged -d
   l = log --decorate
   lo = log --oneline --decorate --graph
   ls = log --stat --decorate
@@ -44,3 +46,5 @@
   autocorrect = 1
 [pull]
   rebase = true
+[diff]
+  tool = meld
