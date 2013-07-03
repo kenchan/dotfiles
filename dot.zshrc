@@ -45,8 +45,6 @@ unsetopt correct_all
 
 alias -g G="| grep"
 alias zmv='noglob zmv -W'
-alias git=hub
-
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}("
 PROMPT=$'%(!.%{$fg_bold[red]%}.%{$fg_bold[green]%}%n@)%m %{$fg_bold[blue]%}%(!.%1~.%~)%{$reset_color%} $(git_prompt_info)\n%{$fg_bold[blue]%}$%{$reset_color%} '
