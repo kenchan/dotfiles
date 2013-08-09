@@ -64,6 +64,7 @@ Bundle 'maxbrunsfeld/vim-yankstack'
 Bundle 'slim-template/vim-slim'
 
 Bundle 'kien/ctrlp.vim'
+Bundle 'rking/ag.vim'
 
 filetype plugin indent on
 syntax enable
