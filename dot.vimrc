@@ -6,65 +6,51 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " colorschema
-Bundle 'xoria256.vim'
-Bundle 'pyte'
+Bundle '29decibel/codeschool-vim-theme'
+Bundle 'Lucius'
 Bundle 'Solarized'
 Bundle 'aereal/vim-magica-colors'
 Bundle 'jpo/vim-railscasts-theme'
-Bundle '29decibel/codeschool-vim-theme'
 Bundle 'mayansmoke'
-Bundle 'Lucius'
+Bundle 'pyte'
+Bundle 'xoria256.vim'
 
-Bundle 'vimwiki'
 Bundle 'Rename'
-Bundle 'taglist.vim'
-Bundle 'repeat.vim'
-Bundle 'matchit.zip'
+Bundle 'Shougo/unite.vim'
+Bundle 'Shougo/vimfiler'
 Bundle 'SuperTab'
-
-Bundle 'scrooloose/syntastic'
-
-Bundle 'vim-ruby/vim-ruby'
+Bundle 'basyura/unite-rails'
+Bundle 'csexton/trailertrash.vim'
 Bundle 'ecomba/vim-ruby-refactoring'
-Bundle 'nelstrom/vim-textobj-rubyblock'
-
-Bundle 'kana/vim-textobj-user'
+Bundle 'h1mesuke/unite-outline'
+Bundle 'h1mesuke/vim-alignta'
+Bundle 'hail2u/vim-css3-syntax'
 Bundle 'kana/vim-textobj-fold'
 Bundle 'kana/vim-textobj-indent'
 Bundle 'kana/vim-textobj-lastpat'
-
-Bundle 'Shougo/vimfiler'
-
-Bundle 'h1mesuke/vim-alignta'
-
-Bundle 'Shougo/unite.vim'
-Bundle 'tsukkee/unite-help'
-Bundle 'h1mesuke/unite-outline'
-Bundle 'basyura/unite-rails'
-Bundle 'tsukkee/unite-tag'
-
-Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-cucumber'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-fugitive'
-
-Bundle 'csexton/trailertrash.vim'
-
+Bundle 'kana/vim-textobj-user'
 Bundle 'kchmck/vim-coffee-script'
-
+Bundle 'kien/ctrlp.vim'
+Bundle 'matchit.zip'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
-
-Bundle 'hail2u/vim-css3-syntax'
-
 Bundle 'maxbrunsfeld/vim-yankstack'
-
-Bundle 'slim-template/vim-slim'
-
-Bundle 'kien/ctrlp.vim'
+Bundle 'nelstrom/vim-textobj-rubyblock'
+Bundle 'repeat.vim'
 Bundle 'rking/ag.vim'
+Bundle 'scrooloose/syntastic'
+Bundle 'slim-template/vim-slim'
+Bundle 'taglist.vim'
+Bundle 'tpope/vim-cucumber'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-haml'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-surround'
+Bundle 'tsukkee/unite-help'
+Bundle 'tsukkee/unite-tag'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'vimwiki'
 
 filetype plugin indent on
 syntax enable
