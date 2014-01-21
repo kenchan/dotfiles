@@ -1,5 +1,9 @@
 set nocompatible
 filetype off
+
+set rtp+=$GOROOT/misc/vim
+exe "set rtp+=" . globpath($GOPATH, "src/github.com/golang/lint/misc/vim")
+
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -15,6 +19,7 @@ Bundle 'mayansmoke'
 Bundle 'pyte'
 Bundle 'xoria256.vim'
 
+Bundle 'Blackrush/vim-gocode'
 Bundle 'Rename'
 Bundle 'Shougo/unite.vim'
 Bundle 'Shougo/vimfiler'
@@ -26,6 +31,7 @@ Bundle 'h1mesuke/unite-outline'
 Bundle 'h1mesuke/vim-alignta'
 Bundle 'hail2u/vim-css3-syntax'
 Bundle 'itchyny/lightline.vim'
+Bundle 'kana/vim-smartinput'
 Bundle 'kana/vim-textobj-fold'
 Bundle 'kana/vim-textobj-indent'
 Bundle 'kana/vim-textobj-lastpat'
@@ -43,6 +49,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'slim-template/vim-slim'
 Bundle 'taglist.vim'
 Bundle 'tpope/vim-cucumber'
+Bundle 'tpope/vim-dispatch'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-haml'
