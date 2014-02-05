@@ -48,3 +48,5 @@
   rebase = true
 [diff]
   tool = meld
+[credential]
+  helper = store
