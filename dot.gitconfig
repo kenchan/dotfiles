@@ -49,3 +49,5 @@
   tool = meld
 [credential]
   helper = store
+[ghq]
+  root = ~/src

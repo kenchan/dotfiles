@@ -52,5 +52,5 @@ PROMPT=$'%(!.%{$fg_bold[red]%}.%{$fg_bold[green]%}%n@)%m %{$fg_bold[blue]%}%(!.%
 
 eval "$(rbenv init -)"
 
-export GOPATH=$HOME/.go
+export GOPATH=$HOME
 export PATH=./bin:$HOME/bin:$GOPATH/bin:$HOME/.npm/node_module/bin:$PATH
