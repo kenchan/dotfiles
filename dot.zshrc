@@ -55,3 +55,4 @@ eval "$(rbenv init -)"
 
 export GOPATH=$HOME
 export PATH=./bin:$HOME/bin:$GOPATH/bin:$HOME/.npm/node_module/bin:$PATH
+compdef hub=git
