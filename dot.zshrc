@@ -38,7 +38,14 @@ source $ZSH/oh-my-zsh.sh
 export TERM='xterm-256color'
 
 _Z_CMD=j
-. /usr/share/z/z.sh
+case "$(uname)" in
+  Darwin)
+    . `brew --prefix`/etc/profile.d/z.sh
+    ;;
+  *)
+    . /usr/share/z/z.sh
+    ;;
+esac
 
 autoload -Uz zmv
 unsetopt correct_all
