@@ -57,7 +57,7 @@ alias -g P="| peco"
 alias gho='cd $(ghq list -p | peco)'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}("
-PROMPT=$'%(!.%{$fg_bold[red]%}.%{$fg_bold[green]%}%n@)%m %{$fg_bold[blue]%}%(!.%1~.%~)%{$reset_color%} $(git_prompt_info)\n%{$fg_bold[blue]%}$%{$reset_color%} '
+PROMPT=$'%(!.%{$fg_bold[red]%}.%{$fg_bold[green]%}%n) %{$fg_bold[blue]%}%(!.%1~.%~)%{$reset_color%} $(git_prompt_info)\n%{$fg_bold[blue]%}$%{$reset_color%} '
 
 eval "$(rbenv init -)"
 
