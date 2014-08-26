@@ -36,6 +36,7 @@ Plugin 'kana/vim-textobj-fold'
 Plugin 'kana/vim-textobj-indent'
 Plugin 'kana/vim-textobj-lastpat'
 Plugin 'kana/vim-textobj-user'
+Plugin 'kana/vim-fakeclip'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'kien/ctrlp.vim'
 Plugin 'matchit.zip'
@@ -105,7 +106,7 @@ set incsearch
 "statusline
 set laststatus=2
 
-set clipboard=unnamedplus
+set clipboard=unnamed
 
 " keymap
 nnoremap j gj
@@ -143,6 +144,13 @@ nnoremap <silent> ,uh :<C-u>Unite help<CR>
 let g:unite_source_alignta_preset_arguments = [
   \ ["Align at ':'", '<<0 \ /1 :'],
   \]
+
+if executable('pt')
+  let g:unite_source_grep_command = 'pt'
+  let g:unite_source_grep_default_opts = '--nogroup --nocolor'
+  let g:unite_source_grep_recursive_opt = ''
+  let g:unite_source_grep_encoding = 'utf-8'
+endif
 
 " vimwiki
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
