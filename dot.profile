@@ -4,5 +4,3 @@ export PATH=$HOME/bin:$PATH
 
 export DE=gnome
 export VTE_CJK_WIDTH=1
-
-export EDITOR=vim
