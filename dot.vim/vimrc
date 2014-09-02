@@ -60,6 +60,7 @@ Plugin 'tsukkee/unite-help'
 Plugin 'tsukkee/unite-tag'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'vimwiki'
+Plugin 'puppetlabs/puppet-syntax-vim'
 
 call vundle#end()
 
