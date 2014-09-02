@@ -108,6 +108,8 @@ set laststatus=2
 
 set clipboard=unnamed
 
+set backspace=indent,eol,start
+
 " keymap
 nnoremap j gj
 nnoremap k gk
