@@ -49,5 +49,7 @@
   tool = meld
 [credential]
   helper = store
+[fetch]
+  prune = true
 [ghq]
   root = ~/src
