@@ -1,70 +1,81 @@
-set nocompatible
-filetype off
+"Note: Skip initialization for vim-tiny or vim-small.
+if !1 | finish | endif
+
+if has('vim_starting')
+  set nocompatible
+  set runtimepath+=/Users/kenchan/.vim/bundle/neobundle.vim/
+endif
+
+call neobundle#begin(expand('/Users/kenchan/.vim/bundle'))
+
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" colorschema
+NeoBundle '29decibel/codeschool-vim-theme'
+NeoBundle 'Lucius'
+NeoBundle 'Solarized'
+NeoBundle 'aereal/vim-magica-colors'
+NeoBundle 'jpo/vim-railscasts-theme'
+NeoBundle 'mayansmoke'
+NeoBundle 'pyte'
+NeoBundle 'xoria256.vim'
+
+NeoBundle 'Shougo/neosnippet.vim'
+NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'flazz/vim-colorschemes'
+NeoBundle 'Blackrush/vim-gocode'
+NeoBundle 'Rename'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimfiler'
+NeoBundle 'SuperTab'
+NeoBundle 'basyura/unite-rails'
+NeoBundle 'csexton/trailertrash.vim'
+NeoBundle 'ecomba/vim-ruby-refactoring'
+NeoBundle 'h1mesuke/unite-outline'
+NeoBundle 'h1mesuke/vim-alignta'
+NeoBundle 'hail2u/vim-css3-syntax'
+NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'kana/vim-smartinput'
+NeoBundle 'kana/vim-textobj-fold'
+NeoBundle 'kana/vim-textobj-indent'
+NeoBundle 'kana/vim-textobj-lastpat'
+NeoBundle 'kana/vim-textobj-user'
+NeoBundle 'kana/vim-fakeclip'
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'ctrlpvim/ctrlp.vim'
+NeoBundle 'matchit.zip'
+NeoBundle 'mattn/gist-vim'
+NeoBundle 'mattn/webapi-vim'
+NeoBundle 'maxbrunsfeld/vim-yankstack'
+NeoBundle 'nelstrom/vim-textobj-rubyblock'
+NeoBundle 'repeat.vim'
+NeoBundle 'rking/ag.vim'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'slim-template/vim-slim'
+NeoBundle 'taglist.vim'
+NeoBundle 'tpope/vim-cucumber'
+NeoBundle 'tpope/vim-dispatch'
+NeoBundle 'tpope/vim-endwise'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-haml'
+NeoBundle 'tpope/vim-rails'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'tsukkee/unite-help'
+NeoBundle 'tsukkee/unite-tag'
+NeoBundle 'vim-ruby/vim-ruby'
+NeoBundle 'vimwiki'
+NeoBundle 'puppetlabs/puppet-syntax-vim'
+
+call neobundle#end()
+
+filetype plugin indent on
+
+NeoBundleCheck
 
 set rtp+=$GOROOT/misc/vim
 exe "set rtp+=" . globpath($GOPATH, "src/github.com/golang/lint/misc/vim")
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'gmarik/Vundle'
-
-" colorschema
-Plugin '29decibel/codeschool-vim-theme'
-Plugin 'Lucius'
-Plugin 'Solarized'
-Plugin 'aereal/vim-magica-colors'
-Plugin 'jpo/vim-railscasts-theme'
-Plugin 'mayansmoke'
-Plugin 'pyte'
-Plugin 'xoria256.vim'
-
-Plugin 'Blackrush/vim-gocode'
-Plugin 'Rename'
-Plugin 'Shougo/unite.vim'
-Plugin 'Shougo/vimfiler'
-Plugin 'SuperTab'
-Plugin 'basyura/unite-rails'
-Plugin 'csexton/trailertrash.vim'
-Plugin 'ecomba/vim-ruby-refactoring'
-Plugin 'h1mesuke/unite-outline'
-Plugin 'h1mesuke/vim-alignta'
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'itchyny/lightline.vim'
-Plugin 'kana/vim-smartinput'
-Plugin 'kana/vim-textobj-fold'
-Plugin 'kana/vim-textobj-indent'
-Plugin 'kana/vim-textobj-lastpat'
-Plugin 'kana/vim-textobj-user'
-Plugin 'kana/vim-fakeclip'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'kien/ctrlp.vim'
-Plugin 'matchit.zip'
-Plugin 'mattn/gist-vim'
-Plugin 'mattn/webapi-vim'
-Plugin 'maxbrunsfeld/vim-yankstack'
-Plugin 'nelstrom/vim-textobj-rubyblock'
-Plugin 'repeat.vim'
-Plugin 'rking/ag.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'slim-template/vim-slim'
-Plugin 'taglist.vim'
-Plugin 'tpope/vim-cucumber'
-Plugin 'tpope/vim-dispatch'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-haml'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-surround'
-Plugin 'tsukkee/unite-help'
-Plugin 'tsukkee/unite-tag'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'vimwiki'
-Plugin 'puppetlabs/puppet-syntax-vim'
-
-call vundle#end()
-
-filetype plugin indent on
 syntax enable
 
 set term=screen-256color
