@@ -10,6 +10,8 @@ call neobundle#begin(expand('/Users/kenchan/.vim/bundle'))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 
+NeoBundle 'tyru/eskk.vim'
+
 " colorschema
 NeoBundle '29decibel/codeschool-vim-theme'
 NeoBundle 'Lucius'
@@ -180,6 +182,15 @@ set listchars=tab:▸\ ,eol:¬
 " syntastic
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_loc_list_height = 3
+
+" eskk.vim
+if has('mac')
+  let g:eskk#large_dictionary = {
+  \  'path': "~/Library/Application\ Support/AquaSKK/SKK-JISYO.L",
+  \  'sorted': 1,
+  \  'encoding': 'euc-jp',
+  \}
+endif
 
 augroup MyAutoCmd
   autocmd!
