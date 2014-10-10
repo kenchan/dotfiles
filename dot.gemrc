@@ -5,3 +5,4 @@
 :update_sources: true
 gem: --no-ri --no-rdoc --verbose
 gemsrc_use_ghq: true
+gemsrc_clone_root: ~/src
