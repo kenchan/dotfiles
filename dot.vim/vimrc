@@ -68,6 +68,7 @@ NeoBundle 'tsukkee/unite-tag'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'vimwiki'
 NeoBundle 'puppetlabs/puppet-syntax-vim'
+NeoBundle 'majutsushi/tagbar'
 
 call neobundle#end()
 
@@ -191,6 +192,19 @@ if has('mac')
   \  'encoding': 'euc-jp',
   \}
 endif
+
+" tagbar
+nnoremap <silent> <space>t :TagbarToggle<CR>
+let g:tagbar_type_ruby = {
+    \ 'kinds' : [
+        \ 'm:modules',
+        \ 'c:classes',
+        \ 'd:describes',
+        \ 'C:contexts',
+        \ 'f:methods',
+        \ 'F:singleton methods'
+    \ ]
+\ }
 
 augroup MyAutoCmd
   autocmd!
