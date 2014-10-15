@@ -21,6 +21,7 @@ NeoBundle 'jpo/vim-railscasts-theme'
 NeoBundle 'mayansmoke'
 NeoBundle 'pyte'
 NeoBundle 'xoria256.vim'
+NeoBundle 'junegunn/seoul256.vim'
 
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'Shougo/neosnippet-snippets'
@@ -48,6 +49,7 @@ NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'matchit.zip'
 NeoBundle 'mattn/gist-vim'
+NeoBundle 'mattn/ctrlp-ghq'
 NeoBundle 'mattn/webapi-vim'
 NeoBundle 'maxbrunsfeld/vim-yankstack'
 NeoBundle 'nelstrom/vim-textobj-rubyblock'
@@ -85,7 +87,7 @@ set term=screen-256color
 set t_Co=256
 set background=light
 let g:solarized_termtrans=1
-colorscheme lucius
+colorscheme seoul256-light
 hi Pmenu ctermbg=4
 
 set ambiwidth=double
@@ -205,6 +207,9 @@ let g:tagbar_type_ruby = {
         \ 'F:singleton methods'
     \ ]
 \ }
+
+" ctrlp-ghq
+noremap <space>g :<c-u>CtrlPGhq<CR>
 
 augroup MyAutoCmd
   autocmd!
