@@ -29,12 +29,13 @@ ZSH_THEME="gentoo"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(bundler autojump cap git go gnu-utils heroku knife rails rake rbenv ruby thor tmux)
+plugins=(bundler autojump cap git go gnu-utils heroku knife rails rake rbenv ruby thor tmux brew)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 #
+
 export TERM='xterm-256color'
 
 _Z_CMD=j
@@ -50,6 +51,10 @@ esac
 autoload -Uz zmv
 unsetopt correct_all
 
+autoload -Uz history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+bindkey "^o" history-beginning-search-backward-end
+
 alias -g G="| grep"
 alias zmv='noglob zmv -W'
 alias git='hub'
@@ -64,3 +69,9 @@ eval "$(rbenv init -)"
 export GOPATH=$HOME
 export PATH=./bin:$HOME/bin:$GOPATH/bin:$HOME/.npm/node_module/bin:$PATH
 compdef hub=git
+
+function zman() {
+  PAGER="less -g -s '+/^ {7}"$1"'" man zshall
+}
+
+[[ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
