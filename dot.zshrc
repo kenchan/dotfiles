@@ -74,4 +74,14 @@ function zman() {
   PAGER="less -g -s '+/^ {7}"$1"'" man zshall
 }
 
+function ghi() {
+  [ "$#" -eq 0 ] && echo "Usage : gpi QUERY" && return 1
+  ghs "$@" | peco | awk '{print $1}' | ghq import
+}
+
 [[ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+fpath=($HOME/.zsh/completions(N-/) $fpath)
+
+autoload -Uz compinit
+compinit
