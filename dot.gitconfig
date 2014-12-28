@@ -45,8 +45,6 @@
   autocorrect = 1
 [pull]
   rebase = true
-[diff]
-  tool = meld
 [credential]
   helper = store
 [fetch]
