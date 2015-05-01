@@ -66,6 +66,9 @@ PROMPT=$'%(!.%{$fg_bold[red]%}.%{$fg_bold[green]%}%n) %{$fg_bold[blue]%}%(!.%1~.
 
 eval "$(rbenv init -)"
 
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+export PYENV_ROOT=/usr/local/opt/pyenv
+
 export GOPATH=$HOME
 export PATH=./bin:$HOME/bin:$GOPATH/bin:$HOME/.npm/node_module/bin:$PATH
 compdef hub=git
