@@ -88,3 +88,5 @@ fpath=($HOME/.zsh/completions(N-/) $fpath)
 
 autoload -Uz compinit
 compinit
+
+eval "$(direnv hook zsh)"
