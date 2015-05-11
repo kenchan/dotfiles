@@ -1,77 +1,92 @@
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+bindkey -e
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="gentoo"
+# prompt
+autoload -U colors && colors
+autoload -U add-zsh-hook
+autoload -U vcs_info
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+zstyle ':vcs_info:*' enable git svn hg
+zstyle ':vcs_info:*' formats '[%b]%c%u'
+zstyle ':vcs_info:*' actionformats '[%b|%a]%c%u'
+zstyle ':vcs_info:git:*' check-for-changes true
 
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
+function _update_vcs_info_msg() {
+  psvar=()
+  LANG=en_US.UTF-8 vcs_info
+  [[ -n $vcs_info_msg_0_ ]] && psvar[1]=" $vcs_info_msg_0_"
+}
 
-# Comment this out to disable weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
+add-zsh-hook precmd _update_vcs_info_msg
 
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
+PROMPT="%{$fg_bold[green]%}%n%{$reset_color%} %{$fg_bold[blue]%}%~%{$fg[green]%}%v %{$fg[red]%}[$(rbenv version-name)] %{$fg[magenta]%}(%T)%{$reset_color%}
+%{$fg_bold[blue]%}$%{$reset_color%} "
 
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(bundler autojump cap git go gnu-utils heroku knife rails rake rbenv ruby thor tmux brew)
-
-source $ZSH/oh-my-zsh.sh
-
-# Customize to your needs...
-#
-
-export TERM='xterm-256color'
-
-_Z_CMD=j
-case "$(uname)" in
-  Darwin)
-    . `brew --prefix`/etc/profile.d/z.sh
-    ;;
-  *)
-    . /usr/share/z/z.sh
-    ;;
-esac
-
-autoload -Uz zmv
-unsetopt correct_all
-
-autoload -Uz history-search-end
-zle -N history-beginning-search-backward-end history-search-end
-bindkey "^o" history-beginning-search-backward-end
-
+# aliases
 alias -g G="| grep"
 alias zmv='noglob zmv -W'
 alias git='hub'
 alias -g P="| peco"
-alias gho='cd $(ghq list -p P)'
+alias g='git'
+alias ls='ls -GF'
+alias la='ls -aGF'
+alias ll='ls -alGF'
 
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}("
-PROMPT=$'%(!.%{$fg_bold[red]%}.%{$fg_bold[green]%}%n) %{$fg_bold[blue]%}%(!.%1~.%~)%{$reset_color%} $(git_prompt_info)%{$fg[red]%}[$(rbenv version-name)]%{$reset_color%}\n%{$fg_bold[blue]%}$%{$reset_color%} '
-
+# x-env
 eval "$(rbenv init -)"
 
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 export PYENV_ROOT=/usr/local/opt/pyenv
 
+eval "$(direnv hook zsh)"
+
+# golang
 export GOPATH=$HOME
+
+# peco
+function peco-src () {
+  local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
+  if [ -n "$selected_dir" ]; then
+    BUFFER="cd ${selected_dir}"
+    zle accept-line
+  fi
+  zle clear-screen
+}
+
+zle -N peco-src
+bindkey '^o' peco-src
+
+# Search shell history with peco: https://github.com/peco/peco
+# Adapted from: https://github.com/mooz/percol#zsh-history-search
+if which peco &> /dev/null; then
+  function peco_select_history() {
+    local tac
+    (which gtac &> /dev/null && tac="gtac") || \
+      (which tac &> /dev/null && tac="tac") || \
+      tac="tail -r"
+    BUFFER=$(fc -l -n 1 | eval $tac | \
+                peco --layout=bottom-up --query "$LBUFFER")
+    CURSOR=$#BUFFER # move cursor
+    zle -R -c       # refresh
+  }
+
+  zle -N peco_select_history
+  bindkey '^R' peco_select_history
+fi
+
+# history
+export HISTFILE=${HOME}/.zsh_history
+export HISTSIZE=10000
+export SAVEHIST=10000
+setopt hist_ignore_all_dups
+setopt hist_reduce_blanks
+
+# misc
+export TERM='xterm-256color'
+
+autoload -Uz zmv
+unsetopt correct_all
+
 export PATH=./bin:$HOME/bin:$GOPATH/bin:$HOME/.npm/node_module/bin:$PATH
-compdef hub=git
 
 function zman() {
   PAGER="less -g -s '+/^ {7}"$1"'" man zshall
@@ -82,11 +97,10 @@ function ghi() {
   ghs "$@" | peco | awk '{print $1}' | ghq import
 }
 
-[[ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 fpath=($HOME/.zsh/completions(N-/) $fpath)
 
-autoload -Uz compinit
-compinit
+autoload -Uz compinit && compinit
 
-eval "$(direnv hook zsh)"
+if [ -f ~/.zsh/homebrew_search_token ];then
+  source ~/.zsh/homebrew_search_token
+fi
