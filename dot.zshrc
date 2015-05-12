@@ -97,6 +97,7 @@ function ghi() {
   ghs "$@" | peco | awk '{print $1}' | ghq import
 }
 
+fpath=(/usr/local/share/zsh-completions $fpath)
 fpath=($HOME/.zsh/completions(N-/) $fpath)
 
 autoload -Uz compinit && compinit
