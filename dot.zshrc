@@ -4,22 +4,20 @@ bindkey -e
 autoload -U colors && colors
 autoload -U add-zsh-hook
 autoload -U vcs_info
+setopt prompt_subst
 
 zstyle ':vcs_info:*' enable git svn hg
 zstyle ':vcs_info:*' formats '[%b]%c%u'
 zstyle ':vcs_info:*' actionformats '[%b|%a]%c%u'
 zstyle ':vcs_info:git:*' check-for-changes true
 
-function _update_vcs_info_msg() {
-  psvar=()
+function _update_prompt() {
   LANG=en_US.UTF-8 vcs_info
-  [[ -n $vcs_info_msg_0_ ]] && psvar[1]=" $vcs_info_msg_0_"
+  PROMPT="%{$fg[magenta]%}[%T]%{$reset_color%} %{$fg_bold[blue]%}%~ %{$fg[red]%}($(rbenv version-name)) %{$fg[green]%}${vcs_info_msg_0_}
+%{$fg_bold[blue]%}$%{$reset_color%} "
 }
 
-add-zsh-hook precmd _update_vcs_info_msg
-
-PROMPT="%{$fg_bold[green]%}%n%{$reset_color%} %{$fg_bold[blue]%}%~%{$fg[green]%}%v %{$fg[red]%}[$(rbenv version-name)] %{$fg[magenta]%}(%T)%{$reset_color%}
-%{$fg_bold[blue]%}$%{$reset_color%} "
+add-zsh-hook precmd _update_prompt
 
 # aliases
 alias -g G="| grep"
