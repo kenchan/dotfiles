@@ -73,10 +73,16 @@ fi
 
 # history
 export HISTFILE=${HOME}/.zsh_history
-export HISTSIZE=10000
-export SAVEHIST=10000
+export HISTSIZE=100000
+export SAVEHIST=$HISTSIZE
+
+setopt extended_history
 setopt hist_ignore_all_dups
+setopt hist_ignore_dups
+setopt hist_ignore_space
 setopt hist_reduce_blanks
+setopt inc_append_history
+setopt share_history
 
 # misc
 export TERM='xterm-256color'
