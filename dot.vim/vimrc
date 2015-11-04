@@ -92,7 +92,6 @@ set fileformats=unix,dos
 "Tab
 set expandtab
 set smartindent
-set ts=2 sw=2 sts=2
 
 "search
 set nohlsearch
@@ -178,4 +177,7 @@ augroup MyAutoCmd
   autocmd BufWritePost $MYGVIMRC if has('gui_running') | source $MYGVIMRC
 
   autocmd BufWritePre * :TrailerTrim
+
+  autocmd FileType php setlocal sw=4 sts=4
+  autocmd FileType ruby setlocal sw=2 sts=2
 augroup END
