@@ -28,6 +28,7 @@ alias g='git'
 alias ls='ls -GF'
 alias la='ls -aGF'
 alias ll='ls -alGF'
+alias be='bundle exec'
 
 # x-env
 eval "$(rbenv init -)"
