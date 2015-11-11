@@ -43,16 +43,62 @@ eval "$(direnv hook zsh)"
 export GOPATH=$HOME
 
 # peco
-function peco-src () {
-  local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
-  if [ -n "$selected_dir" ]; then
-    BUFFER="cd ${selected_dir}"
-    zle accept-line
-  fi
-  zle clear-screen
+export GHQ="/usr/local/bin/ghq"
+export GIT="/usr/local/bin/git"
+
+function ghq() {
+  case $1 in
+    get )
+      $GHQ $@
+
+      # hook after ghq get
+      (ghq-cache update &)
+      ;;
+    list )
+      if [ ! -e ~/.ghq-cache ]; then
+        ghq-cache update
+      fi
+
+      # use ghq list ordered by ghq-cache
+      cat ~/.ghq-cache
+      ;;
+    * )
+      $GHQ $@
+      ;;
+  esac
 }
 
+function git() {
+    case $1 in
+        init )
+            $GIT $@
+            (ghq-cache update &)
+            ;;
+        clone )
+            $GIT $@
+            (ghq-cache update &)
+            ;;
+        * )
+            $GIT $@
+            ;;
+    esac
+}
+
+function peco-src() {
+  local selected_dir=$(ghq list | peco --query "$LBUFFER" --prompt "[ghq list]")
+  if [ -n "$selected_dir" ]; then
+    full_dir="${GOPATH}/src/${selected_dir}"
+
+    # Log repository access to ghq-cache
+    (ghq-cache log $full_dir &)
+
+    BUFFER="cd ${full_dir}"
+    zle accept-line
+  fi
+  zle redisplay
+}
 zle -N peco-src
+stty -ixon
 bindkey '^o' peco-src
 
 # Search shell history with peco: https://github.com/peco/peco
