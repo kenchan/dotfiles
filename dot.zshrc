@@ -35,6 +35,7 @@ eval "$(rbenv init -)"
 
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 export PYENV_ROOT=/usr/local/opt/pyenv
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
 eval "$(direnv hook zsh)"
 
