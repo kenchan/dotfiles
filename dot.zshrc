@@ -157,3 +157,6 @@ autoload -Uz compinit && compinit
 if [ -f ~/.zsh/homebrew_search_token ];then
   source ~/.zsh/homebrew_search_token
 fi
+
+# added by travis gem
+[ -f /Users/kenchan/.travis/travis.sh ] && source /Users/kenchan/.travis/travis.sh
