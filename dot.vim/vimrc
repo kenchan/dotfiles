@@ -92,6 +92,7 @@ set fileformats=unix,dos
 "Tab
 set expandtab
 set smartindent
+set sw=2 sts=2
 
 "search
 set nohlsearch
