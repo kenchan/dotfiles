@@ -177,8 +177,6 @@ augroup MyAutoCmd
   autocmd BufWritePost $MYVIMRC nested source $MYVIMRC | if has('gui_running') | source $MYGVIMRC
   autocmd BufWritePost $MYGVIMRC if has('gui_running') | source $MYGVIMRC
 
-  autocmd BufWritePre * :TrailerTrim
-
   autocmd FileType php setlocal sw=4 sts=4
   autocmd FileType ruby setlocal sw=2 sts=2
 augroup END
