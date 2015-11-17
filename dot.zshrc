@@ -154,8 +154,8 @@ fpath=($HOME/.zsh/completions(N-/) $fpath)
 
 autoload -Uz compinit && compinit
 
-if [ -f ~/.zsh/homebrew_search_token ];then
-  source ~/.zsh/homebrew_search_token
+if [ -f ~/.config/homebrew/search_token ];then
+  source ~/.config/homebrew/search_token
 fi
 
 # added by travis gem

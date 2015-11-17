@@ -1,3 +1,4 @@
 dot.config/*
 !dot.config/awesome
 !dot.config/powerline
+dot.config/homebrew/search_token
