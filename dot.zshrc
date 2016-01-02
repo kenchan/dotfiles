@@ -150,7 +150,7 @@ function ghi() {
 }
 
 fpath=(/usr/local/share/zsh-completions $fpath)
-fpath=($HOME/.zsh/completions(N-/) $fpath)
+fpath=($HOME/.zsh/functions $HOME/.zsh/completions(N-/) $fpath)
 
 autoload -Uz compinit && compinit
 
@@ -160,3 +160,11 @@ fi
 
 # added by travis gem
 [ -f /Users/kenchan/.travis/travis.sh ] && source /Users/kenchan/.travis/travis.sh
+
+## cdd
+if [[ -s ~/.zsh/scripts/cdd ]] then
+  source ~/.zsh/scripts/cdd
+  function chpwd() {
+    _cdd_chpwd
+  }
+fi
