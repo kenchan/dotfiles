@@ -54,6 +54,8 @@ Plug 'vimwiki'
 Plug 'puppetlabs/puppet-syntax-vim'
 Plug 'majutsushi/tagbar'
 Plug 'elixir-lang/vim-elixir'
+Plug 'mattn/emmet-vim'
+Plug 'editorconfig/editorconfig-vim'
 
 call plug#end()
 
