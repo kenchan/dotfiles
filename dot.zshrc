@@ -170,3 +170,6 @@ if [[ -s ~/.zsh/scripts/cdd ]] then
     _cdd_chpwd
   }
 fi
+
+## ruby 2.3.0
+export RUBYOPTS=-ryomikomu
