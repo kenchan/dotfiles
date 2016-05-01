@@ -184,3 +184,9 @@ augroup MyAutoCmd
   autocmd FileType php setlocal sw=4 sts=4
   autocmd FileType ruby setlocal sw=2 sts=2
 augroup END
+
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+
+let g:ctrlp_extentiuons = ['quickfix']
+
+set grepprg=pt\ --nogroup\ --nocolor
