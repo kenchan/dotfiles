@@ -20,15 +20,9 @@ function _update_prompt() {
 add-zsh-hook precmd _update_prompt
 
 # aliases
-alias -g G="| grep"
-alias zmv='noglob zmv -W'
-alias git='hub'
-alias -g P="| peco"
-alias g='git'
-alias ls='ls -GF'
-alias la='ls -aGF'
-alias ll='ls -alGF'
-alias be='bundle exec'
+if [[ -s ~/.zsh/aliases ]] then
+  source ~/.zsh/aliases
+fi
 
 # x-env
 eval "$(rbenv init -)"
