@@ -80,39 +80,10 @@ function git() {
     esac
 }
 
-function peco-src() {
-  local selected_dir=$(ghq list | peco --query "$LBUFFER" --prompt "[ghq list]")
-  if [ -n "$selected_dir" ]; then
-    full_dir="${GOPATH}/src/${selected_dir}"
-
-    # Log repository access to ghq-cache
-    (ghq-cache log $full_dir &)
-
-    BUFFER="cd ${full_dir}"
-    zle accept-line
-  fi
-  zle redisplay
-}
-zle -N peco-src
 stty -ixon
-bindkey '^o' peco-src
 
-# Search shell history with peco: https://github.com/peco/peco
-# Adapted from: https://github.com/mooz/percol#zsh-history-search
 if which peco &> /dev/null; then
-  function peco_select_history() {
-    local tac
-    (which gtac &> /dev/null && tac="gtac") || \
-      (which tac &> /dev/null && tac="tac") || \
-      tac="tail -r"
-    BUFFER=$(fc -l -n 1 | eval $tac | \
-                peco --layout=bottom-up --query "$LBUFFER")
-    CURSOR=$#BUFFER # move cursor
-    zle -R -c       # refresh
-  }
-
-  zle -N peco_select_history
-  bindkey '^R' peco_select_history
+  for f (~/.zsh/peco/*) source "${f}"
 fi
 
 # history
@@ -138,11 +109,6 @@ export PATH=./bin:$HOME/bin:$GOPATH/bin:$HOME/.npm/node_module/bin:$PATH
 
 function zman() {
   PAGER="less -g -s '+/^ {7}"$1"'" man zshall
-}
-
-function ghi() {
-  [ "$#" -eq 0 ] && echo "Usage : gpi QUERY" && return 1
-  ghs "$@" | peco | awk '{print $1}' | ghq import
 }
 
 fpath=(/usr/local/share/zsh-completions $fpath)
