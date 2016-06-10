@@ -8,6 +8,7 @@
   st = status -sb
   pd = push --delete
   c = commit -v
+  cw = commit --allow-empty -m 'WIP'
   a = add
   al = add -A .
   au = add -u
