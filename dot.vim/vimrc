@@ -22,40 +22,40 @@ Plug 'kana/vim-textobj-user'
 Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'thinca/vim-textobj-function-javascript'
 
-Plug 'tpope/vim-fugitive'
 Plug 'Blackrush/vim-gocode'
 Plug 'Rename'
 Plug 'SuperTab'
 Plug 'csexton/trailertrash.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ecomba/vim-ruby-refactoring'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'elixir-lang/vim-elixir'
 Plug 'h1mesuke/vim-alignta'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'itchyny/lightline.vim'
-Plug 'kana/vim-smartinput'
 Plug 'kana/vim-fakeclip'
+Plug 'kana/vim-smartinput'
 Plug 'kchmck/vim-coffee-script'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'majutsushi/tagbar'
 Plug 'matchit.zip'
-Plug 'mattn/gist-vim'
 Plug 'mattn/ctrlp-ghq'
+Plug 'mattn/emmet-vim'
+Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
 Plug 'maxbrunsfeld/vim-yankstack'
+Plug 'puppetlabs/puppet-syntax-vim'
 Plug 'repeat.vim'
 Plug 'slim-template/vim-slim'
 Plug 'taglist.vim'
 Plug 'tpope/vim-cucumber'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-haml'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vimwiki'
-Plug 'puppetlabs/puppet-syntax-vim'
-Plug 'majutsushi/tagbar'
-Plug 'elixir-lang/vim-elixir'
-Plug 'mattn/emmet-vim'
-Plug 'editorconfig/editorconfig-vim'
 
 call plug#end()
 
@@ -141,16 +141,17 @@ let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki', 'syntax': 'markdown', 'ext':
 nmap <leader>l :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
 
-" syntastic
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_loc_list_height = 3
-
 " eskk.vim
 if has('mac')
   let g:eskk#large_dictionary = {
   \  'path': "~/Library/Application\ Support/AquaSKK/SKK-JISYO.L",
   \  'sorted': 1,
   \  'encoding': 'euc-jp',
+  \}
+
+  let g:eskk#server= {
+  \  'host': 'localhost',
+  \  'port': 1178,
   \}
 endif
 
