@@ -10,7 +10,7 @@
   c = commit
   cw = commit --allow-empty -m 'WIP'
   a = add
-  al = add -A .
+  al = add .
   au = add -u
   ap = add -p
   b = branch
@@ -18,7 +18,6 @@
   bm = branch -a --merged
   d = diff
   ds = diff --staged
-  wd = diff --word-diff
   l = log --decorate
   lo = log --oneline --decorate --graph
   ls = log --stat --decorate
