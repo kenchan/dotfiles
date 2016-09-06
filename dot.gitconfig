@@ -7,7 +7,7 @@
   co = checkout
   st = status -sb
   pd = push --delete
-  c = commit -v
+  c = commit
   cw = commit --allow-empty -m 'WIP'
   a = add
   al = add -A .
@@ -49,6 +49,8 @@
   helper = store
 [fetch]
   prune = true
+[commit]
+  verbose = true
 [ghq]
   root = ~/src
 [filter "media"]
