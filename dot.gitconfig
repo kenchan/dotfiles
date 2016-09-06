@@ -49,6 +49,8 @@
   prune = true
 [commit]
   verbose = true
+[diff]
+  compactionHeuristic = true
 [ghq]
   root = ~/src
 [filter "media"]
