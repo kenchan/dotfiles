@@ -1,8 +1,6 @@
 ---
-:backtrace: false
-:benchmark: false
-:bulk_threshold: 1000
 :update_sources: true
-gem: --no-ri --no-rdoc --verbose
+install: --no-document
+update: --no-document
 gemsrc_use_ghq: true
 gemsrc_clone_root: ~/src
