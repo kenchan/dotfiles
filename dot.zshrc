@@ -87,7 +87,6 @@ export SAVEHIST=$HISTSIZE
 
 setopt extended_history
 setopt hist_ignore_all_dups
-setopt hist_ignore_dups
 setopt hist_ignore_space
 setopt hist_reduce_blanks
 setopt inc_append_history
