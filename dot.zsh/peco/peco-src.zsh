@@ -8,7 +8,7 @@ function peco-src() {
     # Log repository access to ghq-cache
     (ghq-cache log $full_dir &)
 
-    BUFFER="cd ${full_dir}"
+    BUFFER=" cd ${full_dir}"
     zle accept-line
   fi
   zle redisplay
