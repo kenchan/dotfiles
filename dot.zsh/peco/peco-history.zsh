@@ -1,16 +1,21 @@
 # Search shell history with peco: https://github.com/peco/peco
 # Adapted from: https://github.com/mooz/percol#zsh-history-search
-
-bindkey '^R' peco_select_history
-
-function peco_select_history() {
-  local tac
-    (which gtac &> /dev/null && tac="gtac") || \
-    (which tac &> /dev/null && tac="tac") || \
-    tac="tail -r"
-    BUFFER=$(fc -l -n 1 | eval $tac | \
-        peco --layout=bottom-up --query "$LBUFFER")
+if which peco &> /dev/null; then
+  function peco_select_history() {
+    BUFFER=$(fc -l -n 1 | peco --query "$LBUFFER" --prompt "[history]")
     CURSOR=$#BUFFER # move cursor
     zle -R -c       # refresh
-}
-zle -N peco_select_history
+  }
+
+  zle -N peco_select_history
+  bindkey '^R' peco_select_history
+
+  function peco_select_old_history() {
+    BUFFER=$(tail -r ~/zsh_history.old | awk -F ';' '{print $2}' | peco --query "$LBUFFER" --prompt "[history]")
+    CURSOR=$#BUFFER # move cursor
+    zle -R -c       # refresh
+  }
+
+  zle -N peco_select_old_history
+  bindkey '^S' peco_select_old_history
+fi
