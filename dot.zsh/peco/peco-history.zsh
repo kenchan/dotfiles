@@ -2,7 +2,7 @@
 # Adapted from: https://github.com/mooz/percol#zsh-history-search
 if which peco &> /dev/null; then
   function peco_select_history() {
-    BUFFER=$(fc -l -n 1 | peco --query "$LBUFFER" --prompt "[history]")
+    BUFFER=$(fc -l -n 1 | tail -r | peco --query "$LBUFFER" --prompt "[history]")
     CURSOR=$#BUFFER # move cursor
     zle -R -c       # refresh
   }
