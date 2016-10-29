@@ -28,7 +28,6 @@
   rh = reset HEAD^
   ri = !sh -c 'git rebase -i HEAD~$0'
   gsub = "!sh -c 'git grep -l $0 $2 | xargs sed -i \"s/$0/$1/g\"'"
-  changelog = "!f() { git tag | grep RELEASE | tail -n 1 | xargs -I{} git log {}..master --oneline | grep 'Merge pull request' | awk '{ print $1 }' | xargs git show; }; f;"
   cb = "!sh -c 'git branch --merged master | grep -v master | grep -v \"*\" | xargs git branch -d'"
 [log]
   date = iso
