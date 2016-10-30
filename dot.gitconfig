@@ -24,7 +24,6 @@
   lp = log -p --decorate
   ru = remote update --prune
   gn = grep -n
-  su = submodule update
   rh = reset HEAD^
   ri = !sh -c 'git rebase -i HEAD~$0'
   gsub = "!sh -c 'git grep -l $0 $2 | xargs sed -i \"s/$0/$1/g\"'"
