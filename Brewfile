@@ -7,34 +7,29 @@ tap 'homebrew/brewdler'
 tap 'homebrew/core'
 tap 'homebrew/dupes'
 tap 'homebrew/fuse'
+tap 'homebrew/php'
 tap 'homebrew/python'
 tap 'homebrew/science'
 tap 'homebrew/services'
 tap 'homebrew/versions'
+tap 'kenchan/taps'
+tap 'koekeishiya/kwm'
 tap 'kopischke/ctags'
 tap 'mackerelio/mackerel-agent'
 tap 'monochromegane/pt'
-tap 'motemen/ghq'
 tap 'peco/peco'
 tap 'sanemat/font'
 cask 'osxfuse'
 brew 'android-sdk'
 brew 'libyaml'
+brew 'openssl@1.1'
+brew 'gdbm'
 brew 'openssl'
-brew 'pkg-config'
+brew 'readline'
+brew 'sqlite'
+brew 'python'
 brew 'ansible'
 brew 'apr'
-brew 'cmake'
-brew 'mysql', service_restart: true
-brew 'gdbm'
-brew 'readline'
-brew 'icu4c'
-brew 'sqlite'
-brew 'xz'
-brew 'python'
-brew 'python3'
-brew 'postgresql', service_restart: true
-brew 'unixodbc'
 brew 'apr-util'
 brew 'gettext'
 brew 'libffi'
@@ -46,6 +41,7 @@ brew 'fontconfig'
 brew 'pixman'
 brew 'cairo'
 brew 'git'
+brew 'pkg-config'
 brew 'gobject-introspection'
 brew 'atk'
 brew 'libxml2'
@@ -54,19 +50,16 @@ brew 'autoconf'
 brew 'automake'
 brew 'bison'
 brew 'boost'
-brew 'gmp'
-brew 'isl'
+brew 'gmp@4'
+brew 'isl@0.12'
 brew 'cloog'
+brew 'cmake'
 brew 'cscope'
 brew 'ctags'
-brew 'libssh2'
 brew 'curl'
-brew 'libsodium'
 brew 'zeromq'
 brew 'czmq'
-brew 'go'
 brew 'direnv'
-brew 'libtool'
 brew 'jpeg'
 brew 'libtiff'
 brew 'wxmac'
@@ -76,9 +69,6 @@ brew 'exiftool'
 brew 'faac'
 brew 'fabric'
 brew 'lame'
-brew 'libssh'
-brew 'sdl'
-brew 'snappy'
 brew 'x264'
 brew 'xvid'
 brew 'ffmpeg'
@@ -86,14 +76,22 @@ brew 'figlet'
 brew 'pcre2'
 brew 'fish'
 brew 'flow'
+brew 'libtool'
+brew 'icu4c'
 brew 'harfbuzz'
 brew 'pango'
 brew 'fontforge'
+brew 'gmp'
+brew 'isl'
 brew 'mpfr'
 brew 'libmpc'
 brew 'gcc'
+brew 'webp'
+brew 'gd'
 brew 'shared-mime-info'
 brew 'gdk-pixbuf'
+brew 'gflags'
+brew 'ghq'
 brew 'gibo'
 brew 'git-lfs'
 brew 'gnu-getopt'
@@ -102,12 +100,13 @@ brew 'global', args: ['with-ctags', 'with-pygments']
 brew 'gnu-sed'
 brew 'libtasn1'
 brew 'nettle'
+brew 'p11-kit'
 brew 'gnutls'
+brew 'go'
 brew 'gperftools'
 brew 'graphviz'
 brew 'hicolor-icon-theme'
 brew 'gtk+'
-brew 'ruby'
 brew 'heroku'
 brew 'lua'
 brew 'highlight'
@@ -115,71 +114,89 @@ brew 'hub'
 brew 'hugo'
 brew 'icdiff'
 brew 'perl'
+brew 'xz'
 brew 'imagemagick'
-brew 'nasm'
 brew 'mozjpeg'
 brew 'jpeg-archive'
 brew 'jpeg-turbo'
 brew 'oniguruma'
 brew 'jq'
 brew 'kotlin'
+brew 'snappy'
 brew 'leveldb'
 brew 'libevent'
+brew 'libsodium'
+brew 'libssh'
+brew 'libssh2'
 brew 'libvo-aacenc'
 brew 'libxslt'
 brew 'lz4'
+brew 'python3'
 brew 'macvim'
 brew 'mas'
-brew 'memcached', service_restart: true
+brew 'memcached', restart_service: true
 brew 'mercurial'
+brew 'mysql', restart_service: true
+brew 'nasm'
 brew 'nkf'
 brew 'node', args: ['with-full-icu']
-brew 'nyah-cli'
 brew 'ossp-uuid'
 brew 'packer'
 brew 'peco'
+brew 'phantomjs'
 brew 'pngquant'
+brew 'postgresql'
 brew 'pow'
-brew 'vde'
 brew 'qemu', args: ['with-gtk+', 'with-libssh2', 'with-sdl', 'with-vde']
 brew 'qt5'
 brew 'ruby-build'
 brew 'rbenv'
 brew 'reattach-to-user-namespace'
-brew 'redis', service_restart: true
+brew 'redis', restart_service: true
 brew 'rocksdb'
+brew 'ruby'
 brew 'rust'
 brew 'sbt'
 brew 'scala'
+brew 'sdl'
 brew 'ssh-copy-id'
 brew 'tmux'
 brew 'tree'
+brew 'unixodbc'
+brew 'utf8proc'
+brew 'v8'
+brew 'vde'
 brew 'vim'
 brew 'watchman'
 brew 'wget'
+brew 'yarn'
 brew 'zsh'
 brew 'zsh-completions'
 brew 'zsh-syntax-highlighting'
 brew 'cubicdaiya/nginx-build/nginx-build'
 brew 'homebrew/apache/ab'
+brew 'homebrew/dupes/apple-gcc42'
 brew 'homebrew/dupes/diffutils'
 brew 'homebrew/dupes/libiconv'
 brew 'homebrew/fuse/sshfs'
+brew 'homebrew/php/php70'
+brew 'homebrew/php/phpmd'
 brew 'homebrew/python/numpy'
-brew 'homebrew/versions/phantomjs198'
+brew 'kenchan/taps/mruby-cli'
+brew 'koekeishiya/kwm/kwm'
 brew 'mackerelio/mackerel-agent/mackerel-agent'
 brew 'monochromegane/pt/pt'
-brew 'motemen/ghq/ghq', args: ['HEAD']
 brew 'sanemat/font/ricty'
-cask 'gpgtools'
 cask 'imageoptim'
 cask 'iterm2'
+cask 'marp'
 cask 'pixate-studio'
 cask 'sequel-pro'
 cask 'shortcuts'
 cask 'slack-beta'
 cask 'soundflower'
 cask 'td-toolbelt'
+cask 'thunderbird'
 cask 'transmission'
 cask 'tunnelblick'
 cask 'tuntap'
@@ -187,28 +204,25 @@ cask 'vagrant'
 cask 'virtualbox'
 cask 'visual-studio-code'
 cask 'vlc'
-mas 'LINE (4.9.0)', id: 539883307
-mas 'Keynote (6.6.2)', id: 409183694
-mas 'Magnet (1.8.15)', id: 441258766
-mas 'Todoist (6.3.16)', id: 585829637
-mas 'Twitter (4.2.2)', id: 409789998
-mas 'iPhoto (9.6.1)', id: 408981381
-mas 'Skitch (2.7.8)', id: 425955336
-mas 'GarageBand (10.1.2)', id: 682658836
-mas 'Kobito (2.3.8)', id: 896624060
-mas 'Total Video Converter Lite - Totally Free to Convert Any Format (3.6.1)', id: 520374433
-mas 'GIPHY CAPTURE (2.4)', id: 668208984
-mas 'The Unarchiver (3.11.1)', id: 425424353
-mas 'Numbers (3.6.2)', id: 409203825
-mas 'Xcode (8.0)', id: 497799835
-mas 'Wunderlist (3.4.5)', id: 410628904
-mas 'Pages (5.6.2)', id: 409201541
-mas 'Dash (3.3.1)', id: 449589707
-mas 'iMovie (10.1.2)', id: 408981434
-mas 'Gyazo (1.0.2)', id: 490085255
-mas 'CopyClip (1.7)', id: 595191960
-mas 'Alfred (1.2)', id: 405843582
-mas 'Slack (2.0.3)', id: 803453959
-mas 'LadioCast (000012000)', id: 411213048
-mas 'PopHub (2.1.4)', id: 928494006
-mas 'Gyazo (1.0.2)', id: 490085255
+mas 'LINE', id: 539883307
+mas 'Keynote', id: 409183694
+mas 'Magnet', id: 441258766
+mas 'Todoist', id: 585829637
+mas 'Twitter', id: 409789998
+mas 'The Unarchiver', id: 425424353
+mas 'Skitch', id: 425955336
+mas 'GIPHY CAPTURE', id: 668208984
+mas 'iPhoto', id: 408981381
+mas 'GarageBand', id: 682658836
+mas 'Kobito', id: 896624060
+mas 'Numbers', id: 409203825
+mas 'Xcode', id: 497799835
+mas 'Wunderlist', id: 410628904
+mas 'Pages', id: 409201541
+mas 'iMovie', id: 408981434
+mas 'CopyClip', id: 595191960
+mas 'Gyazo', id: 490085255
+mas 'Alfred', id: 405843582
+mas 'LadioCast', id: 411213048
+mas 'PopHub', id: 928494006
+mas 'Gyazo', id: 490085255
