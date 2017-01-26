@@ -32,48 +32,6 @@ eval "$(direnv hook zsh)"
 # golang
 export GOPATH=$HOME
 
-# peco
-export GHQ="/usr/local/bin/ghq"
-export GIT="/usr/local/bin/git"
-
-function ghq() {
-  case $1 in
-    get )
-      $GHQ $@
-
-      # hook after ghq get
-      (ghq-cache update &)
-      ;;
-    list )
-      if [ ! -e ~/.ghq-cache ]; then
-        ghq-cache update
-      fi
-
-      # use ghq list ordered by ghq-cache
-      cat ~/.ghq-cache
-      ;;
-    * )
-      $GHQ $@
-      ;;
-  esac
-}
-
-function git() {
-    case $1 in
-        init )
-            $GIT $@
-            (ghq-cache update &)
-            ;;
-        clone )
-            $GIT $@
-            (ghq-cache update &)
-            ;;
-        * )
-            $GIT $@
-            ;;
-    esac
-}
-
 stty -ixon
 
 if which peco &> /dev/null; then

@@ -5,9 +5,6 @@ function peco-src() {
   if [ -n "$selected_dir" ]; then
     full_dir="${GOPATH}/src/${selected_dir}"
 
-    # Log repository access to ghq-cache
-    (ghq-cache log $full_dir &)
-
     BUFFER=" cd ${full_dir}"
     zle accept-line
   fi
