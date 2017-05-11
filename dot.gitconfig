@@ -18,10 +18,10 @@
   bm = branch -a --merged
   d = diff
   ds = diff --staged
-  l = log --decorate
-  lo = log --oneline --decorate --graph
-  ls = log --stat --decorate
-  lp = log -p --decorate
+  l = log
+  lo = log --oneline --graph
+  ls = log --stat
+  lp = log -p
   ru = remote update --prune
   gn = grep -n
   rh = reset HEAD^
