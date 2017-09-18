@@ -29,6 +29,10 @@ eval "$(rbenv init -)"
 
 eval "$(direnv hook zsh)"
 
+if [[ -d ~/.venv/python3 ]] then
+  source ~/.venv/python3/bin/activate
+fi
+
 # golang
 export GOPATH=$HOME
 
