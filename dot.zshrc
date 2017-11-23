@@ -44,7 +44,7 @@ fi
 
 # history
 export HISTFILE=${HOME}/.zsh_history
-export HISTSIZE=100000
+export HISTSIZE=500000000000000
 export SAVEHIST=$HISTSIZE
 
 setopt extended_history
