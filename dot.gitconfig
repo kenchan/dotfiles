@@ -33,7 +33,6 @@
 [push]
   default = tracking
 [core]
-  excludesfile = ~/.gitignore
   editor = vim
 [github]
   user = kenchan
