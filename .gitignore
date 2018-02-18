@@ -1,6 +1,2 @@
-dot.config/*
-!dot.config/awesome
-!dot.config/peco
-!dot.config/git
 dot.vim/*
 !dot.vim/vimrc
