@@ -1,7 +1,7 @@
 alias git hub
 alias g git
 
-set -gx GOPAHT $HOME
+set -gx GOPATH $HOME
 
 set -gx PATH $GOPATH/bin $PATH
 
