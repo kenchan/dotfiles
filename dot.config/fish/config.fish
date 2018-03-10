@@ -1,5 +1,6 @@
 alias git hub
 alias g git
+alias less 'less -R'
 
 set -gx GOPATH $HOME
 
