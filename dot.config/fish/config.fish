@@ -9,6 +9,8 @@ set -gx PATH $GOPATH/bin $PATH
 
 set -gx EDITOR vim
 
+set -gx VIRTUAL_ENV_DISABLE_PROMPT 1
+
 set -g fish_prompt_pwd_dir_length 0
 
 function fish_user_key_bindings
