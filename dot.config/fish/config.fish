@@ -11,7 +11,10 @@ set -gx EDITOR vim
 
 set -gx VIRTUAL_ENV_DISABLE_PROMPT 1
 
+set -gx SHELL (which fish)
+
 set -g fish_prompt_pwd_dir_length 0
+
 
 function fish_user_key_bindings
   bind \cr 'peco_select_history'
