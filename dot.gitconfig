@@ -28,6 +28,7 @@
   ri = !sh -c 'git rebase -i HEAD~$0'
   gsub = "!sh -c 'git grep -l $0 $2 | xargs sed -i \"s/$0/$1/g\"'"
   cb = "!sh -c 'git branch --merged master | grep -v master | grep -v \"*\" | xargs git branch -d'"
+  wip = commit --allow-empty -m 'wip'
 [log]
   date = iso
 [push]
