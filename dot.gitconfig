@@ -35,6 +35,7 @@
   default = tracking
 [core]
   editor = vim
+  commentchar = ^
 [github]
   user = kenchan
 [help]
