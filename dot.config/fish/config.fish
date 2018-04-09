@@ -15,7 +15,6 @@ set -gx SHELL (which fish)
 
 set -g fish_prompt_pwd_dir_length 0
 
-
 function fish_user_key_bindings
   bind \cr 'peco_select_history'
   bind \co 'peco_select_ghq_repository'
