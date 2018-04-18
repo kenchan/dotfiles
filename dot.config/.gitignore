@@ -1,9 +1,0 @@
-configstore/
-direnv/
-filezilla/
-fish/*
-!fish/config.fish
-!fish/fishfile
-fisherman/
-hub
-karabiner/
