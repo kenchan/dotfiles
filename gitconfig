@@ -31,8 +31,6 @@
   wip = commit --allow-empty -m 'wip'
 [log]
   date = iso
-[push]
-  default = tracking
 [core]
   editor = vim
   commentchar = ^
