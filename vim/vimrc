@@ -191,3 +191,7 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 let g:ctrlp_extentiuons = ['quickfix']
 
 set grepprg=pt\ --nogroup\ --nocolor
+
+" gtags.vim
+let g:Gtags_Close_When_Single = 1
+noremap <c-]> :GtagsCursor<CR>
