@@ -172,6 +172,17 @@ let g:tagbar_type_ruby = {
 " ctrlp-ghq
 noremap <space>g :<c-u>CtrlPGhq<CR>
 
+" lightline
+let g:lightline = {
+  \ 'active': {
+  \   'left': [ ['mode', 'paste'],
+  \             [ 'gitbranch', 'readonly', 'filename', 'modified'] ]
+  \ },
+  \ 'component_function': {
+  \   'gitbranch': 'fugitive#head'
+  \ },
+  \}
+
 augroup MyAutoCmd
   autocmd!
 
