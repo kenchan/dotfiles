@@ -30,6 +30,7 @@ Plug 'ecomba/vim-ruby-refactoring'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'elixir-lang/vim-elixir'
 Plug 'ervandew/supertab'
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'h1mesuke/vim-alignta'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'itchyny/lightline.vim'
