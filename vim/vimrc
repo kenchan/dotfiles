@@ -210,6 +210,8 @@ augroup MyAutoCmd
 
   autocmd FileType php setlocal sw=4 sts=4
   autocmd FileType ruby setlocal sw=2 sts=2
+
+  autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
 augroup END
 
 set grepprg=pt\ --nogroup\ --nocolor
