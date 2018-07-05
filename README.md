@@ -7,9 +7,11 @@
 ## Install
 
 ```
-git clone git://github.com/kenchan/dotfiles.git ~/dotfiles
+mkdir -p ~/src/github.com/kenchan
 
-env RCRC=$HOME/dotfiles/rcrc rcup
+git clone git://github.com/kenchan/dotfiles.git ~/src/github.com/kenchan/dotfiles
+
+env RCRC=$HOME/src/github.com/kenchan/dotfiles/rcrc rcup
 ```
 
 ## License
