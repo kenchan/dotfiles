@@ -31,11 +31,13 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'elixir-lang/vim-elixir'
 Plug 'ervandew/supertab'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'godlygeek/tabular'
 Plug 'h1mesuke/vim-alignta'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'itchyny/lightline.vim'
 Plug 'kana/vim-fakeclip'
 Plug 'kana/vim-smartinput'
+Plug 'kannokanno/previm'
 Plug 'kchmck/vim-coffee-script'
 Plug 'majutsushi/tagbar'
 Plug 'mattn/ctrlp-ghq'
@@ -43,6 +45,7 @@ Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
 Plug 'mhinz/vim-grepper'
+Plug 'plasticboy/vim-markdown'
 Plug 'puppetlabs/puppet-syntax-vim'
 Plug 'slim-template/vim-slim'
 Plug 'terryma/vim-multiple-cursors'
@@ -138,6 +141,7 @@ inoremap <Leader>time <C-R>=strftime('%H:%M:%S')<CR>
 
 " vimwiki
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_global_ext = 0
 
 " show invisibles
 nmap <leader>l :set list!<CR>
@@ -187,6 +191,9 @@ let g:lightline = {
   \   'gitbranch': 'fugitive#head'
   \ },
   \}
+
+" markdown
+let g:vim_markdown_folding_disabled = 1
 
 " yankround
 nmap p <Plug>(yankround-p)
