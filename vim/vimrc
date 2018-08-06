@@ -138,8 +138,8 @@ cnoremap <C-x> <C-r>=expand('%:p:h')<CR>/
 cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
 
 " <Leader>
-inoremap <Leader>date <C-R>=strftime('%Y/%m/%d(%a)')<CR>
-inoremap <Leader>time <C-R>=strftime('%H:%M:%S')<CR>
+inoremap <Leader>d <C-R>=strftime('%Y-%m-%d(%a)')<CR>
+inoremap <Leader>t <C-R>=strftime('%H:%M:%S')<CR>
 
 " vimwiki
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
