@@ -19,3 +19,5 @@ set -g fish_user_paths "/usr/local/opt/mysql@5.6/bin" $fish_user_paths
 eval (direnv hook fish)
 
 set -gx XDG_CONFIG_HOME $HOME/.config
+
+set -gx DOCKER_BUILDKIT 1
