@@ -1,12 +1,4 @@
-fisherman/await
-fisherman/fnm
-fisherman/get_file_age
-decors/fish-ghq
-fisherman/git_porcelain
-fisherman/git_util
-fisherman/last_job_id
-fisherman/menu
-oh-my-fish/plugin-peco
+jethrokuan/z
 kenchan/fish-prompt
-fisherman/rbenv
-fisherman/z
+decors/fish-ghq
+oh-my-fish/plugin-peco
