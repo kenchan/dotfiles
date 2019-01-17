@@ -113,7 +113,7 @@ set incsearch
 "statusline
 set laststatus=2
 
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 set backspace=indent,eol,start
 
