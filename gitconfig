@@ -1,63 +1,63 @@
 # vim: set noexpandtab ts=4 sw=4 sts=4 :
 [user]
-  email = kenichi.taka@gmail.com
-  name = Kenichi Takahashi
+	email = kenichi.taka@gmail.com
+	name = Kenichi Takahashi
 [color]
-  ui = auto
+	ui = auto
 [alias]
-  co = checkout
-  st = status -sb
-  pd = push --delete
-  c = commit
-  a = add
-  al = add .
-  au = add -u
-  ap = add -p
-  b = branch
-  ba = branch -a
-  bm = branch -a --merged
-  d = diff
-  ds = diff --staged
-  l = log
-  lo = log --oneline --graph
-  ls = log --stat
-  lp = log -p
-  ru = remote update --prune
-  gn = grep -n
-  rh = reset HEAD^
-  ri = !sh -c 'git rebase -i HEAD~$0'
-  gsub = "!sh -c 'git grep -l $0 $2 | xargs sed -i \"s/$0/$1/g\"'"
-  cb = "!sh -c 'git branch --merged master | grep -v master | grep -v \"*\" | xargs git branch -d'"
-  wip = commit --allow-empty -m 'wip'
-  cot = "!sh -c 'git branch --remote | peco | xargs git checkout -t'"
+	co = checkout
+	st = status -sb
+	pd = push --delete
+	c = commit
+	a = add
+	al = add .
+	au = add -u
+	ap = add -p
+	b = branch
+	ba = branch -a
+	bm = branch -a --merged
+	d = diff
+	ds = diff --staged
+	l = log
+	lo = log --oneline --graph
+	ls = log --stat
+	lp = log -p
+	ru = remote update --prune
+	gn = grep -n
+	rh = reset HEAD^
+	ri = !sh -c 'git rebase -i HEAD~$0'
+	gsub = "!sh -c 'git grep -l $0 $2 | xargs sed -i \"s/$0/$1/g\"'"
+	cb = "!sh -c 'git branch --merged master | grep -v master | grep -v \"*\" | xargs git branch -d'"
+	wip = commit --allow-empty -m 'wip'
+	cot = "!sh -c 'git branch --remote | peco | xargs git checkout -t'"
 [log]
-  date = iso
+	date = iso
 [core]
-  editor = vim
-  commentchar = ^
+	editor = vim
+	commentchar = ^
 [github]
-  user = kenchan
+	user = kenchan
 [help]
-  autocorrect = 1
+	autocorrect = 1
 [pull]
-  rebase = true
+	rebase = true
 [credential]
-  helper = store
+	helper = store
 [fetch]
-  prune = true
+	prune = true
 [commit]
-  verbose = true
+	verbose = true
 [diff]
-  compactionHeuristic = true
+	compactionHeuristic = true
 [ghq]
-  root = ~/src
+	root = ~/src
 [filter "media"]
-  clean = git-media-clean %f
-  smudge = git-media-smudge %f
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
 [include]
-  path = ~/.gitconfig.local
+	path = ~/.gitconfig.local
 [filter "lfs"]
-  process = git-lfs filter-process
-  required = true
-  clean = git-lfs clean -- %f
-  smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
