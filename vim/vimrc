@@ -38,7 +38,6 @@ Plug 'kana/vim-smartinput'
 Plug 'kannokanno/previm'
 Plug 'kchmck/vim-coffee-script'
 Plug 'majutsushi/tagbar'
-Plug 'mattn/ctrlp-ghq'
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
@@ -183,7 +182,6 @@ endif
 let g:ctrlp_map = '<c-f>'
 let g:ctrlp_extentiuons = ['quickfix']
 let g:ctrlp_root_markers = ['.envrc', '.git']
-noremap <space>g :<c-u>CtrlPGhq<CR>
 
 " lightline
 let g:lightline = {
