@@ -137,6 +137,7 @@ cnoremap <C-x> <C-r>=expand('%:p:h')<CR>/
 cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
 
 " <Leader>
+let mapleader = "\<Space>"
 inoremap <Leader>d <C-R>=strftime('%Y-%m-%d(%a)')<CR>
 inoremap <Leader>t <C-R>=strftime('%H:%M:%S')<CR>
 
