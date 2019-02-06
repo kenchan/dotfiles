@@ -23,7 +23,6 @@ Plug 'thinca/vim-textobj-function-javascript'
 Plug 'Blackrush/vim-gocode'
 Plug 'LeafCage/yankround.vim'
 Plug 'csexton/trailertrash.vim'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ecomba/vim-ruby-refactoring'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'elixir-lang/vim-elixir'
@@ -175,16 +174,6 @@ let g:tagbar_type_ruby = {
     \ ]
 \ }
 
-" ctrlp
-if executable('rg')
-  set grepprg=rg\ --color=never
-  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
-  let g:ctrlp_use_caching = 0
-endif
-let g:ctrlp_map = '<c-f>'
-let g:ctrlp_extentiuons = ['quickfix']
-let g:ctrlp_root_markers = ['.envrc', '.git']
-
 " lightline
 let g:lightline = {
   \ 'active': {
@@ -245,3 +234,4 @@ set modeline
 " fzf
 command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
 nnoremap <C-g> :Rg<Cr>
+nnoremap <C-f> :Files<Cr>
