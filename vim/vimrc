@@ -25,7 +25,6 @@ Plug 'LeafCage/yankround.vim'
 Plug 'csexton/trailertrash.vim'
 Plug 'ecomba/vim-ruby-refactoring'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'elixir-lang/vim-elixir'
 Plug 'ervandew/supertab'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'godlygeek/tabular'
