@@ -12,6 +12,15 @@ call plug#begin('~/.vim/plugged')
 " colorschema
 Plug 'flazz/vim-colorschemes'
 
+" UI
+Plug 'itchyny/lightline.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'majutsushi/tagbar'
+
+" Find and Grep
+Plug 'junegunn/fzf.vim'
+Plug 'mhinz/vim-grepper'
+
 " text-obj
 Plug 'kana/vim-textobj-fold'
 Plug 'kana/vim-textobj-indent'
@@ -19,44 +28,45 @@ Plug 'kana/vim-textobj-lastpat'
 Plug 'kana/vim-textobj-user'
 Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'thinca/vim-textobj-function-javascript'
+Plug 'tpope/vim-surround'
 
-Plug 'Blackrush/vim-gocode'
+" text edit
 Plug 'LeafCage/yankround.vim'
 Plug 'csexton/trailertrash.vim'
-Plug 'ecomba/vim-ruby-refactoring'
-Plug 'editorconfig/editorconfig-vim'
 Plug 'ervandew/supertab'
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
-Plug 'godlygeek/tabular'
 Plug 'h1mesuke/vim-alignta'
-Plug 'hail2u/vim-css3-syntax'
-Plug 'itchyny/lightline.vim'
-Plug 'junegunn/fzf.vim'
-Plug 'kana/vim-fakeclip'
 Plug 'kana/vim-smartinput'
-Plug 'kannokanno/previm'
-Plug 'majutsushi/tagbar'
-Plug 'mhinz/vim-grepper'
 Plug 'plasticboy/vim-markdown'
-Plug 'puppetlabs/puppet-syntax-vim'
-Plug 'rust-lang/rust.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'slim-template/vim-slim'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'tpope/vim-cucumber'
-Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-haml'
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-surround'
-Plug 'tyru/open-browser.vim'
-Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/Rename'
 Plug 'vim-scripts/matchit.zip'
 Plug 'vim-scripts/repeat.vim'
-Plug 'vim-scripts/taglist.vim'
 Plug 'vim-scripts/vimwiki'
+
+" Programming
+Plug 'editorconfig/editorconfig-vim'
 Plug 'w0rp/ale'
+
+" Golang
+Plug 'Blackrush/vim-gocode'
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+
+" Ruby and Rails
+Plug 'ecomba/vim-ruby-refactoring'
+Plug 'tpope/vim-cucumber'
+Plug 'tpope/vim-rails'
+Plug 'vim-ruby/vim-ruby'
+
+" Web
+Plug 'hail2u/vim-css3-syntax'
+Plug 'slim-template/vim-slim'
+Plug 'tpope/vim-haml'
+
+" Puppet
+Plug 'puppetlabs/puppet-syntax-vim'
+
+" Rust
+Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
