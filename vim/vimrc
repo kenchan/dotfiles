@@ -220,8 +220,6 @@ augroup MyAutoCmd
   autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
 augroup END
 
-set grepprg=pt\ --nogroup\ --nocolor
-
 " gtags.vim
 let g:Gtags_Close_When_Single = 1
 noremap <c-]> :GtagsCursor<CR>
