@@ -18,3 +18,7 @@ set -g fish_prompt_pwd_dir_length 0
 eval (direnv hook fish)
 
 set -gx DOCKER_BUILDKIT 1
+
+function fish_user_key_bindings
+  bind \cg '__ghq_crtl_g'
+end
