@@ -2,6 +2,7 @@ alias git hub
 alias g git
 alias less 'less -R'
 alias be 'bundle exec'
+alias ls exa
 
 set -gx GOPATH $HOME
 
