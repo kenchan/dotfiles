@@ -10,7 +10,7 @@ if !1 | finish | endif
 call plug#begin('~/.vim/plugged')
 
 " colorschema
-Plug 'flazz/vim-colorschemes'
+Plug 'sonph/onehalf', {'rtp': 'vim/'}
 
 " UI
 Plug 'itchyny/lightline.vim'
@@ -80,8 +80,8 @@ syntax enable
 
 set term=screen-256color
 set t_Co=256
-set background=light
-colorscheme lucius
+set background=dark
+colorscheme onehalfdark
 hi Pmenu ctermbg=4
 
 set ambiwidth=double
@@ -91,6 +91,7 @@ set number
 set showmatch
 set ttymouse=xterm2
 set wildmode=list:longest,list:full
+set cursorline
 
 set directory-=.
 
@@ -182,6 +183,7 @@ let g:tagbar_type_ruby = {
 
 " lightline
 let g:lightline = {
+  \ 'colorscheme': 'one',
   \ 'active': {
   \   'left': [ ['mode', 'paste'],
   \             [ 'gitbranch', 'readonly', 'filename', 'modified'] ]
