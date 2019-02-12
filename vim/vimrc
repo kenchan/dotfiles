@@ -36,6 +36,7 @@ Plug 'csexton/trailertrash.vim'
 Plug 'ervandew/supertab'
 Plug 'h1mesuke/vim-alignta'
 Plug 'kana/vim-smartinput'
+Plug 'mattn/sonictemplate-vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-scripts/Rename'
@@ -238,3 +239,8 @@ set modeline
 command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
 nnoremap <C-g> :Rg<Cr>
 nnoremap <C-f> :Files<Cr>
+
+" sonictemplate
+let g:sonictemplate_vim_template_dir = [
+\ '$HOME/.vim/template'
+\]
