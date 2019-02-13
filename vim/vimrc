@@ -246,3 +246,6 @@ nnoremap <C-f> :Files<Cr>
 let g:sonictemplate_vim_template_dir = [
 \ '$HOME/.vim/template'
 \]
+
+" trailertrash
+hi UnwantedTrailerTrash guibg=red ctermbg=red
