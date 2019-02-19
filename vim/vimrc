@@ -73,9 +73,6 @@ call plug#end()
 
 filetype plugin indent on
 
-set rtp+=$GOROOT/misc/vim
-exe "set rtp+=" . globpath($GOPATH, "src/github.com/golang/lint/misc/vim")
-
 syntax enable
 
 set term=screen-256color
