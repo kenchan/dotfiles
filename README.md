@@ -3,6 +3,7 @@
 ## Requirements
 
 - [thoughtbot/rcm](https://github.com/thoughtbot/rcm)
+  - [rcmを使ってdotfilesを管理する - ペパボテックブログ](https://tech.pepabo.com/2018/04/25/dotfiles-management-using-rcm/)
 
 ## Install
 
