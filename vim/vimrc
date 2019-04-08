@@ -9,6 +9,8 @@ if !1 | finish | endif
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'tyru/open-browser.vim'
+
 " colorschema
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 
@@ -38,6 +40,7 @@ Plug 'h1mesuke/vim-alignta'
 Plug 'kana/vim-smartinput'
 Plug 'mattn/sonictemplate-vim'
 Plug 'plasticboy/vim-markdown'
+Plug 'previm/previm'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-scripts/Rename'
 Plug 'vim-scripts/matchit.zip'
