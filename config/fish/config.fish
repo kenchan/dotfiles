@@ -1,8 +1,15 @@
 alias git hub
-alias g git
 alias less 'less -R'
-alias be 'bundle exec'
 alias ls exa
+
+abbr -a b bundle
+abbr -a be bundle exec
+abbr -a d docker
+abbr -a dc docker-compose
+abbr -a dce docker-compose exec
+abbr -a dcr docker-compose run --rm
+abbr -a g git
+abbr -a k kubectl
 
 set -gx GOPATH $HOME
 
