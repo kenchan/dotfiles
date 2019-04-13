@@ -44,6 +44,8 @@ set $menu dmenu_path | dmenu | xargs swaymsg exec
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
+output eDP-1 scale 1.5
+
 ### Input configuration
 #
 # Example configuration:
