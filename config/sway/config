@@ -64,6 +64,13 @@ input "1:1:AT_Translated_Set_2_keyboard" {
   xkb_options ctrl:nocaps
 }
 
+input "2:7:SynPS/2_Synaptics_TouchPad" {
+  accel_profile flat
+  pointer_accel 0.3
+  natural_scroll enabled
+  click_method clickfinger
+}
+
 ### Key bindings
 #
 # Basics:
