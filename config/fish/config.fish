@@ -27,10 +27,6 @@ eval (direnv hook fish)
 
 set -gx DOCKER_BUILDKIT 1
 
-function fish_user_key_bindings
-  bind \cg '__ghq_crtl_g'
-end
-
 if command -v direnv > /dev/null;
   eval (direnv hook fish)
 end
