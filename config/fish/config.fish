@@ -30,3 +30,7 @@ set -gx DOCKER_BUILDKIT 1
 if command -v direnv > /dev/null;
   eval (direnv hook fish)
 end
+
+if test -f ~/.asdf/asdf.fish
+  source ~/.asdf/asdf.fish
+end
