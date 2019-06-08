@@ -252,5 +252,5 @@ let g:github_enterprise_urls = ['https://git.pepabo.com/']
 let g:previm_open_cmd = "xdg-open"
 
 " tnite
-nnoremap <silent><C-f> :<C-u>call tnite#start(["sh", "-c", "fd \| peco --layout=top-down --initial-filter SmartCase"], "edit")<CR>
-nnoremap <silent><C-g> :<C-u>call tnite#start(["sh", "-c", "rg --line-number " . shellescape(expand('<cword>')) ." \| peco --layout=top-down --initial-filter SmartCase \| awk -F: '{print \"+\"$2 \" \" $1}'"], "edit")<CR>
+nnoremap <silent><Leader>f :<C-u>call tnite#start(["sh", "-c", "fd \| peco --layout=top-down --initial-filter SmartCase"], "edit")<CR>
+nnoremap <silent><Leader>g :<C-u>call tnite#start(["sh", "-c", "rg --line-number " . shellescape(expand('<cword>')) ." \| peco --layout=top-down --initial-filter SmartCase \| awk -F: '{print \"+\"$2 \" \" $1}'"], "edit")<CR>
