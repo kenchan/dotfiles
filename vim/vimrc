@@ -9,6 +9,7 @@ if !1 | finish | endif
 
 call plug#begin('~/.vim/plugged')
 
+Plug '907th/vim-auto-save'
 Plug 'tyru/open-browser.vim'
 
 " colorschema
