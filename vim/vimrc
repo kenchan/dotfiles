@@ -20,8 +20,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'majutsushi/tagbar'
 
 " Find and Grep
-Plug 'junegunn/fzf.vim'
-Plug 'mhinz/vim-grepper'
+Plug 'pocke/tnite.vim'
 
 " text-obj
 Plug 'kana/vim-textobj-fold'
@@ -238,12 +237,6 @@ let g:ale_linters = {
 
 set modeline
 
-" fzf
-command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
-let $FZF_DEFAULT_COMMAND = 'fd -H -t f -i -E .git'
-nnoremap <C-g> :Rg<Cr>
-nnoremap <C-f> :Files<Cr>
-
 " sonictemplate
 let g:sonictemplate_vim_template_dir = [
 \ '$HOME/.vim/template'
@@ -251,3 +244,12 @@ let g:sonictemplate_vim_template_dir = [
 
 " trailertrash
 hi UnwantedTrailerTrash guibg=red ctermbg=red
+
+let g:github_enterprise_urls = ['https://git.pepabo.com/']
+
+" previm
+let g:previm_open_cmd = "xdg-open"
+
+" tnite
+nnoremap <silent><C-f> :<C-u>call tnite#start(["sh", "-c", "fd \| fzf"], "edit")<CR>
+nnoremap <silent><C-g> :<C-u>call tnite#start(["sh", "-c", "rg --line-number " . shellescape(expand('<cword>')) ." \| fzf \| awk -F: '{print \"+\"$2 \" \" $1}'"], "edit")<CR>
