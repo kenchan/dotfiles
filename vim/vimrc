@@ -14,7 +14,7 @@ Plug '907th/vim-auto-save'
 Plug 'tyru/open-browser.vim'
 
 " colorschema
-Plug 'morhetz/gruvbox'
+Plug 'arcticicestudio/nord-vim'
 
 " UI
 Plug 'itchyny/lightline.vim'
@@ -82,7 +82,7 @@ syntax enable
 
 set term=xterm-256color
 set background=dark
-colorscheme gruvbox
+colorscheme nord
 hi Pmenu ctermbg=4
 
 set ambiwidth=double
