@@ -63,3 +63,5 @@
 	smudge = git-lfs smudge -- %f
 [pager]
 	branch = cat
+[merge]
+	conflictStyle = diff3
