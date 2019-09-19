@@ -5,7 +5,7 @@
 [color]
 	ui = auto
 [alias]
-	co = checkout
+	co = switch
 	st = status -sb
 	pd = push --delete
 	c = commit
