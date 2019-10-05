@@ -34,6 +34,7 @@ Plug 'thinca/vim-textobj-function-javascript'
 Plug 'tpope/vim-surround'
 
 " text edit
+Plug '907th/vim-auto-save'
 Plug 'LeafCage/yankround.vim'
 Plug 'csexton/trailertrash.vim'
 Plug 'ervandew/supertab'
@@ -254,3 +255,7 @@ let g:previm_open_cmd = "xdg-open"
 " tnite
 nnoremap <silent><Leader>f :<C-u>call tnite#start(["sh", "-c", "fd \| peco --layout=top-down --initial-filter Fuzzy"], "edit", {})<CR>
 nnoremap <silent><Leader>g :<C-u>call tnite#start(["sh", "-c", "rg --line-number " . shellescape(expand('<cword>')) . " \| peco --layout=top-down --initial-filter  Fuzzy \| cut -d : -f 1,2"], "edit", {"jump_to_line": v:true})<CR>
+
+" auto save
+let g:auto_save = 1
+let g:auto_save_silent = 1
