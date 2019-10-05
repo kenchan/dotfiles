@@ -34,3 +34,7 @@ end
 if test -f ~/.asdf/asdf.fish
   source ~/.asdf/asdf.fish
 end
+
+if command -v starship > /dev/null;
+  eval (starship init fish)
+end
