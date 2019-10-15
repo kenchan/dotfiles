@@ -36,7 +36,6 @@ Plug 'tpope/vim-surround'
 " text edit
 Plug '907th/vim-auto-save'
 Plug 'LeafCage/yankround.vim'
-Plug 'csexton/trailertrash.vim'
 Plug 'ervandew/supertab'
 Plug 'h1mesuke/vim-alignta'
 Plug 'kana/vim-smartinput'
@@ -231,11 +230,16 @@ noremap <c-]> :GtagsCursor<CR>
 
 "ale
 let g:ale_sign_column_always = 1
+let g:ale_fix_on_save = 1
 
 let g:ale_linters = {
   \ 'ruby':  ['ruby'],
   \ 'go':  ['gofmt'],
   \ }
+
+let g:ale_fixers = {
+  \ '*': ['trim_whitespace', 'remove_trailing_lines']
+\}
 
 set modeline
 
@@ -243,9 +247,6 @@ set modeline
 let g:sonictemplate_vim_template_dir = [
 \ '$HOME/.vim/template'
 \]
-
-" trailertrash
-hi UnwantedTrailerTrash guibg=red ctermbg=red
 
 let g:github_enterprise_urls = ['https://git.pepabo.com/']
 
