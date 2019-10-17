@@ -155,20 +155,6 @@ let g:vimwiki_global_ext = 0
 nmap <leader>l :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
 
-" eskk.vim
-if has('mac')
-  let g:eskk#large_dictionary = {
-  \  'path': "~/Library/Application\ Support/AquaSKK/SKK-JISYO.L",
-  \  'sorted': 1,
-  \  'encoding': 'euc-jp',
-  \}
-
-  let g:eskk#server= {
-  \  'host': 'localhost',
-  \  'port': 1178,
-  \}
-endif
-
 " tagbar
 nnoremap <silent> <space>t :TagbarToggle<CR>
 let g:tagbar_type_ruby = {
