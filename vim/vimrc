@@ -241,7 +241,7 @@ let g:github_enterprise_urls = ['https://git.pepabo.com/']
 let g:previm_open_cmd = "xdg-open"
 
 " tnite
-nnoremap <silent><Leader>f :<C-u>call tnite#start(["sh", "-c", "fd \| peco --layout=top-down --initial-filter Fuzzy"], "edit", {})<CR>
+nnoremap <silent><Leader>f :<C-u>call tnite#start(["sh", "-c", "fd -t f \| peco --layout=top-down --initial-filter Fuzzy"], "edit", {})<CR>
 nnoremap <silent><Leader>g :<C-u>call tnite#start(["sh", "-c", "rg --line-number " . shellescape(expand('<cword>')) . " \| peco --layout=top-down --initial-filter  Fuzzy \| cut -d : -f 1,2"], "edit", {"jump_to_line": v:true})<CR>
 
 " auto save
