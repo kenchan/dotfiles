@@ -14,7 +14,7 @@ Plug '907th/vim-auto-save'
 Plug 'tyru/open-browser.vim'
 
 " colorschema
-Plug 'arcticicestudio/nord-vim'
+Plug 'cocopon/iceberg.vim'
 
 " UI
 Plug 'itchyny/lightline.vim'
@@ -82,7 +82,7 @@ syntax enable
 
 set term=xterm-256color
 set background=dark
-colorscheme nord
+colorscheme iceberg
 hi Pmenu ctermbg=4
 
 set ambiwidth=double
