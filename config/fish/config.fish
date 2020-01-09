@@ -11,8 +11,6 @@ abbr -a dcr docker-compose run --rm
 abbr -a g git
 abbr -a k kubectl
 
-abbr -a vim vscode
-
 set -gx GOPATH $HOME
 
 set -gx PATH $GOPATH/bin $PATH
