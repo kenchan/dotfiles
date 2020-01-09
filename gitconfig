@@ -65,3 +65,5 @@
 	branch = cat
 [merge]
 	conflictStyle = diff3
+[url "git@github.com:"]
+	pushInsteadOf = "https://github.com/"
