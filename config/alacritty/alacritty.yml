@@ -332,12 +332,7 @@ background_opacity: 0.8
 #    - --login
 
 shell:
-  program: /usr/bin/uim-fep
-  args:
-    - -s
-    - none
-    - -e
-    - /bin/fish
+  program: /bin/fish
 # Startup directory
 #
 # Directory the shell is started in. If this is unset, or `None`, the working
