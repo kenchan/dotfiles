@@ -1,6 +1,12 @@
-alias git hub
 alias less 'less -R'
-alias ls exa
+
+if command -v hub > /dev/null;
+  alias git hub
+end
+
+if command -v exa > /dev/null;
+  alias ls exa
+end
 
 abbr -a b bundle
 abbr -a be bundle exec
