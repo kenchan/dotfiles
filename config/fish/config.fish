@@ -29,8 +29,6 @@ set -gx SHELL (which fish)
 
 set -g fish_prompt_pwd_dir_length 0
 
-eval (direnv hook fish)
-
 set -gx DOCKER_BUILDKIT 1
 
 if command -v direnv > /dev/null;
