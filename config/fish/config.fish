@@ -31,6 +31,8 @@ set -g fish_prompt_pwd_dir_length 0
 
 set -gx DOCKER_BUILDKIT 1
 
+set -g GHQ_SELECTOR peco
+
 if command -v direnv > /dev/null;
   eval (direnv hook fish)
 end
