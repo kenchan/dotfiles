@@ -17,9 +17,7 @@ abbr -a dcr docker-compose run --rm
 abbr -a g git
 abbr -a k kubectl
 
-set -gx GOPATH $HOME
-
-set -gx PATH $GOPATH/bin $PATH
+set -gx PATH ~/bin ~/go/bin $PATH
 
 set -gx EDITOR vim
 
