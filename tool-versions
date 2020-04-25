@@ -4,3 +4,4 @@ nodejs 14.0.0
 python 3.8.2
 ruby 2.7.1
 rust 1.42.0
+terraform 0.12.24
