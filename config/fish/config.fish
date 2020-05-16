@@ -4,8 +4,8 @@ if command -v hub > /dev/null;
   alias git hub
 end
 
-if command -v exa > /dev/null;
-  alias ls exa
+if command -v lsd > /dev/null;
+  alias ls 'lsd --icon never'
 end
 
 abbr -a b bundle
