@@ -1,26 +1,26 @@
-prompt_order = [
-    "time",
-    "directory",
-    "git_branch",
-    "git_state",
-    "git_status",
-    "golang",
-    "java",
-    "nodejs",
-    "python",
-    "ruby",
-    "rust",
-    "cmd_duration",
-    "line_break",
-    "character",
-]
+format = """
+$time \
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$golang\
+$java\
+$nodejs\
+$python\
+$ruby\
+$rust\
+$cmd_duration\
+$line_break\
+$character\
+"""
 
 [directory]
 truncate_to_repo = false
 
 [time]
 disabled = false
-format = "[%T]"
+format = "[\\[$time\\]]($style)"
 
 [character]
 use_symbol_for_status = true
