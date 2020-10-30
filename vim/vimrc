@@ -235,8 +235,6 @@ let g:sonictemplate_vim_template_dir = [
 \ '$HOME/.vim/template'
 \]
 
-let g:github_enterprise_urls = ['https://git.pepabo.com/']
-
 " previm
 let g:previm_open_cmd = "xdg-open"
 
