@@ -31,6 +31,8 @@ set -gx DOCKER_BUILDKIT 1
 
 set -g GHQ_SELECTOR peco
 
+set -gx ASDF_RUBY_BUILD_VERSION master
+
 if command -v direnv > /dev/null;
   eval (direnv hook fish)
 end
