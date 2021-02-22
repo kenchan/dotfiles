@@ -1,7 +1,7 @@
 adr-tools 3.0.0
 golang 1.13.7
-nodejs 14.0.0
+nodejs 14.15.1
 python 3.8.2
-ruby 2.7.1
+ruby 3.0.0
 rust 1.42.0
 terraform 0.12.24
