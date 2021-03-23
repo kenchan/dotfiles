@@ -33,8 +33,7 @@
 [log]
 	date = iso
 [core]
-	editor = vim
-	commentchar = ^
+	editor = code --wait
 [github]
 	user = kenchan
 [help]
