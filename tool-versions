@@ -4,5 +4,5 @@ nodejs 15.5.1
 python 3.8.2
 ruby 3.0.0
 rust 1.42.0
-terraform 0.12.28
+terraform 0.14.9
 php 7.4.1
