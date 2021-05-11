@@ -1,8 +1,0 @@
-.header on
-
-.mode column
-.width 0
-
-.timer on
-
-.nullvalue "(NULL)"
