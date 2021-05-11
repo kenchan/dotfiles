@@ -54,7 +54,7 @@
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
 [include]
-	path = ~/.gitconfig.local
+	path = ~/.config/git/config.local
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
