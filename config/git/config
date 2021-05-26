@@ -32,8 +32,6 @@
 	cot = "!sh -c 'git branch --remote | peco | xargs git checkout -t'"
 [log]
 	date = iso
-[core]
-	editor = code --wait
 [github]
 	user = kenchan
 [help]
@@ -68,3 +66,5 @@
 	pushInsteadOf = "https://github.com/"
 [init]
 	defaultBranch = main
+[ghq "https://git.pepabo.com/"]
+	vcs = git
