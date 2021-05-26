@@ -21,6 +21,3 @@ truncate_to_repo = false
 [time]
 disabled = false
 format = "[\\[$time\\]]($style)"
-
-[character]
-use_symbol_for_status = true
