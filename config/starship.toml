@@ -10,6 +10,7 @@ $nodejs\
 $python\
 $ruby\
 $rust\
+$kubernetes\
 $cmd_duration\
 $line_break\
 $character\
@@ -21,3 +22,6 @@ truncate_to_repo = false
 [time]
 disabled = false
 format = "[\\[$time\\]]($style)"
+
+[kubernetes]
+disabled =false
