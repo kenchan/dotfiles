@@ -44,8 +44,6 @@
 	prune = true
 [commit]
 	verbose = true
-[diff]
-	compactionHeuristic = true
 [ghq]
 	root = ~/src
 [filter "media"]
@@ -60,6 +58,10 @@
 	smudge = git-lfs smudge -- %f
 [pager]
 	branch = cat
+	diff = delta
+	log = delta
+	reflog = delta
+	show = delta
 [merge]
 	conflictStyle = diff3
 [url "git@github.com:"]
@@ -68,3 +70,11 @@
 	defaultBranch = main
 [ghq "https://git.pepabo.com/"]
 	vcs = git
+[delta]
+	plus-style = "syntax #012800"
+	minus-style = "syntax #340001"
+	syntax-theme = Monokai Extended
+	navigate = true
+	line-numbers = true
+[interactive]
+	diffFilter = delta --color-only
