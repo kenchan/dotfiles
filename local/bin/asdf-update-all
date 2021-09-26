@@ -7,7 +7,6 @@ asdf plugin update --all
 
 for name in $(asdf plugin list); do
   asdf install $name latest
-
   asdf global $name $(asdf list $name | tail -n1)
 done
 
