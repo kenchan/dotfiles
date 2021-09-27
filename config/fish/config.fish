@@ -51,11 +51,6 @@ function fish_user_key_bindings
   bind \cr 'peco_select_history (commandline -b)'
 end
 
-if [ -f /mnt/c/wsl-ssh-agent/npiperelay.exe ]
-  set -x SSH_AUTH_SOCK $HOME/.ssh/agent.sock
-  ss -a ^/dev/null | grep -q $SSH_AUTH_SOCK
-  if [ $status -ne 0 ]
-      rm -f $SSH_AUTH_SOCK
-      eval ( setsid socat UNIX-LISTEN:$SSH_AUTH_SOCK,fork EXEC:"/mnt/c/wsl-ssh-agent/npiperelay.exe -ei -s //./pipe/openssh-ssh-agent",nofork & )
-  end
+if command -v keychain > /dev/null;
+  keychain --nogui -q ~/.ssh/id_*
 end
