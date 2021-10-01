@@ -59,7 +59,6 @@ filetype plugin indent on
 
 syntax enable
 
-set term=xterm-256color
 set background=dark
 colorscheme iceberg
 hi Pmenu ctermbg=4
@@ -69,7 +68,6 @@ set autoread
 set hidden
 set number
 set showmatch
-set ttymouse=xterm2
 set wildmode=list:longest,list:full
 set cursorline
 
@@ -98,7 +96,8 @@ set incsearch
 "statusline
 set laststatus=2
 
-set clipboard=unnamedplus
+set clipboard&
+set clipboard^=unnamedplus
 
 set backspace=indent,eol,start
 
