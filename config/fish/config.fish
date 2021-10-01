@@ -52,5 +52,5 @@ function fish_user_key_bindings
 end
 
 if command -v keychain > /dev/null;
-  keychain --nogui -q ~/.ssh/id_*
+  eval (keychain --eval --nogui -q ~/.ssh/id_ed25519)
 end
