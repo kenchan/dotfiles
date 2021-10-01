@@ -8,6 +8,10 @@ if command -v lsd > /dev/null;
   alias ls 'lsd --icon never'
 end
 
+if command -v nvim > /dev/null;
+  alias vim nvim
+end
+
 abbr -a b bundle
 abbr -a be bundle exec
 abbr -a d docker
@@ -21,7 +25,7 @@ if [ -d $HOME/.local/bin ]
   set -gx PATH ~/.local/bin $PATH
 end
 
-set -gx EDITOR vim
+set -gx EDITOR nvim
 
 set -gx VIRTUAL_ENV_DISABLE_PROMPT 1
 
