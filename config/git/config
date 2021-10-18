@@ -6,6 +6,7 @@
 	ui = auto
 [alias]
 	co = switch
+	swt = "!sh -c \"git switch -t $(git branch -r --format \"%(refname:lstrip=2)\" | peco)\""
 	st = status -sb
 	pd = push --delete
 	c = commit
