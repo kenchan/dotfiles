@@ -39,6 +39,8 @@ set -g GHQ_SELECTOR peco
 
 set -gx ASDF_RUBY_BUILD_VERSION master
 
+set -x GPG_TTY (tty)
+
 if command -v direnv > /dev/null;
   eval (direnv hook fish)
 end
