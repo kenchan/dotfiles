@@ -3,6 +3,6 @@ golang 1.17.2
 nodejs 17.0.1
 python 3.9.7
 ruby 3.0.2
-rust 1.56.0
+rust 1.56.1
 terraform 1.0.9
 php 8.1.0RC5
