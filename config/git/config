@@ -69,8 +69,6 @@
 	pushInsteadOf = "https://github.com/"
 [init]
 	defaultBranch = main
-[ghq "https://git.pepabo.com/"]
-	vcs = git
 [delta]
 	plus-style = "syntax #012800"
 	minus-style = "syntax #340001"
