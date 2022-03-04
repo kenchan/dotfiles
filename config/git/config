@@ -1,4 +1,6 @@
 # vim: set noexpandtab ts=4 sw=4 sts=4 :
+[core]
+	pager = delta
 [user]
 	email = kenichi.taka@gmail.com
 	name = Kenichi Takahashi
@@ -57,12 +59,6 @@
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
-[pager]
-	branch = cat
-	diff = delta
-	log = delta
-	reflog = delta
-	show = delta
 [merge]
 	conflictStyle = diff3
 [url "git@github.com:"]
@@ -70,10 +66,10 @@
 [init]
 	defaultBranch = main
 [delta]
-	plus-style = "syntax #012800"
-	minus-style = "syntax #340001"
-	syntax-theme = Monokai Extended
 	navigate = true
 	line-numbers = true
+	side-by-side = true
 [interactive]
 	diffFilter = delta --color-only
+[diff]
+	colorMoved = default
