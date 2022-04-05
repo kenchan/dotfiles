@@ -18,3 +18,10 @@ endif
 
 nnoremap ; :
 nnoremap : ;
+nnoremap k gk
+nnoremap j gj
+
+if exists('g:vscode')
+  nnoremap k :<C-u>call rpcrequest(g:vscode_channel, 'vscode-command', 'cursorMove', { 'to': 'up', 'by': 'wrappedLine', 'value': v:count ? v:count : 1 })<CR>
+  nnoremap j :<C-u>call rpcrequest(g:vscode_channel, 'vscode-command', 'cursorMove', { 'to': 'down', 'by': 'wrappedLine', 'value': v:count ? v:count : 1 })<CR>
+endif
