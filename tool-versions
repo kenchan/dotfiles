@@ -9,3 +9,4 @@ php 8.1.0RC5
 elixir 1.13.3-otp-24
 erlang 24.3
 deno 1.19.3
+heroku-cli 7.60.1
