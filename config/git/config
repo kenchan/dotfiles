@@ -41,8 +41,6 @@
 	autocorrect = 1
 [pull]
 	rebase = true
-[credential]
-	helper = store
 [fetch]
 	prune = true
 [commit]
