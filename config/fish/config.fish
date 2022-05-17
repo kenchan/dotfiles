@@ -60,3 +60,9 @@ end
 if command -v keychain > /dev/null;
   eval (keychain --eval --nogui -q ~/.ssh/id_ed25519)
 end
+
+if test -d "/mnt/c/Program Files/Oracle/VirtualBox"
+  set -x PATH "/mnt/c/Program Files/Oracle/VirtualBox" $PATH
+  set -x VAGRANT_WSL_ENABLE_WINDOWS_ACCESS 1
+end
+
