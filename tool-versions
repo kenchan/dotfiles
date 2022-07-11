@@ -11,3 +11,4 @@ erlang 24.3
 deno 1.19.3
 heroku-cli 7.60.1
 kustomize 4.5.5
+gcloud 392.0.0
