@@ -57,7 +57,7 @@ if command -v starship > /dev/null;
 end
 
 function fish_user_key_bindings
-  bind \cr 'peco_select_history (commandline -b)'
+  bind \cr 'peco_select_history_and_frgm (commandline -b)'
 end
 
 if command -v keychain > /dev/null;
