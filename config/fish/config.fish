@@ -20,6 +20,9 @@ abbr -a dce docker compose exec
 abbr -a dcr docker compose run --rm
 abbr -a g git
 abbr -a k kubectl
+abbr -a kx kubectx
+abbr -a ks kubens
+abbr -a tf terraform
 
 if [ -d $HOME/.local/bin ]
   set -gx PATH ~/.local/bin $PATH
