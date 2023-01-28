@@ -11,13 +11,25 @@ end
 
 local packer_bootstrap = ensure_packer()
 
+local no_vscode = function()
+  return vim.g.vscode ~= 1
+end
+
+local conf = function(plugin_name)
+  return "require 'plugins/"..plugin_name.."'"
+end
+
 require("packer").startup(function(use)
   use "wbthomason/packer.nvim"
   use {
     "vimwiki/vimwiki",
-    config = function()
-      require "plugins/vimwiki"
-    end
+    config = conf("vimwiki"),
+  }
+
+  use {
+    "gbprod/yanky.nvim",
+    config = conf("yanky"),
+    cond = no_vscode,
   }
 
   if packer_bootstrap then
