@@ -27,7 +27,15 @@ require("packer").startup(function(use)
   }
 
   use {
+    "nvim-telescope/telescope.nvim",
+    requires = { { "nvim-lua/plenary.nvim" } },
+    config = conf("telescope"),
+    cond = no_vscode,
+  }
+
+  use {
     "gbprod/yanky.nvim",
+    requires = { { "nvim-telescope/telescope.nvim" } },
     config = conf("yanky"),
     cond = no_vscode,
   }
