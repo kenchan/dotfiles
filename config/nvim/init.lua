@@ -1,3 +1,5 @@
+require("plugins/init")
+
 local options = {
   number = true,
 
