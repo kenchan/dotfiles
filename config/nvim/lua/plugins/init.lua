@@ -27,6 +27,11 @@ require("packer").startup(function(use)
   }
 
   use {
+    "glepnir/template.nvim",
+    config = conf("template"),
+  }
+
+  use {
     "nvim-telescope/telescope.nvim",
     requires = { { "nvim-lua/plenary.nvim" } },
     config = conf("telescope"),
