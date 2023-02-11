@@ -48,8 +48,10 @@ if command -v direnv > /dev/null;
   eval (direnv hook fish)
 end
 
-if test -f ~/.asdf/asdf.fish
-  source ~/.asdf/asdf.fish
+if command -v rtx > /dev/null;
+  rtx activate fish | source 
+  rtx hook-env -s fish | source 
+  rtx complete -s fish | source 
 end
 
 if command -v starship > /dev/null;
