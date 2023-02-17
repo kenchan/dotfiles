@@ -40,7 +40,6 @@ require("packer").startup(function(use)
 
   use {
     "gbprod/yanky.nvim",
-    requires = { { "nvim-telescope/telescope.nvim" } },
     config = conf("yanky"),
     cond = no_vscode,
   }
