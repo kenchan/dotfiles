@@ -32,6 +32,11 @@ require("packer").startup(function(use)
   }
 
   use {
+    "Pocco81/auto-save.nvim",
+    config = conf("auto-save"),
+  }
+
+  use {
     "nvim-telescope/telescope.nvim",
     requires = { { "nvim-lua/plenary.nvim" } },
     config = conf("telescope"),
