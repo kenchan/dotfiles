@@ -4,6 +4,7 @@
 [user]
 	email = kenichi.taka@gmail.com
 	name = Kenichi Takahashi
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINLXm83XcTsZi0cfwYGQ4k3VLwymqR8vVdgjJ66gQHk9
 [color]
 	ui = auto
 [alias]
@@ -69,3 +70,10 @@
 	diffFilter = delta --color-only
 [diff]
 	colorMoved = default
+[gpg]
+  format = ssh
+[gpg "ssh"]
+  program = "/mnt/c/Users/kenchan/AppData/Local/1Password/app/8/op-ssh-sign.exe"
+[commit]
+  gpgsign = true
+
