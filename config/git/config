@@ -71,9 +71,8 @@
 [diff]
 	colorMoved = default
 [gpg]
-  format = ssh
+	format = ssh
 [gpg "ssh"]
-  program = "/mnt/c/Users/kenchan/AppData/Local/1Password/app/8/op-ssh-sign.exe"
+	program = "/mnt/c/Users/kenchan/AppData/Local/1Password/app/8/op-ssh-sign.exe"
 [commit]
-  gpgsign = true
-
+	gpgsign = true
