@@ -76,3 +76,5 @@
 	program = "/mnt/c/Users/kenchan/AppData/Local/1Password/app/8/op-ssh-sign.exe"
 [commit]
 	gpgsign = true
+[credential]
+	helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager-core.exe
