@@ -43,12 +43,6 @@ require("packer").startup(function(use)
     cond = no_vscode,
   }
 
-  use {
-    "gbprod/yanky.nvim",
-    config = conf("yanky"),
-    cond = no_vscode,
-  }
-
   if packer_bootstrap then
     require("packer").sync()
   end
