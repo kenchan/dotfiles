@@ -36,6 +36,8 @@ require("packer").startup(function(use)
     config = conf("auto-save"),
   }
 
+  use "machakann/vim-sandwich"
+
   use {
     "nvim-telescope/telescope.nvim",
     requires = { { "nvim-lua/plenary.nvim" } },
