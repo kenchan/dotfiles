@@ -1,0 +1,17 @@
+[tools]
+
+awscli = 'latest'
+go = ['latest', '1.14.1']
+heroku-cli = '7.69.1'
+kustomize = 'latest'
+nodejs = 'lts'
+python = 'latest'
+ruby = ['latest', '2.7.1']
+rust = ['latest', '1.42.0']
+terraform = 'latest'
+
+[settings]
+
+jobs = 4
+
+experimental = true
