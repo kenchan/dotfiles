@@ -2,7 +2,6 @@
 
 awscli = 'latest'
 go = ['latest', '1.14.1']
-heroku-cli = '7.69.1'
 kustomize = 'latest'
 nodejs = 'lts'
 python = 'latest'
