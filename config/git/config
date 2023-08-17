@@ -1,6 +1,7 @@
 # vim: set noexpandtab ts=4 sw=4 sts=4 :
 [core]
 	pager = delta
+	compression = -1
 [user]
 	email = kenichi.taka@gmail.com
 	name = Kenichi Takahashi
