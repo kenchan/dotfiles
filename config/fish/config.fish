@@ -24,6 +24,7 @@ abbr -a kx kubectx
 abbr -a ks kubens
 abbr -a tf terraform
 abbr -a rge rg -E euc-jp
+abbr -a vs "code (ghq list -p | peco)"
 
 if [ -d $HOME/.local/bin ]
   set -gx PATH ~/.local/bin $PATH
