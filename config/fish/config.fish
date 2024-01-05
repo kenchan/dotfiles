@@ -50,10 +50,10 @@ if command -v direnv > /dev/null;
   eval (direnv hook fish)
 end
 
-if command -v rtx > /dev/null;
-  rtx activate fish | source 
-  rtx hook-env -s fish | source 
-  rtx complete -s fish | source 
+if command -v mise > /dev/null;
+  mise activate fish | source
+  mise hook-env -s fish | source
+  mise complete -s fish | source
 end
 
 if command -v starship > /dev/null;
