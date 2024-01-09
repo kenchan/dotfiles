@@ -8,9 +8,3 @@ python = 'latest'
 ruby = ['latest', '2.7.1']
 rust = ['latest', '1.42.0']
 terraform = 'latest'
-
-[settings]
-
-jobs = 4
-
-experimental = true
