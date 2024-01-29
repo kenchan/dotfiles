@@ -65,8 +65,7 @@
 	defaultBranch = main
 [delta]
 	navigate = true
-	line-numbers = true
-	side-by-side = true
+	light = false
 [interactive]
 	diffFilter = delta --color-only
 [diff]
