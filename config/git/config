@@ -1,6 +1,5 @@
 # vim: set noexpandtab ts=4 sw=4 sts=4 :
 [core]
-	pager = delta
 	compression = -1
 [user]
 	email = kenichi.taka@gmail.com
@@ -63,11 +62,6 @@
 	conflictStyle = diff3
 [init]
 	defaultBranch = main
-[delta]
-	navigate = true
-	light = false
-[interactive]
-	diffFilter = delta --color-only
 [diff]
 	colorMoved = default
 [gpg]
