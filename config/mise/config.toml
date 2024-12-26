@@ -1,12 +1,12 @@
 [tools]
 
 awscli = 'latest'
-go = ['latest', '1.14.1']
+go = 'latest'
 kustomize = 'latest'
 nodejs = 'lts'
 python = 'latest'
 ruby = ['latest', '2.7.1']
-rust = ['latest', '1.42.0']
+rust = 'latest'
 terraform = 'latest'
 deno = 'latest'
 usage = "latest"
