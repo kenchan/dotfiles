@@ -11,3 +11,4 @@ terraform = 'latest'
 deno = 'latest'
 usage = "latest"
 bun = "latest"
+gcloud = "latest"
