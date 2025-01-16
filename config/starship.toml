@@ -4,6 +4,7 @@ $directory\
 $git_branch\
 $git_state\
 $git_status\
+$kubernetes\
 $cmd_duration\
 $line_break\
 $character\
@@ -16,3 +17,6 @@ truncate_to_repo = false
 disabled = false
 format = "[\\[$time\\]]($style)"
 
+[kubernetes]
+disabled = false
+format = "[$symbol $context (\\($namespace\\))]($style)"
