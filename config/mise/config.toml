@@ -12,3 +12,4 @@ deno = 'latest'
 usage = "latest"
 bun = "latest"
 gcloud = "latest"
+stern = "latest"
