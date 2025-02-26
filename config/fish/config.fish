@@ -24,7 +24,7 @@ abbr -a kx kubectx
 abbr -a ks kubens
 abbr -a tf terraform
 abbr -a rge rg -E euc-jp
-abbr -a e "code (ghq list -p | peco)"
+abbr -a e "code (ghq list -p | fzf)"
 abbr -a c "cursor ."
 
 if [ -d $HOME/.local/bin ]
@@ -41,11 +41,11 @@ set -g fish_prompt_pwd_dir_length 0
 
 set -gx DOCKER_BUILDKIT 1
 
-set -g GHQ_SELECTOR peco
-
 set -gx ASDF_RUBY_BUILD_VERSION master
 
 set -x GPG_TTY (tty)
+
+set -x FZF_DEFAULT_OPTS "--reverse --height 40%"
 
 if command -v direnv > /dev/null;
   eval (direnv hook fish)
@@ -59,10 +59,6 @@ end
 
 if command -v starship > /dev/null;
   eval (starship init fish)
-end
-
-function fish_user_key_bindings
-  bind \cr 'peco_select_history_and_frgm (commandline -b)'
 end
 
 if command -v keychain > /dev/null;

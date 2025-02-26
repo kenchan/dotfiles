@@ -9,7 +9,7 @@
 	ui = auto
 [alias]
 	co = switch
-	swt = "!sh -c \"git switch -t $(git branch -r --format \"%(refname:lstrip=2)\" | peco)\""
+	swt = "!sh -c \"git switch -t $(git branch -r --format \"%(refname:lstrip=2)\" | fzf)\""
 	st = status -sb
 	pd = push --delete
 	c = commit
@@ -33,7 +33,7 @@
 	gsub = "!sh -c 'git grep -l $0 $2 | xargs sed -i \"s/$0/$1/g\"'"
 	cb = "!sh -c 'git branch --merged master | grep -v master | grep -v \"*\" | xargs git branch -d'"
 	wip = commit --allow-empty -m 'wip'
-	cot = "!sh -c 'git branch --remote | peco | xargs git checkout -t'"
+	cot = "!sh -c 'git branch --remote | fzf | xargs git checkout -t'"
 [log]
 	date = iso
 [github]
