@@ -26,6 +26,7 @@ abbr -a tf terraform
 abbr -a rge rg -E euc-jp
 abbr -a e "code (ghq list -p | fzf)"
 abbr -a c "cursor ."
+abbr -a z zellij
 
 if [ -d $HOME/.local/bin ]
   set -gx PATH ~/.local/bin $PATH
@@ -68,5 +69,9 @@ end
 if test -d "/mnt/c/Program Files/Oracle/VirtualBox"
   set -x PATH "/mnt/c/Program Files/Oracle/VirtualBox" $PATH
   set -x VAGRANT_WSL_ENABLE_WINDOWS_ACCESS 1
+end
+
+if command -v ghq > /dev/null;
+  bind alt-g "cd (ghq list --full-path | fzf)" repaint
 end
 
