@@ -26,6 +26,7 @@ abbr -a tf terraform
 abbr -a rge rg -E euc-jp
 abbr -a e "code (ghq list -p | fzf)"
 abbr -a c "cursor ."
+abbr -a z zellij
 
 if [ -d $HOME/.local/bin ]
   set -gx PATH ~/.local/bin $PATH
