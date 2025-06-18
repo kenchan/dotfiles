@@ -22,5 +22,27 @@ return {
     config = function()
       require("plugins/telescope")
     end
+  },
+
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    config = function()
+      require("plugins/treesitter")
+    end
+  },
+
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    opts = {}
+  },
+
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorsheme = "tokyonight"
+    }
   }
 }
+
