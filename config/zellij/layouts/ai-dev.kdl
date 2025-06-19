@@ -1,0 +1,37 @@
+layout {
+    // Main development workspace with AI agent, editor and terminal
+    default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        children
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+    
+    tab name="AI Development" {
+        pane split_direction="vertical" {
+            // Left half
+            pane size="70%" split_direction="horizontal" {
+                // Left top: Editor
+                pane size="70%" name="Neovim" {
+                    command "nvim"
+                    cwd "~"
+                }
+                
+                // Left bottom: Terminal
+                pane name="Terminal" {
+                    command "fish"
+                    cwd "~"
+                }
+            }
+            
+            // Right half: AI Agent
+            pane name="AI Agent" {
+                command "claude"
+                cwd "~"
+            }
+        }
+    }
+}
