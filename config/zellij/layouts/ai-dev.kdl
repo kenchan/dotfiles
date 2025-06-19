@@ -17,20 +17,17 @@ layout {
                 // Left top: Editor
                 pane size="70%" name="Neovim" {
                     command "nvim"
-                    cwd "~"
                 }
                 
                 // Left bottom: Terminal
                 pane name="Terminal" {
                     command "fish"
-                    cwd "~"
                 }
             }
             
             // Right half: AI Agent
             pane name="AI Agent" {
                 command "claude"
-                cwd "~"
             }
         }
     }
