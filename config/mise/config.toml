@@ -13,3 +13,6 @@ usage = "latest"
 bun = "latest"
 gcloud = "latest"
 stern = "latest"
+
+"npm:@anthropic-ai/claude-code" = "latest"
+"npm:zenn-cli" = "latest"
