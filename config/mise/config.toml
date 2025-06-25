@@ -15,4 +15,5 @@ gcloud = "latest"
 stern = "latest"
 
 "npm:@anthropic-ai/claude-code" = "latest"
+"npm:@google/gemini-cli" = "latest"
 "npm:zenn-cli" = "latest"
