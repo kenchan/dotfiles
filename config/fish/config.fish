@@ -48,10 +48,6 @@ set -x GPG_TTY (tty)
 
 set -x FZF_DEFAULT_OPTS "--reverse --height 40%"
 
-if not set -q XDG_CONFIG_HOME
-  set -gx XDG_CONFIG_HOME $HOME/.config
-end
-
 if command -v direnv > /dev/null;
   eval (direnv hook fish)
 end
