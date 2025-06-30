@@ -17,3 +17,11 @@ stern = "latest"
 "npm:@anthropic-ai/claude-code" = "latest"
 "npm:@google/gemini-cli" = "latest"
 "npm:zenn-cli" = "latest"
+
+[tasks.update-env]
+description = "Update mise tool and system packages"
+run = [
+  "mise up",
+  "sudo eix-sync -a",
+  "sudo emerge -uDN @world -j2"
+]
