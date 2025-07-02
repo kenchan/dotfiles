@@ -17,6 +17,7 @@ stern = "latest"
 "npm:@anthropic-ai/claude-code" = "latest"
 "npm:@google/gemini-cli" = "latest"
 "npm:zenn-cli" = "latest"
+act = "latest"
 
 [tasks.update-env]
 description = "Update mise tool and system packages"
