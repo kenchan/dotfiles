@@ -4,3 +4,4 @@
 mise up
 sudo eix-sync -a
 sudo emerge -uDN @world -j2
+sudo emerge --depclean
