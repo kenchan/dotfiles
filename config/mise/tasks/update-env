@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# mise description="Update mise tools and system packages"
+
+mise up
+sudo eix-sync -a
+sudo emerge -uDN @world -j2
