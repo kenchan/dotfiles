@@ -1,0 +1,16 @@
+#!/bin/bash
+# mise description="Clone all non-archived repositories using gh and ghq"
+
+set -e
+
+echo "Fetching list of non-archived repositories..."
+
+# Get all non-archived repositories for the authenticated user
+gh repo list --no-archived --json name,url --limit 1000 | \
+  jq -r '.[].url' | \
+  while read -r repo_url; do
+    echo "Cloning: $repo_url"
+    ghq get "$repo_url" || echo "Failed to clone: $repo_url"
+  done
+
+echo "Done cloning repositories!"

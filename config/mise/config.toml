@@ -19,10 +19,3 @@ stern = "latest"
 "npm:zenn-cli" = "latest"
 act = "latest"
 
-[tasks.update-env]
-description = "Update mise tool and system packages"
-run = [
-  "mise up",
-  "sudo eix-sync -a",
-  "sudo emerge -uDN @world -j2"
-]
