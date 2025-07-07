@@ -25,7 +25,7 @@ abbr -a ks kubens
 abbr -a tf terraform
 abbr -a rge rg -E euc-jp
 abbr -a e "code (ghq list -p | fzf)"
-abbr -a c claude
+abbr -a c "claude -c || claude"
 abbr -a z zellij
 
 if [ -d $HOME/.local/bin ]
