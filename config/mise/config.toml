@@ -18,4 +18,5 @@ stern = "latest"
 "npm:@google/gemini-cli" = "latest"
 "npm:zenn-cli" = "latest"
 act = "latest"
+uv = "latest"
 
