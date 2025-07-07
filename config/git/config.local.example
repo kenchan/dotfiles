@@ -1,0 +1,13 @@
+# Signed key Settings from 1password
+#
+#[user]
+#  signingkey = ssh-ed25519 ...
+#
+#[gpg]
+#  format = ssh
+#
+#[gpg "ssh"]
+#  program = "/**/op-ssh-sign-wsl"
+#
+#[commit]
+#  gpgsign = true
