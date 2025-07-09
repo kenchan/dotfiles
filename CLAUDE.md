@@ -29,7 +29,7 @@ This is a dotfiles repository managed by **rcm** with modular configuration patt
 
 ### Modern Toolchain Integration
 - `mise` for runtime/language version management
-- `starship` for shell prompt customization  
+- `starship` for shell prompt customization
 - `fisher` for fish plugin management
 - `direnv` for project-specific environments
 - `fzf` integration throughout shell experience
@@ -48,3 +48,4 @@ This is a dotfiles repository managed by **rcm** with modular configuration patt
 - Use host-specific suffixes for platform differences
 - Fish plugins managed via `config/fish/fish_plugins`
 - Neovim plugins in `/config/nvim/lua/plugins/` directory
+- Mise tasks in `/config/mise/tasks/` directory (executable shell scripts)
