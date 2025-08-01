@@ -143,3 +143,5 @@ cscope.po.out
 .envrc
 
 **/.claude/settings.local.json
+
+**/CLAUDE.local.md
