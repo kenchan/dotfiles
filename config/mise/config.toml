@@ -20,4 +20,5 @@ stern = "latest"
 "npm:difit" = "latest"
 act = "latest"
 uv = "latest"
+ollama = "latest"
 
