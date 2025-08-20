@@ -1,25 +1,24 @@
 [tools]
 
+act = "latest"
 awscli = 'latest'
+bun = "latest"
+deno = 'latest'
+gcloud = "latest"
 go = 'latest'
 kustomize = 'latest'
 nodejs = 'lts'
+ollama = "latest"
 python = 'latest'
-ruby = ['latest']
+ruby = 'latest'
 rust = 'latest'
-terraform = 'latest'
-deno = 'latest'
-usage = "latest"
-bun = "latest"
-gcloud = "latest"
 stern = "latest"
+terraform = 'latest'
+usage = "latest"
+uv = "latest"
 
 "npm:@anthropic-ai/claude-code" = "latest"
 "npm:@google/gemini-cli" = "latest"
-"npm:zenn-cli" = "latest"
-"npm:difit" = "latest"
-act = "latest"
-uv = "latest"
-ollama = "latest"
-
 "npm:@openai/codex" = "latest"
+"npm:difit" = "latest"
+"npm:zenn-cli" = "latest"
