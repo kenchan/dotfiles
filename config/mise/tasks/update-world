@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# mise description="Update mise tools and system packages"
+#MISE description="Update mise tools and system packages"
 
 mise self-update -y
 mise up

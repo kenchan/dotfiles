@@ -1,5 +1,5 @@
 #!/bin/bash
-# mise description="Clone all non-archived repositories using gh and ghq"
+#MISE description="Clone all non-archived repositories using gh and ghq"
 
 set -e
 
