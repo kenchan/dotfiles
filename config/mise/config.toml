@@ -22,3 +22,6 @@ uv = "latest"
 "npm:@openai/codex" = "latest"
 "npm:difit" = "latest"
 "npm:zenn-cli" = "latest"
+
+[settings]
+idiomatic_version_file_enable_tools = ["ruby"]
