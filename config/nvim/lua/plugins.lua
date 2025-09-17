@@ -3,8 +3,6 @@ local no_vscode = function()
 end
 
 return {
-  "wbthomason/packer.nvim",
-
   {
     "vimwiki/vimwiki",
     init = function()
