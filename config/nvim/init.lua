@@ -1,19 +1,4 @@
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
-end
-vim.opt.rtp:prepend(lazypath)
-
-plugins = require("plugins")
-
-require("lazy").setup(plugins)
+require("config.lazy")
 
 local options = {
   number = true,
@@ -39,6 +24,8 @@ vim.api.nvim_set_keymap("n", ";", ":", keymap_opts)
 vim.api.nvim_set_keymap("n", ":", ";", keymap_opts)
 vim.api.nvim_set_keymap("n", "k", "gk", keymap_opts)
 vim.api.nvim_set_keymap("n", "j", "gj", keymap_opts)
+
+vim.cmd.colorscheme "tokyonight"
 
 if vim.g.vscode then
   vim.api.nvim_set_keymap("n", "k", ":<C-u>call VSCodeCall('cursorMove', { 'to': 'up', 'by': 'wrappedLine', 'value': v:count ? v:count : 1 })<CR>", keymap_opts)
