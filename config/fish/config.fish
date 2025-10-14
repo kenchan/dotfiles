@@ -28,10 +28,6 @@ abbr -a e "code (ghq list -p | fzf)"
 abbr -a c "claude -c || claude"
 abbr -a z zellij
 
-if [ -d $HOME/.local/bin ]
-  set -gx PATH ~/.local/bin $PATH
-end
-
 set -gx EDITOR nvim
 
 set -gx VIRTUAL_ENV_DISABLE_PROMPT 1
@@ -56,6 +52,10 @@ if command -v mise > /dev/null;
   mise activate fish | source
   mise hook-env -s fish | source
   mise complete -s fish | source
+end
+
+if [ -d $HOME/.local/bin ]
+  set -gx PATH ~/.local/bin $PATH
 end
 
 if command -v starship > /dev/null;
