@@ -17,7 +17,6 @@ terraform = 'latest'
 usage = "latest"
 uv = "latest"
 
-"npm:@anthropic-ai/claude-code" = "latest"
 "npm:@google/gemini-cli" = "latest"
 "npm:@openai/codex" = "latest"
 "npm:difit" = "latest"
