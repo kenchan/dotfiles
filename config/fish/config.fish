@@ -54,6 +54,10 @@ if command -v mise > /dev/null;
   mise complete -s fish | source
 end
 
+if command -vq wsl2-ssh-agent and is-login
+  wsl2-ssh-agent | source
+end
+
 if [ -d $HOME/.local/bin ]
   set -gx PATH ~/.local/bin $PATH
 end
@@ -70,4 +74,3 @@ if test -d "/mnt/c/Program Files/Oracle/VirtualBox"
   set -x PATH "/mnt/c/Program Files/Oracle/VirtualBox" $PATH
   set -x VAGRANT_WSL_ENABLE_WINDOWS_ACCESS 1
 end
-
