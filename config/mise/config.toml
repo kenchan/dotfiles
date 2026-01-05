@@ -16,6 +16,7 @@ stern = "latest"
 terraform = 'latest'
 usage = "latest"
 uv = "latest"
+pnpm = "latest"
 
 "npm:@google/gemini-cli" = "latest"
 "npm:@openai/codex" = "latest"
