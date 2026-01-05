@@ -1,2 +1,0 @@
-EXCLUDES="README.md LICENSE CLAUDE.md"
-DOTFILES_DIRS="$HOME/src/github.com/kenchan/dotfiles"
