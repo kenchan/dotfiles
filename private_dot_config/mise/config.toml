@@ -24,6 +24,7 @@ pnpm = "latest"
 "npm:zenn-cli" = "latest"
 
 "aqua:mame/wsl2-ssh-agent" = "latest"
+chezmoi = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["ruby", "node"]
