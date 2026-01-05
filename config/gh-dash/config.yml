@@ -8,6 +8,9 @@ prSections:
 - title: Involved
   filters: is:open involves:@me -author:@me
   type: null
+- title: No Reviewers Assigned
+  filters: is:open review:none
+  type: null
 issuesSections:
 - title: My Issues
   filters: is:open author:@me
