@@ -1,0 +1,26 @@
+layout {
+    default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        children
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+
+    tab name="Claude Code" focus=true {
+        pane split_direction="horizontal" {
+            // 左: メインパネル
+            pane size="60%" name="Main" focus=true
+
+            // 右: サブパネル4つ
+            pane size="40%" split_direction="vertical" {
+                pane name="Sub 1"
+                pane name="Sub 2"
+                pane name="Sub 3"
+                pane name="Sub 4"
+            }
+        }
+    }
+}
