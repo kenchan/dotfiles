@@ -1,0 +1,52 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bat:*)",
+      "Bash(fd:*)",
+      "Bash(gemini:*)",
+      "Bash(gh:*)",
+      "Bash(git:*)",
+      "Bash(grep:*)",
+      "Bash(jq:*)",
+      "Bash(ls:*)",
+      "Bash(npm:*)",
+      "Bash(pnpm:*)",
+      "Bash(rg:*)",
+      "Edit(**)",
+      "MultiEdit(**)",
+      "Write(**)",
+      "Fetch(https://*)",
+      "mcp__gemini-cli__ask-gemini",
+      "mcp__playwright"
+    ],
+    "deny": []
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "WebSearch",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"decision\": \"block\", \"reason\": \"Use gemini mcp instead of WebSearch\"}'"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.file_path' | xargs sed -i -e '$a\\'"
+          },
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.file_path' | xargs sed -i 's/[[:space:]]*$//'"
+          }
+        ]
+      }
+    ]
+  }
+}
