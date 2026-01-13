@@ -18,6 +18,7 @@ abbr -a d docker
 abbr -a dc docker compose
 abbr -a dce docker compose exec
 abbr -a dcr docker compose run --rm
+abbr -a ch chezmoi
 abbr -a g git
 abbr -a k kubectl
 abbr -a kx kubectx
