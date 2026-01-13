@@ -45,6 +45,8 @@ set -x GPG_TTY (tty)
 
 set -x FZF_DEFAULT_OPTS "--reverse --height 40%"
 
+set -g GHQ_SELECTOR_OPTS "--delimiter=/" "--nth=-2,-1"
+
 if command -v direnv > /dev/null;
   eval (direnv hook fish)
 end
