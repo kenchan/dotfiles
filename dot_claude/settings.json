@@ -1,6 +1,10 @@
 {
   "permissions": {
+    "additionalDirectories": [
+      "/tmp"
+    ],
     "allow": [
+      "Bash(awk:*)",
       "Bash(bat:*)",
       "Bash(fd:*)",
       "Bash(gemini:*)",
@@ -9,14 +13,18 @@
       "Bash(grep:*)",
       "Bash(jq:*)",
       "Bash(ls:*)",
+      "Bash(mise:*)",
+      "Bash(mkdir:*)",
       "Bash(npm:*)",
       "Bash(pnpm:*)",
       "Bash(rg:*)",
+      "Bash(sed:*)",
       "Edit(**)",
       "MultiEdit(**)",
       "Write(**)",
       "Fetch(https://*)",
       "mcp__gemini-cli__ask-gemini",
+      "mcp__GHE",
       "mcp__playwright"
     ],
     "deny": []
@@ -48,5 +56,10 @@
         ]
       }
     ]
+  },
+  "enabledPlugins": {
+    "code-simplifier@claude-plugins-official": true,
+    "commit-commands@claude-plugins-official": true,
+    "plugin-dev@claude-plugins-official": true
   }
 }
