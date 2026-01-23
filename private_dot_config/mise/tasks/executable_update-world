@@ -3,6 +3,15 @@
 
 mise self-update -y
 mise up
+
+if command -v claude &> /dev/null; then
+    claude update
+fi
+
+if command -v gh &> /dev/null; then
+    gh extension upgrade --all
+fi
+
 sudo eix-sync -a
 sudo emerge -uDN @world -j2
 sudo emerge --depclean
