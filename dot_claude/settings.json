@@ -1,7 +1,4 @@
 {
-  "pluginDirectories": [
-    "~/.config/claude-plugins/personal-tools"
-  ],
   "permissions": {
     "additionalDirectories": [
       "/tmp"
