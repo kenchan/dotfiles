@@ -1,8 +1,7 @@
 ---
 name: consolidate-permissions
 description: This skill should be used when the user asks to "consolidate permissions", "add permissions to user-level", "sync claude settings", "remove duplicate permissions", "manage allow list", or wants to unify Claude Code permission settings across user and project levels.
-argument-hint: [new-permissions...]
-disable-model-invocation: true
+argument-hint: "[new-permissions...]"
 user-invocable: true
 ---
 
@@ -20,10 +19,13 @@ Consolidate Claude Code permission settings by adding common permissions to user
 
 ### Step 1: Check Current Settings
 
-1. Read `~/.claude/settings.json`
-2. If managed by chezmoi, also read `~/.local/share/chezmoi/dot_claude/settings.json`
+Read `~/.claude/settings.json` to understand the current user-level permissions.
+
+If managed by chezmoi, also read `~/.local/share/chezmoi/dot_claude/settings.json` as the source of truth.
 
 ### Step 2: Search for Project Settings Files
+
+Locate all project-level settings:
 
 ```bash
 fd 'settings.local.json' ~/.claude/projects/ --type f
@@ -34,12 +36,12 @@ fd 'settings.local.json' ~/src --type f
 
 Add permissions from $ARGUMENTS to the user-level `allow` array.
 
-Invocation example:
+**Invocation example:**
 ```
 /consolidate-permissions Bash(python:*) Bash(uv:*) mcp__terraform
 ```
 
-Valid permission formats:
+**Valid permission formats:**
 - `Bash(command:*)` - Shell command permission
 - `mcp__server` - MCP server permission
 - `Edit(**)`, `Read(**)` - File operation permissions
@@ -60,7 +62,7 @@ chezmoi diff
 ### Step 6: Safety Checklist
 
 Verify before committing:
-- [ ] Changes affect only `.claude/` files
+- [ ] Changes affect only `.claude/` related files
 - [ ] Added commands are standard development tools
 - [ ] No system file write permissions (/etc, /usr, etc.)
 - [ ] No credential access (.env, credentials, etc.)
