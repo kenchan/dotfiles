@@ -1,12 +1,8 @@
 # vim: set noexpandtab ts=4 sw=4 sts=4 :
-[core]
-	compression = -1
 [user]
 	email = kenichi.taka@gmail.com
 	name = Kenichi Takahashi
 	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINLXm83XcTsZi0cfwYGQ4k3VLwymqR8vVdgjJ66gQHk9
-[color]
-	ui = auto
 [alias]
 	co = switch
 	swt = "!sh -c \"git switch -t $(git branch -r --format \"%(refname:lstrip=2)\" | fzf)\""
@@ -48,9 +44,6 @@
 	verbose = true
 [ghq]
 	root = ~/src
-[filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
 [include]
 	path = ~/.config/git/config.local
 [filter "lfs"]
