@@ -35,7 +35,7 @@
 [github]
 	user = kenchan
 [help]
-	autocorrect = 1
+	autocorrect = prompt
 [pull]
 	rebase = true
 [fetch]
