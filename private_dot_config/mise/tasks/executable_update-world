@@ -6,6 +6,7 @@ mise up
 
 if command -v claude &> /dev/null; then
     claude update
+    claude plugin list --json | jq -r '.[].id' | xargs -n1 claude plugin update
 fi
 
 if command -v gh &> /dev/null; then
