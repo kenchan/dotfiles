@@ -31,6 +31,7 @@
       "WebFetch(*)",
       "mcp__gemini-cli__ask-gemini",
       "mcp__GHE",
+      "mcp__github-enterprise-server",
       "mcp__playwright",
       "mcp__terraform"
     ],
@@ -67,6 +68,8 @@
   "enabledPlugins": {
     "code-simplifier@claude-plugins-official": true,
     "commit-commands@claude-plugins-official": true,
-    "plugin-dev@claude-plugins-official": true
-  }
+    "plugin-dev@claude-plugins-official": true,
+    "document-skills@anthropic-agent-skills": true
+  },
+  "skipDangerousModePermissionPrompt": true
 }
