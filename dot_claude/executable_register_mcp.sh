@@ -3,6 +3,7 @@
 claude mcp add gemini-cli -s user -- npx -y gemini-mcp-tool
 claude mcp add playwright -s user -- powershell.exe -NoProfile -Command npx -y @playwright/mcp@latest
 claude mcp add-json datadog-mcp -s user '{"type":"http","url":"https://mcp.datadoghq.com/api/unstable/mcp-server/mcp"}'
+claude mcp add-json sentry -s user '{"type":"http","url":"https://mcp.sentry.dev/mcp"}'
 
 # GitHub MCP Server (requires gh CLI authentication)
 # Required scopes: repo, read:org, read:packages
