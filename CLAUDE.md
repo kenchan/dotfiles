@@ -17,7 +17,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ### Shell Configuration Testing
 - Validate fish config: `fish -c exit`
 - Lint fish scripts: `fish --no-execute private_dot_config/fish/config.fish`
-- Test starship prompt: `starship config validate`
+- Test fish prompt: `fish -c exit`
 
 ### mise Tasks
 - Run custom tasks: `mise run <task-name>`
@@ -43,7 +43,7 @@ This is a dotfiles repository managed by **chezmoi**. Migrated from rcm on 2026-
 - Conditional command checking pattern before setting aliases/abbreviations
 - Uses `command -v` checks to ensure tools exist
 - mise activation for runtime management
-- Integrates: direnv, starship, fzf, wsl2-ssh-agent
+- Integrates: direnv, pure (fisher plugin), fzf, wsl2-ssh-agent
 
 **Tmux** (`private_dot_config/tmux/`):
 - Base config in `tmux.conf`
@@ -71,7 +71,7 @@ This is a dotfiles repository managed by **chezmoi**. Migrated from rcm on 2026-
 All managed via mise (`config.toml`):
 - Languages: ruby, python, nodejs, go, rust, deno, bun
 - Cloud: gcloud, awscli, terraform
-- CLI tools: gh, kubectl, docker, fzf, starship, direnv
+- CLI tools: gh, kubectl, docker, fzf, direnv
 - Package managers: pnpm, uv, bundle
 
 ### Development Workflow
