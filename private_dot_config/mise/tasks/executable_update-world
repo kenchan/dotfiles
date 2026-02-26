@@ -2,6 +2,11 @@
 #MISE description="Update mise tools and system packages"
 
 mise self-update -y
+
+if command -v gh &> /dev/null; then
+    export GITHUB_TOKEN="$(gh auth token)"
+fi
+
 mise up
 
 if command -v claude &> /dev/null; then
