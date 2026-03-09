@@ -21,3 +21,18 @@ fi
 sudo eix-sync -a
 sudo emerge -uDN @world -j2
 sudo emerge --depclean
+
+# Build zellij from main branch
+if command -v ghq > /dev/null && zellij_dir="$(ghq list -p zellij-org/zellij)"; then
+  (
+    cd "$zellij_dir"
+    git fetch origin
+    worktree=$(mktemp -d)
+    git worktree add "$worktree" origin/main --detach
+    cd "$worktree"
+    cargo build --release
+    cp target/release/zellij "$HOME/.local/bin/zellij"
+    cd /
+    git -C "$zellij_dir" worktree remove "$worktree"
+  )
+fi
