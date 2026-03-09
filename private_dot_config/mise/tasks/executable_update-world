@@ -26,13 +26,11 @@ sudo emerge --depclean
 if command -v ghq > /dev/null && zellij_dir="$(ghq list -p zellij-org/zellij)"; then
   (
     cd "$zellij_dir"
+    orig_head=$(git rev-parse HEAD)
     git fetch origin
-    worktree=$(mktemp -d)
-    git worktree add "$worktree" origin/main --detach
-    cd "$worktree"
+    git checkout --detach origin/main
     cargo build --release
-    cp target/release/zellij "$HOME/.local/bin/zellij"
-    cd /
-    git -C "$zellij_dir" worktree remove "$worktree"
+    install -m 755 target/release/zellij "$HOME/.local/bin/zellij"
+    git checkout "$orig_head"
   )
 fi
