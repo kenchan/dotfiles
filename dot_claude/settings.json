@@ -8,8 +8,10 @@
       "Bash(chezmoi:*)",
       "Bash(docker:*)",
       "Bash(gh:*)",
+      "Bash(ghq:*)",
       "Bash(git:*)",
       "Bash(go:*)",
+      "Bash(gws:*)",
       "Bash(jq:*)",
       "Bash(ls:*)",
       "Bash(mise:*)",
@@ -33,7 +35,10 @@
       "mcp__GHE",
       "mcp__github-enterprise-server",
       "mcp__playwright",
-      "mcp__terraform"
+      "mcp__terraform",
+      "mcp__plugin_slack_slack",
+      "mcp__claude_ai_Slack",
+      "mcp__claude_ai_Notion"
     ],
     "deny": []
   },
