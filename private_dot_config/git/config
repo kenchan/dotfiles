@@ -1,4 +1,6 @@
 # vim: set noexpandtab ts=4 sw=4 sts=4 :
+[core]
+	untrackedCache = true
 [user]
 	email = kenichi.taka@gmail.com
 	name = Kenichi Takahashi
