@@ -25,8 +25,6 @@ dir() {
 context() {
   if [ -n "$ctx_pct" ] && [ -n "$ctx_tokens" ] && [ -n "$ctx_size" ]; then
     printf ' ctx:%d%% %dk/%dk' "${ctx_pct%.*}" $((ctx_tokens / 1000)) $((ctx_size / 1000))
-  elif [ -n "$ctx_pct" ]; then
-    printf ' ctx:%d%%' "${ctx_pct%.*}"
   fi
 }
 
