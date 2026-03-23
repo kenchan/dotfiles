@@ -1,8 +1,5 @@
 {
   "permissions": {
-    "additionalDirectories": [
-      "/tmp"
-    ],
     "allow": [
       "Bash(bundle:*)",
       "Bash(chezmoi:*)",
@@ -31,16 +28,12 @@
       "MultiEdit(**)",
       "Write(**)",
       "WebFetch(*)",
-      "mcp__gemini-cli__ask-gemini",
-      "mcp__GHE",
-      "mcp__github-enterprise-server",
-      "mcp__playwright",
-      "mcp__terraform",
-      "mcp__plugin_slack_slack",
-      "mcp__claude_ai_Slack",
-      "mcp__claude_ai_Notion"
+      "mcp__gemini-cli__ask-gemini"
     ],
-    "deny": []
+    "deny": [],
+    "additionalDirectories": [
+      "/tmp"
+    ]
   },
   "hooks": {
     "PreToolUse": [
@@ -70,11 +63,9 @@
       }
     ]
   },
-  "enabledPlugins": {
-    "code-simplifier@claude-plugins-official": true,
-    "commit-commands@claude-plugins-official": true,
-    "plugin-dev@claude-plugins-official": true,
-    "document-skills@anthropic-agent-skills": true
-  },
-  "skipDangerousModePermissionPrompt": true
+  "skipDangerousModePermissionPrompt": true,
+  "statusLine": {
+    "type": "command",
+    "command": "bash ~/.claude/statusline.bash"
+  }
 }
