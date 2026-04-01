@@ -47,6 +47,18 @@
         ]
       }
     ],
+    "UserPromptSubmit": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"UserPromptSubmit\",\"additionalContext\":\"Current time: '$(date +%H:%M:%S%z)'\"}}'",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
     "PostToolUse": [
       {
         "matcher": "Write|Edit|MultiEdit",
@@ -63,9 +75,20 @@
       }
     ]
   },
-  "skipDangerousModePermissionPrompt": true,
   "statusLine": {
     "type": "command",
     "command": "bash ~/.claude/statusline.bash"
-  }
+  },
+  "enabledPlugins": {
+    "freee-mcp@freee-mcp-marketplace": true
+  },
+  "extraKnownMarketplaces": {
+    "freee-mcp-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "freee/freee-mcp"
+      }
+    }
+  },
+  "skipDangerousModePermissionPrompt": true
 }
