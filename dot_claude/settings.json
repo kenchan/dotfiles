@@ -39,7 +39,8 @@
       "MultiEdit(**)",
       "Write(**)",
       "WebFetch(*)",
-      "mcp__gemini-cli__ask-gemini"
+      "mcp__gemini-cli__ask-gemini",
+      "Skill(commit-commands:*)"
     ],
     "deny": [],
     "additionalDirectories": [
@@ -47,17 +48,7 @@
     ]
   },
   "hooks": {
-    "PreToolUse": [
-      {
-        "matcher": "WebSearch",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "echo '{\"decision\": \"block\", \"reason\": \"Use gemini mcp instead of WebSearch\"}'"
-          }
-        ]
-      }
-    ],
+    "PreToolUse": [],
     "UserPromptSubmit": [
       {
         "matcher": "",
