@@ -18,19 +18,10 @@ if command -v gh &> /dev/null; then
     gh extension upgrade --all
 fi
 
+if command -v fish &> /dev/null; then
+    fish -c "type -q fisher; and fisher update"
+fi
+
 sudo eix-sync -a
 sudo emerge -uDN @world -j2
 sudo emerge --depclean
-
-# Build zellij from main branch
-if command -v ghq > /dev/null && zellij_dir="$(ghq list -p zellij-org/zellij)"; then
-  (
-    cd "$zellij_dir"
-    orig_head=$(git rev-parse HEAD)
-    git fetch origin
-    git checkout --detach origin/main
-    cargo build --release
-    install -m 755 target/release/zellij "$HOME/.local/bin/zellij"
-    git checkout "$orig_head"
-  )
-fi
