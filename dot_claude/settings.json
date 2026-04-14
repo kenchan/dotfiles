@@ -35,11 +35,19 @@
       "Bash(uv:*)",
       "Bash(uvx:*)",
       "Bash(which:*)",
+      "Bash(grep:*)",
+      "Bash(wc:*)",
       "Edit(**)",
       "MultiEdit(**)",
       "Write(**)",
       "WebFetch(*)",
+      "WebSearch(*)",
+      "mcp__claude_ai_Notion__*",
+      "mcp__claude_ai_Slack__*",
       "mcp__gemini-cli__ask-gemini",
+      "mcp__github",
+      "mcp__github-enterprise-server",
+      "mcp__freee-remote",
       "Skill(commit-commands:*)"
     ],
     "deny": [],
@@ -57,6 +65,18 @@
             "type": "command",
             "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"UserPromptSubmit\",\"additionalContext\":\"Current time: '$(date +%H:%M:%S%z)'\"}}'",
             "timeout": 5
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '[(\"CC [\" + (.cwd // \"\" | split(\"/\") | last) + \"]\"), (.message // \"入力待ちです\")] | @sh' | xargs notify",
+            "timeout": 15
           }
         ]
       }
@@ -82,7 +102,8 @@
     "command": "bash ~/.claude/statusline.bash"
   },
   "enabledPlugins": {
-    "freee-mcp@freee-mcp-marketplace": true
+    "freee-mcp@freee-mcp-marketplace": true,
+    "commit-commands@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "freee-mcp-marketplace": {
