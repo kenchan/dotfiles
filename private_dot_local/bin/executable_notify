@@ -1,0 +1,24 @@
+#!/bin/bash
+TITLE="${1:-通知}"
+MESSAGE="${2:-完了しました}"
+APP_ID="${3:-Microsoft.WindowsTerminal_8wekyb3d8bbwe!App}"
+
+powershell.exe -NoProfile -Command '
+[Windows.UI.Notifications.ToastNotificationManager, Windows.UI.Notifications, ContentType = WindowsRuntime] | Out-Null
+[Windows.Data.Xml.Dom.XmlDocument, Windows.Data.Xml.Dom, ContentType = WindowsRuntime] | Out-Null
+$xml = @"
+<toast duration="short" activationType="protocol" launch="">
+  <visual>
+    <binding template="ToastGeneric">
+      <text>'"$TITLE"'</text>
+      <text>'"$MESSAGE"'</text>
+    </binding>
+  </visual>
+</toast>
+"@
+$doc = New-Object Windows.Data.Xml.Dom.XmlDocument
+$doc.LoadXml($xml)
+$notifier = [Windows.UI.Notifications.ToastNotificationManager]::CreateToastNotifier("'"$APP_ID"'")
+$toast = New-Object Windows.UI.Notifications.ToastNotification $doc
+$notifier.Show($toast)
+'
