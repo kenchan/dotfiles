@@ -65,6 +65,10 @@ if [ -d $HOME/.local/bin ]
   set -gx PATH ~/.local/bin $PATH
 end
 
+if command -v starship > /dev/null;
+  eval (starship init fish)
+end
+
 if command -v keychain > /dev/null;
   eval (keychain --eval --nogui -q ~/.ssh/id_ed25519)
 end
