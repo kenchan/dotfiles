@@ -28,7 +28,6 @@ abbr -a rge rg -E euc-jp
 abbr -a e "code (ghq list -p | fzf)"
 abbr -a c "claude --chrome"
 abbr -a cc "claude --chrome -c || claude --chrome"
-abbr -a z zellij
 
 set -gx EDITOR nvim
 
