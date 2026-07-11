@@ -26,5 +26,7 @@ pnpm = "latest"
 "aqua:mame/wsl2-ssh-agent" = "latest"
 chezmoi = "latest"
 
+"github:googleworkspace/cli" = "latest"
+
 [settings]
 idiomatic_version_file_enable_tools = ["ruby", "node"]
