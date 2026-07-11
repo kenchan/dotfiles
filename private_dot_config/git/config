@@ -63,3 +63,5 @@
 	helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
 [push]
 	autoSetupRemote = true
+[gpg "ssh"]
+	program = /mnt/c/Users/kenchan/AppData/Local/Microsoft/WindowsApps/op-ssh-sign-wsl.exe

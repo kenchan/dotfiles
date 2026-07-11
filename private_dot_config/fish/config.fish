@@ -26,7 +26,8 @@ abbr -a ks kubens
 abbr -a tf terraform
 abbr -a rge rg -E euc-jp
 abbr -a e "code (ghq list -p | fzf)"
-abbr -a cc "claude -c || claude"
+abbr -a c "claude --chrome"
+abbr -a cc "claude --chrome -c || claude --chrome"
 abbr -a z zellij
 
 set -gx EDITOR nvim
