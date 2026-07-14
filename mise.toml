@@ -1,0 +1,9 @@
+[dotfiles]
+"~/.config" = { source = "config", mode = "symlink-each" }
+# lazy-lock.json の書き換え（rename方式）で symlink が実ファイル化しないよう
+# nvim だけディレクトリ丸ごと symlink にする。source の重なりを避けるため
+# リポジトリ側では config/ の外に置く
+"~/.config/nvim" = { source = "nvim", mode = "symlink" }
+# settings.json はマシン・業務ローカルな状態を含むため意図的に管理しない
+"~/.claude" = { source = "claude", mode = "symlink-each" }
+"~/.local/bin" = { source = "bin", mode = "symlink-each" }

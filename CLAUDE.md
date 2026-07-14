@@ -4,94 +4,84 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Commands
 
-### chezmoi Management
-- Edit a dotfile: `chezmoi edit ~/.config/fish/config.fish`
-- Apply changes: `chezmoi apply`
-- Preview changes: `chezmoi diff`
-- Add new dotfile: `chezmoi add ~/.config/newfile`
-- Update from remote: `chezmoi update`
-- Pull and preview: `chezmoi git pull -- --autostash --rebase && chezmoi diff`
-- Verify all files: `chezmoi verify`
-- List managed files: `chezmoi managed`
+### dotfiles Management (mise)
+
+Run inside this repository (the `[dotfiles]` section lives in the repo-root `mise.toml`):
+
+- Check deployment state: `mise dotfiles status`
+- Apply (create missing links): `mise dotfiles apply`
+- Start managing a new file: `mise dotfiles add ~/.config/newfile`
+- Full machine setup: `mise bootstrap`
 
 ### Shell Configuration Testing
+
 - Validate fish config: `fish -c exit`
-- Lint fish scripts: `fish --no-execute private_dot_config/fish/config.fish`
+- Lint fish scripts: `fish --no-execute config/fish/config.fish`
 - Test starship prompt: `starship print-config`
 
 ### mise Tasks
+
 - Run custom tasks: `mise run <task-name>`
-- Available tasks defined in: `private_dot_config/mise/tasks/`
+- Available tasks defined in: `config/mise/tasks/` (file tasks must be executable)
 
 ## Architecture Overview
 
-This is a dotfiles repository managed by **chezmoi**. Migrated from rcm on 2026-01-05 with full git history preserved.
+This is a dotfiles repository managed by **mise** (`[dotfiles]` in `mise.toml`).
+History: rcm → chezmoi (2026-01-05) → mise dotfiles (2026-07-14), full git history preserved.
 
-### chezmoi Naming Conventions
-- `dot_` prefix → `.` in home directory (e.g., `dot_bashrc` → `~/.bashrc`)
-- `private_` prefix → chmod 600 (files) or 700 (directories)
-- `private_dot_config/` → `~/.config/` with permissions 700
+### Deployment Layout
 
-### Configuration Structure
-- **All configurations** stored in `private_dot_config/` (maps to `~/.config/`)
-- **Platform-specific configs** use runtime detection patterns (not file suffixes)
-- **Toolchain management** via mise (replaces asdf/rtx)
+| Repository | Target | Mode |
+|---|---|---|
+| `config/` | `~/.config/` | `symlink-each` |
+| `nvim/` | `~/.config/nvim` | `symlink` (whole directory) |
+| `claude/` | `~/.claude/` | `symlink-each` |
+| `bin/` | `~/.local/bin/` | `symlink-each` |
+
+Key properties:
+
+- `symlink-each` recreates directories as real directories and links each
+  managed file individually. Application-generated files next to them stay in
+  the real directories and never show up in this repository.
+- `nvim/` is deployed as a whole-directory symlink so that `lazy-lock.json`
+  rewrites are reliably captured. It lives outside `config/` in the repository
+  to keep the two dotfiles entries' sources from overlapping.
+- Deployed files ARE the repository files (same inode via symlink). Edit either
+  path, then commit here — there is no separate "apply" step for edits to
+  already-managed files. `mise dotfiles apply` is only needed when files are
+  added to or removed from the repository.
+
+### IMPORTANT: ~/.claude/settings.json is unmanaged
+
+`~/.claude/settings.json` is intentionally NOT managed by this repository.
+It contains machine- and work-local state (internal plugin marketplaces,
+local hooks) that must not be committed to this public repository. Never add
+it to `[dotfiles]` or commit its contents here.
 
 ### Key Patterns
 
-**Fish Shell** (`private_dot_config/fish/config.fish`):
+**Fish Shell** (`config/fish/config.fish`):
 - Conditional command checking pattern before setting aliases/abbreviations
 - Uses `command -v` checks to ensure tools exist
 - mise activation for runtime management
 - Integrates: direnv, starship, fzf, wsl2-ssh-agent
 
-**Tmux** (`private_dot_config/tmux/`):
-- Base config in `tmux.conf`
-- Platform-specific overlays loaded conditionally at runtime:
-  - `tmux.darwin.conf` - macOS specific (clipboard via pbcopy/pbpaste)
-  - `tmux.wayland.conf` - Wayland specific (clipboard via wl-copy/wl-paste)
-  - `tmux.wsl-vscode-terminal.conf` - WSL + VS Code specific
-- Detection via `if` statements in main config (uname, command checks)
-
-**Neovim** (`private_dot_config/nvim/`):
+**Neovim** (`nvim/`):
 - Lazy.nvim plugin manager
 - Modular plugin config in `lua/plugins/` directory
-- Each plugin in separate file for maintainability
 
-**Git** (`private_dot_config/git/config`):
-- GPG signing with SSH keys
+**Git** (`config/git/config`):
+- GPG signing with SSH keys (1Password)
 - Config includes `config.local` for machine-specific settings (not tracked)
 
-**mise** (`private_dot_config/mise/`):
+**mise** (`config/mise/`):
 - Global tool version management in `config.toml`
 - Custom tasks in `tasks/` directory (executable scripts)
-- Supports idiomatic version files (.ruby-version, .node-version)
-
-### Modern Toolchain
-All managed via mise (`config.toml`):
-- Languages: ruby, python, nodejs, go, rust, deno, bun
-- Cloud: gcloud, awscli, terraform
-- CLI tools: gh, kubectl, docker, fzf, starship, direnv
-- Package managers: pnpm, uv, bundle
 
 ### Development Workflow
-1. Edit dotfiles: Use `chezmoi edit` (never edit files in `~/.config/` directly)
-2. Test changes: Apply and test in current session
-3. Commit: Work in `~/.local/share/chezmoi` git repository
-4. Apply: `chezmoi apply` to deploy changes to home directory
 
-### Platform Detection Pattern
-Instead of file suffixes, configs use runtime detection:
-```fish
-# Fish example
-if command -v hub > /dev/null
-  alias git hub
-end
-```
-
-```tmux
-# Tmux example
-if '[ `uname` = "Darwin" ]' 'source-file ~/.config/tmux/tmux.darwin.conf'
-```
-
-This allows single files to adapt to different environments rather than maintaining separate platform-specific variants.
+1. Edit dotfiles directly (deployed paths are symlinks into this repository)
+2. Test changes in the current session
+3. Commit and push in this repository (`~/src/github.com/kenchan/dotfiles`)
+4. On other machines: `git pull` — symlinked files pick up changes immediately;
+   run `mise dotfiles apply` only if files were added or removed
