@@ -24,7 +24,6 @@ pnpm = "latest"
 "npm:zenn-cli" = "latest"
 
 "aqua:mame/wsl2-ssh-agent" = "latest"
-chezmoi = "latest"
 
 "github:googleworkspace/cli" = "latest"
 

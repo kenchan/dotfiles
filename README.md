@@ -1,76 +1,61 @@
 # kenchan's dotfiles
 
-Managed with [chezmoi](https://www.chezmoi.io/).
+Managed with [mise](https://mise.jdx.dev/) (`[dotfiles]` section + `mise dotfiles`).
 
 ## Requirements
 
-- [chezmoi](https://www.chezmoi.io/)
+- [mise](https://mise.jdx.dev/)
 
 ## Install
 
-### Quick Install
-
 ```bash
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply kenchan
+# Install mise
+curl https://mise.run | sh
+
+# Clone this repository (ghq root layout)
+git clone https://github.com/kenchan/dotfiles.git ~/src/github.com/kenchan/dotfiles
+
+cd ~/src/github.com/kenchan/dotfiles
+mise trust
+mise dotfiles apply
 ```
 
-### Manual Install
+## Layout
 
-```bash
-# Install chezmoi
-sh -c "$(curl -fsLS get.chezmoi.io)"
+| Repository | Target | Mode |
+|---|---|---|
+| `config/` | `~/.config/` | symlink-each |
+| `nvim/` | `~/.config/nvim` | symlink (whole directory) |
+| `claude/` | `~/.claude/` | symlink-each |
+| `bin/` | `~/.local/bin/` | symlink-each |
 
-# Initialize with this repository
-chezmoi init https://github.com/kenchan/dotfiles.git
+With `symlink-each`, directories are created as real directories and each
+managed file becomes a symlink into this repository. Files created by
+applications alongside them are left alone and never enter the repository.
 
-# Review changes
-chezmoi diff
-
-# Apply dotfiles
-chezmoi apply -v
-```
+`~/.claude/settings.json` is intentionally **not** managed here: it holds
+machine- and work-local state.
 
 ## Usage
 
-### Edit a dotfile
+Deployed files are symlinks into this repository, so just edit them in
+place (either path is the same file) and commit here.
 
 ```bash
-chezmoi edit ~/.config/fish/config.fish
-```
+# Check deployment state
+mise dotfiles status
 
-### Apply changes
+# Start managing a new file
+mise dotfiles add ~/.config/newfile
 
-```bash
-chezmoi apply
-```
-
-### Check what would change
-
-```bash
-chezmoi diff
-```
-
-### Add a new dotfile
-
-```bash
-chezmoi add ~/.config/newfile
-```
-
-### Update from the repository
-
-```bash
-chezmoi update
-```
-
-### Pull the latest changes and see what would change
-
-```bash
-chezmoi git pull -- --autostash --rebase && chezmoi diff
+# Create links for files newly added to the repository
+mise dotfiles apply
 ```
 
 ## Migration History
 
-Previously managed with [thoughtbot/rcm](https://github.com/thoughtbot/rcm). Migrated to chezmoi on 2026-01-05 while preserving full git history.
+- Managed with [thoughtbot/rcm](https://github.com/thoughtbot/rcm), migrated to [chezmoi](https://www.chezmoi.io/) on 2026-01-05 preserving full git history.
+- Migrated from chezmoi to mise `[dotfiles]` on 2026-07-14.
 
 ## License
 

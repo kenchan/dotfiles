@@ -1,5 +1,0 @@
-[diff]
-    exclude = ["scripts"]
-
-# ソースから削除されたファイルを自動的に削除
-remove = true
