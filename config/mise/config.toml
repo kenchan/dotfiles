@@ -26,6 +26,7 @@ pnpm = "latest"
 "aqua:mame/wsl2-ssh-agent" = "latest"
 
 "github:googleworkspace/cli" = "latest"
+"github:ogulcancelik/herdr" = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["ruby", "node"]
