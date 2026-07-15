@@ -3,5 +3,8 @@ onboarding = false
 [ui]
 agent_panel_sort = "priority"
 
+[ui.toast]
+delivery = "system"
+
 [experimental]
 pane_history = true
