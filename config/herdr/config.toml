@@ -1,4 +1,4 @@
 onboarding = false
 
 [ui]
-agent_panel_sort = "spaces"
+agent_panel_sort = "priority"
