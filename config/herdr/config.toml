@@ -1,5 +1,8 @@
 onboarding = false
 
+[keys]
+prefix = "ctrl+t"
+
 [ui]
 agent_panel_sort = "priority"
 
