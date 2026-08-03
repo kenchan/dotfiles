@@ -11,3 +11,9 @@ delivery = "off"
 
 [experimental]
 pane_history = true
+
+[[keys.command]]
+key = "prefix+t"
+type = "shell"
+command = '"$HERDR_BIN_PATH" plugin pane open --plugin kenchan.ghq-open-agent --entrypoint picker'
+description = "ghq repository picker"
