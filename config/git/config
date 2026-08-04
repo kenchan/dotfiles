@@ -44,10 +44,9 @@
 	prune = true
 [commit]
 	verbose = true
+	gpgsign = true
 [ghq]
 	root = ~/src
-[include]
-	path = ~/.config/git/config.local
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
@@ -63,5 +62,9 @@
 	helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
 [push]
 	autoSetupRemote = true
+[gpg]
+	format = ssh
 [gpg "ssh"]
-	program = /mnt/c/Users/kenchan/AppData/Local/Microsoft/WindowsApps/op-ssh-sign-wsl.exe
+	program = "/mnt/c/Program Files/1Password/app/8/op-ssh-sign-wsl.exe"
+[include]
+	path = ~/.config/git/config.local

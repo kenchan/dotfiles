@@ -1,13 +1,4 @@
-# Signed key Settings from 1password
-#
-#[user]
-#  signingkey = ssh-ed25519 ...
-#
-#[gpg]
-#  format = ssh
-#
+# Override this only on machines where 1Password installs the SSH signer in
+# AppData rather than the default Program Files location.
 #[gpg "ssh"]
-#  program = "/**/op-ssh-sign-wsl"
-#
-#[commit]
-#  gpgsign = true
+#  program = /mnt/c/Users/kenchan/AppData/Local/Microsoft/WindowsApps/op-ssh-sign-wsl.exe
