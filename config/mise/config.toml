@@ -19,8 +19,10 @@ pnpm = "latest"
 "npm:@google/gemini-cli" = "latest"
 "npm:@openai/codex" = "latest"
 "npm:hunkdiff" = "latest"
+"npm:wrangler" = "latest"
 "npm:zenn-cli" = "latest"
 
+"aqua:cli/cli" = "latest"
 "aqua:mame/wsl2-ssh-agent" = "latest"
 
 "github:googleworkspace/cli" = "latest"
