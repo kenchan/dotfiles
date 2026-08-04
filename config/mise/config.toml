@@ -1,9 +1,7 @@
 [tools]
 
-act = "latest"
 awscli = 'latest'
 bun = "latest"
-deno = 'latest'
 gcloud = "latest"
 go = 'latest'
 kustomize = 'latest'
@@ -20,7 +18,6 @@ pnpm = "latest"
 
 "npm:@google/gemini-cli" = "latest"
 "npm:@openai/codex" = "latest"
-"npm:difit" = "latest"
 "npm:hunkdiff" = "latest"
 "npm:zenn-cli" = "latest"
 
