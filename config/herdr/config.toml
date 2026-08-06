@@ -6,6 +6,12 @@ prefix = "ctrl+t"
 [ui]
 agent_panel_sort = "priority"
 
+[ui.sidebar.agents]
+rows = [
+  ["state_icon", "workspace", "tab"],
+  [{ token = "agent", dim = false }],
+]
+
 [ui.toast]
 delivery = "off"
 
