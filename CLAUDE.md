@@ -13,6 +13,14 @@ Run inside this repository (the `[dotfiles]` section lives in the repo-root `mis
 - Start managing a new file: `mise dotfiles add ~/.config/newfile`
 - Full machine setup: `mise bootstrap`
 
+**Caution**: `mise dotfiles add` only matches exact `[dotfiles]` keys. For a new
+file inside a directory already managed with `symlink-each` (e.g. a new file
+under `~/.claude` or `~/.config`), it won't recognize the existing mapping —
+it creates a separate entry instead (seeding a new `~/.dotfiles/` tree and
+writing to the global mise config). Don't use `add` for these; instead place
+the file directly under the matching source directory in this repo (e.g.
+`claude/skills/<name>/SKILL.md`) and run `mise dotfiles apply`.
+
 ### Shell Configuration Testing
 
 - Validate fish config: `fish -c exit`
