@@ -11,7 +11,18 @@ mise up
 
 if command -v claude &> /dev/null; then
     claude update
-    claude plugin list --json | jq -r '.[].id' | xargs -n1 claude plugin update
+    claude plugin list --json | jq -c '.[]' | while read -r entry; do
+        id=$(jq -r '.id' <<<"$entry")
+        scope=$(jq -r '.scope' <<<"$entry")
+        path=$(jq -r '.projectPath // empty' <<<"$entry")
+        if [[ -n "$path" ]]; then
+            pushd "$path" >/dev/null
+            claude plugin update "$id" -s "$scope"
+            popd >/dev/null
+        else
+            claude plugin update "$id" -s "$scope"
+        fi
+    done
 fi
 
 if command -v gh &> /dev/null; then
