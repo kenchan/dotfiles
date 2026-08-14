@@ -27,7 +27,7 @@ EOF
 ## Notes
 
 - `win32yank.exe` handles UTF-8 natively — no encoding conversion needed.
-- Located at `~/.local/bin/win32yank.exe`.
+- Installed via mise (`github:equalsraf/win32yank`); it resolves on `PATH`.
 - Fallback if `win32yank.exe` is unavailable: `printf '%s' '...' | iconv -f UTF-8 -t UTF-16LE | clip.exe`
 
 ## Reading from Clipboard
