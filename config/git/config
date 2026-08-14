@@ -60,6 +60,7 @@
 	colorMoved = default
 [credential]
 	helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
+	username = kenchan
 [push]
 	autoSetupRemote = true
 [gpg]
