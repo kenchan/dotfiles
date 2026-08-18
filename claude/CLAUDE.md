@@ -1,7 +1,7 @@
 # Personal Preferences
 
 - Respond in Japanese
-- Comments should explain "why" only, not "what"
+- Where explanations go (t-wada): How → the code itself. What → tests, and API docs. Why → the commit log. Why not (why not the obvious alternative) → a code comment. Anything else: no comment.
 - Use `/commit-commands:commit` skill for git commits
 - Send Slack messages as drafts. Confirm content with user before creating the draft.
 - Always use ghq to manage git repositories (clone with `ghq get`, stored under `ghq root`)
