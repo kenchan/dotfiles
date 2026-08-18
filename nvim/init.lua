@@ -1,33 +1,16 @@
-require("config.lazy")
+vim.pack.add({ "https://github.com/folke/tokyonight.nvim" })
 
-local options = {
-  number = true,
+vim.o.number = true
+vim.o.clipboard = "unnamedplus"
+vim.o.fileencodings = "utf-8,euc-jp"
+vim.o.expandtab = true
+vim.o.shiftwidth = 2
+vim.o.tabstop = 2
+vim.o.softtabstop = 2
 
-  clipboard = "unnamedplus",
+vim.keymap.set("n", ";", ":")
+vim.keymap.set("n", ":", ";")
+vim.keymap.set("n", "k", "gk")
+vim.keymap.set("n", "j", "gj")
 
-  encoding = "utf-8",
-  fileencodings = "utf-8,euc-jp",
-
-  expandtab = true,
-  sw = 2,
-  ts = 2,
-  sts = 2,
-}
-
-for k, v in pairs(options) do
-  vim.opt[k] = v
-end
-
-local keymap_opts = { noremap = true, silent = true }
-
-vim.api.nvim_set_keymap("n", ";", ":", keymap_opts)
-vim.api.nvim_set_keymap("n", ":", ";", keymap_opts)
-vim.api.nvim_set_keymap("n", "k", "gk", keymap_opts)
-vim.api.nvim_set_keymap("n", "j", "gj", keymap_opts)
-
-vim.cmd.colorscheme "tokyonight"
-
-if vim.g.vscode then
-  vim.api.nvim_set_keymap("n", "k", ":<C-u>call VSCodeCall('cursorMove', { 'to': 'up', 'by': 'wrappedLine', 'value': v:count ? v:count : 1 })<CR>", keymap_opts)
-  vim.api.nvim_set_keymap("n", "j", ":<C-u>call VSCodeCall('cursorMove', { 'to': 'down', 'by': 'wrappedLine', 'value': v:count ? v:count : 1 })<CR>", keymap_opts)
-end
+vim.cmd.colorscheme("tokyonight")

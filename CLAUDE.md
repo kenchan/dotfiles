@@ -51,9 +51,10 @@ Key properties:
 - `symlink-each` recreates directories as real directories and links each
   managed file individually. Application-generated files next to them stay in
   the real directories and never show up in this repository.
-- `nvim/` is deployed as a whole-directory symlink so that `lazy-lock.json`
-  rewrites are reliably captured. It lives outside `config/` in the repository
-  to keep the two dotfiles entries' sources from overlapping.
+- `nvim/` is deployed as a whole-directory symlink so that `nvim-pack-lock.json`
+  rewrites are reliably captured (Neovim writes it into `$XDG_CONFIG_HOME/nvim/`).
+  It lives outside `config/` in the repository to keep the two dotfiles entries'
+  sources from overlapping.
 - Deployed files ARE the repository files (same inode via symlink). Edit either
   path, then commit here — there is no separate "apply" step for edits to
   already-managed files. `mise dotfiles apply` is only needed when files are
@@ -75,8 +76,8 @@ it to `[dotfiles]` or commit its contents here.
 - Integrates: direnv, starship, fzf, wsl2-ssh-agent
 
 **Neovim** (`nvim/`):
-- Lazy.nvim plugin manager
-- Modular plugin config in `lua/plugins/` directory
+- Single `init.lua`; no plugin-manager bootstrap. Requires Neovim >= 0.12
+- Plugins via the built-in `vim.pack`; `:lua vim.pack.update()` to update
 
 **Git** (`config/git/config`):
 - GPG signing with SSH keys (1Password)
