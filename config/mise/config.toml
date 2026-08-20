@@ -18,7 +18,6 @@ pnpm = "latest"
 
 "npm:@google/gemini-cli" = "latest"
 "npm:@openai/codex" = "latest"
-"npm:hunkdiff" = "latest"
 "npm:wrangler" = "latest"
 "npm:zenn-cli" = "latest"
 
@@ -28,6 +27,8 @@ pnpm = "latest"
 "github:googleworkspace/cli" = "latest"
 "github:ogulcancelik/herdr" = "latest"
 "github:equalsraf/win32yank" = { version = "latest", postinstall = "chmod +x {{xdg_data_home}}/mise/installs/github-equalsraf-win32yank/*/win32yank.exe" }
+ghq = "latest"
+hunk = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["ruby", "node"]
