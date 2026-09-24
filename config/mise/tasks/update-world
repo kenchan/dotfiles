@@ -1,13 +1,18 @@
 #!/usr/bin/env bash
 #MISE description="Update mise tools and system packages"
 
-mise self-update -y
+# ディストリのパッケージとして入れた mise は self-update 無効でビルドされているので、パッケージマネージャ側の更新に任せる
+if [[ "$(mise doctor --json 2>/dev/null | jq '.self_update_available')" == "true" ]]; then
+    mise self-update -y
+fi
 
 if command -v gh &> /dev/null; then
     export GITHUB_TOKEN="$(gh auth token)"
 fi
 
 mise up
+mise prune -y
+mise cache prune
 
 if command -v claude &> /dev/null; then
     claude update
@@ -33,6 +38,24 @@ if command -v fish &> /dev/null; then
     fish -c "type -q fisher; and fisher update"
 fi
 
-sudo eix-sync -a
-sudo emerge -uDN @world -j2
-sudo emerge --depclean
+if command -v emerge &> /dev/null; then
+    sudo eix-sync -a
+    sudo emerge -uDN @world -j2
+    sudo emerge --depclean
+    if command -v eclean &> /dev/null; then
+        sudo eclean-dist --deep
+        sudo eclean-pkg --deep
+    fi
+elif command -v pacman &> /dev/null; then
+    if command -v paru &> /dev/null; then
+        paru -Syu
+        paru -c
+        paru -Sc --noconfirm
+    else
+        sudo pacman -Syu
+        if orphans=$(pacman -Qdtq); then
+            sudo pacman -Rns $orphans
+        fi
+        sudo pacman -Sc --noconfirm
+    fi
+fi
