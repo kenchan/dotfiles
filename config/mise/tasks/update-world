@@ -19,6 +19,7 @@ if command -v claude &> /dev/null; then
     claude plugin list --json | jq -c '.[]' | while read -r entry; do
         id=$(jq -r '.id' <<<"$entry")
         scope=$(jq -r '.scope' <<<"$entry")
+        [[ "$scope" == "synced" ]] && continue
         path=$(jq -r '.projectPath // empty' <<<"$entry")
         if [[ -n "$path" ]]; then
             pushd "$path" >/dev/null
