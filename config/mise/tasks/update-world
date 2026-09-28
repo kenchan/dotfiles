@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 #MISE description="Update mise tools and system packages"
+set -euo pipefail
 
 # ディストリのパッケージとして入れた mise は self-update 無効でビルドされているので、パッケージマネージャ側の更新に任せる
 if [[ "$(mise doctor --json 2>/dev/null | jq '.self_update_available')" == "true" ]]; then
