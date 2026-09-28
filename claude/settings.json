@@ -1,0 +1,70 @@
+{
+  "env": {
+    "GIT_COMMITTER_NAME": "Claude Code",
+    "GIT_COMMITTER_EMAIL": "claude-code@anthropic.localhost",
+    "GIT_CONFIG_COUNT": "1",
+    "GIT_CONFIG_KEY_0": "commit.gpgsign",
+    "GIT_CONFIG_VALUE_0": "false"
+  },
+  "attribution": {
+    "sessionUrl": false
+  },
+  "permissions": {
+    "defaultMode": "auto"
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "^(startup|resume|clear|compact|fork)$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash '/home/kenchan/.claude/hooks/herdr-agent-state.sh' session",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"UserPromptSubmit\",\"additionalContext\":\"Current time: '$(date +%H:%M:%S%z)'\"}}'",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.file_path' | xargs sed -i -e '$a\\'"
+          },
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.file_path' | xargs sed -i 's/[[:space:]]*$//'"
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bash ~/.claude/statusline.bash"
+  },
+  "enabledPlugins": {
+    "commit-commands@claude-plugins-official": true
+  },
+  "extraKnownMarketplaces": {},
+  "advisorModel": "fable",
+  "tui": "fullscreen",
+  "theme": "dark",
+  "remoteControlAtStartup": true,
+  "skipAutoPermissionPrompt": true,
+  "agentPushNotifEnabled": true
+}

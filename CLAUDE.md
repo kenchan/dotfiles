@@ -60,12 +60,13 @@ Key properties:
   already-managed files. `mise dotfiles apply` is only needed when files are
   added to or removed from the repository.
 
-### IMPORTANT: ~/.claude/settings.json is unmanaged
+### IMPORTANT: review ~/.claude/settings.json diffs before committing
 
-`~/.claude/settings.json` is intentionally NOT managed by this repository.
-It contains machine- and work-local state (internal plugin marketplaces,
-local hooks) that must not be committed to this public repository. Never add
-it to `[dotfiles]` or commit its contents here.
+`~/.claude/settings.json` is managed here (`claude/settings.json`). Claude Code
+rewrites it via `/config`, plugin installs, etc., so changes land in this
+public repository's working tree. Before committing, review the diff and make
+sure nothing unsafe to publish (tokens or other secrets) is included; reject
+such changes instead of committing them.
 
 ### Key Patterns
 
