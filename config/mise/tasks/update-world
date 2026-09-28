@@ -65,9 +65,9 @@ elif command -v pacman &> /dev/null; then
         paru -c
         paru -Sc --noconfirm
     else
-        sudo pacman -Syu
+        sudo pacman -Syu --noconfirm
         if orphans=$(pacman -Qdtq); then
-            sudo pacman -Rns $orphans
+            sudo pacman -Rns $orphans --noconfirm
         fi
         sudo pacman -Sc --noconfirm
     fi
