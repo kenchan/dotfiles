@@ -52,6 +52,10 @@ if command -v herdr &> /dev/null; then
     herdr plugin install kenchan/herdr-ghq-open-agent --yes
 fi
 
+if command -v apm &> /dev/null; then
+    apm update -g --yes
+fi
+
 if command -v emerge &> /dev/null; then
     sudo eix-sync -a
     sudo emerge -uDN @world -j2
