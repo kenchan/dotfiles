@@ -62,11 +62,12 @@ Key properties:
 
 ### IMPORTANT: review ~/.claude/settings.json diffs before committing
 
-`~/.claude/settings.json` is managed here (`claude/settings.json`). Claude Code
-rewrites it via `/config`, plugin installs, etc., so changes land in this
-public repository's working tree. Before committing, review the diff and make
-sure nothing unsafe to publish (tokens or other secrets) is included; reject
-such changes instead of committing them.
+`~/.claude/settings.json` is managed here as `claude/settings.json` (deployed
+via `symlink-each`). Work-internal settings (plugin marketplaces, plugins,
+hooks) come from server-managed settings (`~/.claude/remote-settings.json`),
+not from this file, so they don't belong here. Claude Code rewrites this file
+via `/config`, plugin installs, etc.; before committing, review the diff and
+reject anything that must not be published (secrets or work-internal settings).
 
 ### Key Patterns
 
