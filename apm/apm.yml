@@ -1,0 +1,20 @@
+name: kenchan
+version: 1.0.0
+description: APM project for kenchan
+author: Kenichi Takahashi
+targets:
+- claude
+dependencies:
+  apm:
+  - freee/freee-mcp/skills/freee-api-skill
+  mcp:
+  - name: datadog-mcp
+    registry: false
+    transport: http
+    url: https://mcp.datadoghq.com/api/unstable/mcp-server/mcp
+  - name: sentry
+    registry: false
+    transport: http
+    url: https://mcp.sentry.dev/mcp
+includes: auto
+scripts: {}

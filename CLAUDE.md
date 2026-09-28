@@ -45,6 +45,7 @@ History: rcm → chezmoi (2026-01-05) → mise dotfiles (2026-07-14), full git h
 | `nvim/` | `~/.config/nvim` | `symlink` (whole directory) |
 | `claude/` | `~/.claude/` | `symlink-each` |
 | `bin/` | `~/.local/bin/` | `symlink-each` |
+| `apm/` | `~/.apm/` | `symlink-each` |
 
 Key properties:
 
