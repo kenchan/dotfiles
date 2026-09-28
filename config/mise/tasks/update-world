@@ -40,11 +40,14 @@ if command -v fish &> /dev/null; then
 fi
 
 if command -v herdr &> /dev/null; then
-    herdr integration install claude
-    # ~/.codex が無いと install が失敗する
+    # 設定ディレクトリが無いと install が失敗する
+    if [[ -d "${CLAUDE_CONFIG_DIR:-$HOME/.claude}" ]]; then
+        herdr integration install claude
+    fi
     if [[ -d "${CODEX_HOME:-$HOME/.codex}" ]]; then
         herdr integration install codex
     fi
+
     herdr plugin install kenchan/herdr-ghq-open-agent --yes
 fi
 
