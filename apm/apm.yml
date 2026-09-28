@@ -4,9 +4,10 @@ description: APM project for kenchan
 author: Kenichi Takahashi
 targets:
 - claude
+- codex
 dependencies:
   apm:
-  - freee/freee-mcp/skills/freee-api-skill
+  - "freee/freee-mcp/skills/freee-api-skill#>=0.36.0"
   mcp:
   - name: datadog-mcp
     registry: false
