@@ -39,6 +39,11 @@ if command -v fish &> /dev/null; then
     fish -c "type -q fisher; and fisher update"
 fi
 
+if command -v herdr &> /dev/null; then
+    herdr integration install claude
+    herdr plugin install kenchan/herdr-ghq-open-agent --yes
+fi
+
 if command -v emerge &> /dev/null; then
     sudo eix-sync -a
     sudo emerge -uDN @world -j2
