@@ -66,8 +66,8 @@ if command -v emerge &> /dev/null; then
     fi
 elif command -v pacman &> /dev/null; then
     if command -v paru &> /dev/null; then
-        paru -Syu
-        paru -c
+        paru -Syu --noconfirm --skipreview
+        paru -c --noconfirm
         paru -Sc --noconfirm
     else
         sudo pacman -Syu --noconfirm
