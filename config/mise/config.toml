@@ -30,6 +30,7 @@ pnpm = "latest"
 ghq = "latest"
 hunk = "latest"
 apm = "latest"
+antigravity-cli = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["ruby", "node"]
