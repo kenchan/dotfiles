@@ -68,12 +68,14 @@ elif command -v pacman &> /dev/null; then
     if command -v paru &> /dev/null; then
         paru -Syu --noconfirm --skipreview
         paru -c --noconfirm
+        sudo find /var/cache/pacman/pkg -mindepth 1 -maxdepth 1 -type d -name 'download-*' -empty -delete
         paru -Sc --noconfirm
     else
         sudo pacman -Syu --noconfirm
         if orphans=$(pacman -Qdtq); then
             sudo pacman -Rns $orphans --noconfirm
         fi
+        sudo find /var/cache/pacman/pkg -mindepth 1 -maxdepth 1 -type d -name 'download-*' -empty -delete
         sudo pacman -Sc --noconfirm
     fi
 fi
