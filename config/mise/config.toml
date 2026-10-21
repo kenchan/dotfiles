@@ -20,6 +20,7 @@ pnpm = "latest"
 "npm:@openai/codex" = "latest"
 "npm:wrangler" = "latest"
 "npm:zenn-cli" = "latest"
+"npm:heroku" = "latest"
 
 "aqua:cli/cli" = "latest"
 "aqua:mame/wsl2-ssh-agent" = "latest"
