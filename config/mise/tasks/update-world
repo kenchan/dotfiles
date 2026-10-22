@@ -53,6 +53,7 @@ if command -v herdr &> /dev/null; then
 fi
 
 if command -v apm &> /dev/null; then
+    apm install -g
     apm update -g --yes
 fi
 
