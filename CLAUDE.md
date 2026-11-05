@@ -47,6 +47,19 @@ History: rcm → chezmoi (2026-01-05) → mise dotfiles (2026-07-14), full git h
 | `bin/` | `~/.local/bin/` | `symlink-each` |
 | `apm/` | `~/.apm/` | `symlink-each` |
 
+OS-specific files live under `os/wsl/` and `os/macos/` (same layout as the
+common directories, e.g. `os/wsl/config/git/config.os`) and are deployed by
+single-file or per-directory `[dotfiles]` entries in `mise.linux.toml` /
+`mise.macos.toml`. mise loads the file for the current OS via platform
+environments (`auto_env = true`, set in the repo-root `.miserc.toml` and in
+`config/mise/miserc.toml` → `~/.config/mise/miserc.toml`; it has no effect in
+`mise.toml`). `linux` is treated as WSL because WSL is the only Linux
+environment in use. OS-specific mise tools go in `config/mise/config.<os>.toml`.
+
+Current OS-specific files: `~/.config/git/config.os` (1Password SSH signer,
+included from `config/git/config`), `~/.config/fish/conf.d/os.fish`,
+`~/.local/bin/notify`, and (WSL only) `~/.claude/skills/wsl2-clipboard/`.
+
 Key properties:
 
 - `symlink-each` recreates directories as real directories and links each
@@ -76,18 +89,24 @@ reject anything that must not be published (secrets or work-internal settings).
 - Conditional command checking pattern before setting aliases/abbreviations
 - Uses `command -v` checks to ensure tools exist
 - mise activation for runtime management
-- Integrates: direnv, starship, fzf, wsl2-ssh-agent
+- Integrates: direnv, starship, fzf
+- OS-specific setup (wsl2-ssh-agent on WSL; Homebrew PATH and the 1Password
+  SSH agent on macOS) lives in `os/<os>/config/fish/conf.d/os.fish`
 
 **Neovim** (`nvim/`):
 - Single `init.lua`; no plugin-manager bootstrap. Requires Neovim >= 0.12
 - Plugins via the built-in `vim.pack`; `:lua vim.pack.update()` to update
 
 **Git** (`config/git/config`):
-- GPG signing with SSH keys (1Password)
+- GPG signing with SSH keys (1Password); the signer path comes from the
+  per-OS `config.os` include
+- HTTPS credentials via `bin/git-credential-gh` (gh tokens, per
+  `credential.username` account)
 - Config includes `config.local` for machine-specific settings (not tracked)
 
 **mise** (`config/mise/`):
-- Global tool version management in `config.toml`
+- Global tool version management in `config.toml` (OS-only tools in
+  `config.<os>.toml`)
 - Custom tasks in `tasks/` directory (executable scripts)
 
 ### Development Workflow
