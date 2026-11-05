@@ -22,11 +22,9 @@ pnpm = "latest"
 "npm:zenn-cli" = "latest"
 
 "aqua:cli/cli" = "latest"
-"aqua:mame/wsl2-ssh-agent" = "latest"
 
 "github:googleworkspace/cli" = "latest"
 "github:ogulcancelik/herdr" = "latest"
-"github:equalsraf/win32yank" = { version = "latest", postinstall = "chmod +x {{xdg_data_home}}/mise/installs/github-equalsraf-win32yank/*/win32yank.exe" }
 ghq = "latest"
 hunk = "latest"
 apm = "latest"

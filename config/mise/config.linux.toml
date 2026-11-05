@@ -1,0 +1,5 @@
+# Linux 環境は WSL しかないので linux = WSL とみなしている。
+# 素の Linux を使うようになったら MISE_ENV=wsl などで分ける
+[tools]
+"aqua:mame/wsl2-ssh-agent" = "latest"
+"github:equalsraf/win32yank" = { version = "latest", postinstall = "chmod +x {{xdg_data_home}}/mise/installs/github-equalsraf-win32yank/*/win32yank.exe" }

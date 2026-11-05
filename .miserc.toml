@@ -1,0 +1,3 @@
+# mise dotfiles apply が mise.<os>.toml の [dotfiles] を拾うために必要。
+# ~/.config/mise/miserc.toml は初回 apply まで存在しないのでリポジトリ側にも置く
+auto_env = true

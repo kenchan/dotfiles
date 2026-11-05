@@ -1,0 +1,3 @@
+# mise.toml の [settings] では効かない（config 探索前に読まれる）ためここで有効化する。
+# mise 2027.6.0 で既定オンになったら不要
+auto_env = true
