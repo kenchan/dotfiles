@@ -2,3 +2,4 @@
 [dotfiles]
 "~/.config/git/config.os" = "os/macos/config/git/config.os"
 "~/.config/fish/conf.d/os.fish" = "os/macos/config/fish/conf.d/os.fish"
+"~/.local/bin/notify" = "os/macos/bin/notify"
