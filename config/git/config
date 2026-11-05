@@ -59,12 +59,10 @@
 [diff]
 	colorMoved = default
 [credential]
-	# 空の helper で、system 側の設定（Homebrew git の osxkeychain など）が
-	# 足した helper を消す。helper は複数あると全部順に呼ばれるため
+	# system 側の設定が足した helper（osxkeychain など）まで呼ばれないよう空にする
+	# https://git-scm.com/docs/gitcredentials#Documentation/gitcredentials.txt-helper
 	helper =
 	helper = !~/.local/bin/git-credential-gh
-# どのアカウントで認証するかは URL で決める。パスは / 区切りの前方一致で、
-# 長く一致した方が優先されるので、組織ごとの上書きは config.local に書く
 [credential "https://github.com"]
 	username = kenchan
 [push]
