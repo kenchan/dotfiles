@@ -5,3 +5,4 @@
 "~/.config/git/config.os" = "os/wsl/config/git/config.os"
 "~/.config/fish/conf.d/os.fish" = "os/wsl/config/fish/conf.d/os.fish"
 "~/.local/bin/notify" = "os/wsl/bin/notify"
+"~/.claude/skills/wsl2-clipboard" = { source = "os/wsl/claude/skills/wsl2-clipboard", mode = "symlink-each" }
