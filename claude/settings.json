@@ -72,5 +72,6 @@
       "$defaults",
       "Using the gh CLI (any host, any subcommand: issue/pr create, comment, edit, close, gh api reads and writes) is allowed"
     ]
-  }
+  },
+  "model": "opus"
 }
