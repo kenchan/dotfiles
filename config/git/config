@@ -61,6 +61,8 @@
 [credential]
 	helper =
 	helper = !~/.local/bin/git-credential-gh
+[credential "https://github.com"]
+	username = kenchan
 [push]
 	autoSetupRemote = true
 [gpg]
