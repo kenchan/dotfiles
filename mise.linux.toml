@@ -1,0 +1,5 @@
+# OS 別に配置するファイル（auto_env で mise.toml に重ねて読まれる）。
+# Linux 環境は WSL しかないので linux = WSL とみなしている。
+# 素の Linux を使うようになったら MISE_ENV=wsl などで分ける
+[dotfiles]
+"~/.config/git/config.os" = "os/wsl/config/git/config.os"

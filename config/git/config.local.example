@@ -1,4 +1,4 @@
-# Override this only on machines where 1Password installs the SSH signer in
-# AppData rather than the default Program Files location.
+# Machine-specific overrides. Example: on a WSL machine where 1Password
+# installs the SSH signer in AppData rather than Program Files.
 #[gpg "ssh"]
 #  program = /mnt/c/Users/kenchan/AppData/Local/Microsoft/WindowsApps/op-ssh-sign-wsl.exe
