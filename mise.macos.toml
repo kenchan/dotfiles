@@ -1,3 +1,4 @@
 # OS 別に配置するファイル（auto_env で mise.toml に重ねて読まれる）
 [dotfiles]
 "~/.config/git/config.os" = "os/macos/config/git/config.os"
+"~/.config/fish/conf.d/os.fish" = "os/macos/config/fish/conf.d/os.fish"

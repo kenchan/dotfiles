@@ -3,3 +3,4 @@
 # 素の Linux を使うようになったら MISE_ENV=wsl などで分ける
 [dotfiles]
 "~/.config/git/config.os" = "os/wsl/config/git/config.os"
+"~/.config/fish/conf.d/os.fish" = "os/wsl/config/fish/conf.d/os.fish"
