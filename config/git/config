@@ -59,7 +59,8 @@
 [diff]
 	colorMoved = default
 [credential]
-	helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
+	helper =
+	helper = !~/.local/bin/git-credential-gh
 	username = kenchan
 [push]
 	autoSetupRemote = true
