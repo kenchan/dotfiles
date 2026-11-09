@@ -9,6 +9,12 @@ fi
 
 if command -v gh &> /dev/null; then
     export GITHUB_TOKEN="$(gh auth token)"
+    # mise は GitHub Enterprise の api_url を持つツールにも GITHUB_TOKEN を送り、401 で失敗する。
+    # gh がログインしている github.com 以外のホストが 1 つだけなら、そのトークンを渡す
+    ghe_hosts=$(gh auth status 2>/dev/null | grep -E '^[^ ]' | grep -vx 'github.com' || true)
+    if [[ -n "$ghe_hosts" && "$(wc -l <<<"$ghe_hosts")" -eq 1 ]]; then
+        export MISE_GITHUB_ENTERPRISE_TOKEN="$(gh auth token --hostname "$ghe_hosts")"
+    fi
 fi
 
 mise up
