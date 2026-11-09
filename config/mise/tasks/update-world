@@ -2,22 +2,18 @@
 #MISE description="Update mise tools and system packages"
 set -euo pipefail
 
-if command -v gh &> /dev/null; then
-    export GITHUB_TOKEN="$(gh auth token)"
-    # mise は GitHub Enterprise の api_url を持つツールにも GITHUB_TOKEN を送り、401 で失敗する。
-    # gh がログインしている github.com 以外のホストが 1 つだけなら、そのトークンを渡す
-    ghe_hosts=$(gh auth status 2>/dev/null | grep -E '^[^ ]' | grep -vx 'github.com' || true)
-    if [[ -n "$ghe_hosts" && "$(wc -l <<<"$ghe_hosts")" -eq 1 ]]; then
-        export MISE_GITHUB_ENTERPRISE_TOKEN="$(gh auth token --hostname "$ghe_hosts")"
-    fi
-fi
+# トークンはこのスクリプトでは取らず、呼ぶ側が環境変数で渡す。例:
+#   GITHUB_TOKEN=$(gh auth token) mise run update-world
+# GITHUB_TOKEN は mise と Nix(GitHub API の回数制限よけ)が使う。mise は GitHub Enterprise の
+# api_url を持つツールにも GITHUB_TOKEN を送って 401 になるので、そういうツールがあるマシンでは
+# MISE_GITHUB_ENTERPRISE_TOKEN も渡す
 
 if command -v darwin-rebuild &> /dev/null; then
     # macOS: Touch ID(sudo)を聞かれる処理を先に済ませて、あとは放っておけるようにする。
     # nix-darwin の設定(github.com/kenchan/nix-config)の入力を上げて反映し、switch では上げない
     # 設定にしている Homebrew の cask もここで上げる(cask によっては sudo を聞かれる)
     nix_config="$HOME/src/github.com/kenchan/nix-config"
-    # 共有の IP だと GitHub API の未認証の回数制限にすぐ当たるので、gh のトークンを Nix にも渡す
+    # 共有の IP だと GitHub API の未認証の回数制限にすぐ当たるので、GITHUB_TOKEN があれば Nix にも渡す
     nix_opts=()
     if [[ -n "${GITHUB_TOKEN:-}" ]]; then
         nix_opts=(--option access-tokens "github.com=$GITHUB_TOKEN")
