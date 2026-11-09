@@ -15,10 +15,6 @@ mise up
 mise prune -y
 mise cache prune
 
-if command -v claude &> /dev/null; then
-    claude update
-fi
-
 if command -v gh &> /dev/null; then
     gh extension upgrade --all
 fi
