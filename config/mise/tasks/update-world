@@ -2,6 +2,17 @@
 #MISE description="Update mise tools and system packages"
 set -euo pipefail
 
+if command -v darwin-rebuild &> /dev/null; then
+    # macOS: Touch ID(sudo)を聞かれる処理を先に済ませて、あとは放っておけるようにする。
+    # nix-darwin の設定(github.com/kenchan/nix-config)の入力を上げて反映し、switch では上げない
+    # 設定にしている Homebrew の cask もここで上げる(cask によっては sudo を聞かれる)
+    nix_config="$HOME/src/github.com/kenchan/nix-config"
+    nix flake update --flake "$nix_config"
+    sudo darwin-rebuild switch --flake "$nix_config#default"
+    brew update
+    brew upgrade
+fi
+
 # ディストリのパッケージとして入れた mise は self-update 無効でビルドされているので、パッケージマネージャ側の更新に任せる
 if [[ "$(mise doctor --json 2>/dev/null | jq '.self_update_available')" == "true" ]]; then
     mise self-update -y
@@ -67,15 +78,8 @@ elif command -v pacman &> /dev/null; then
         sudo pacman -Sc --noconfirm
     fi
 elif command -v darwin-rebuild &> /dev/null; then
-    # nix-darwin の設定(github.com/kenchan/nix-config)の入力を上げて反映する。
-    # switch は Homebrew を上げない設定なので、cask はここで上げる
-    nix_config="$HOME/src/github.com/kenchan/nix-config"
-    nix flake update --flake "$nix_config"
-    sudo darwin-rebuild switch --flake "$nix_config#default"
-    brew update
-    brew upgrade
-
-    # Docker 用の Lima の VM(Ubuntu)。セキュリティ更新は VM の中の unattended-upgrades が入れるが、
+    # Nix と Homebrew は先頭で上げ済み。
+    # Docker 用の Lima の VM(Ubuntu)。VM の中の sudo はパスワードなしで通る。セキュリティ更新は VM の中の unattended-upgrades が入れるが、
     # Docker 社のリポジトリから入れた Docker 本体は対象外なので、ここでまとめて上げる
     if command -v limactl &> /dev/null && [[ "$(limactl list --format '{{.Status}}' docker 2>/dev/null)" == "Running" ]]; then
         limactl shell docker sudo sh -c 'apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y upgrade && apt-get -y autoremove'
