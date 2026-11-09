@@ -1,18 +1,20 @@
 #!/usr/bin/env bash
 input=$(cat)
 
-IFS=$'\t' read -r cwd model ctx_pct ctx_tokens ctx_size rl_5h rl_5h_resets rl_7d rl_7d_resets < <(
+# Split on the unit separator (0x1f), not tab: tab is IFS whitespace, so read
+# collapses empty fields between tabs and shifts every later value.
+IFS=$'\x1f' read -r cwd model ctx_pct ctx_tokens ctx_size rl_5h rl_5h_resets rl_7d rl_7d_resets < <(
   echo "$input" | jq -r '[
     .workspace.current_dir,
     .model.display_name,
-    (.context_window.used_percentage // ""),
-    (.context_window.current_usage.input_tokens // ""),
-    (.context_window.context_window_size // ""),
-    (.rate_limits.five_hour.used_percentage // ""),
-    (.rate_limits.five_hour.resets_at // ""),
-    (.rate_limits.seven_day.used_percentage // ""),
-    (.rate_limits.seven_day.resets_at // "")
-  ] | @tsv'
+    .context_window.used_percentage,
+    .context_window.current_usage.input_tokens,
+    .context_window.context_window_size,
+    .rate_limits.five_hour.used_percentage,
+    .rate_limits.five_hour.resets_at,
+    .rate_limits.seven_day.used_percentage,
+    .rate_limits.seven_day.resets_at
+  ] | map(. // "" | tostring) | join("\u001f")'
 )
 
 dir() {
