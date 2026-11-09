@@ -1,0 +1,3 @@
+# Ghostty は Ctrl+J を IME とターミナルの両方に渡すので、macSKK でひらがなに入ると同時に改行(LF)も送られてしまう。
+# ターミナル側だけ無視して、IME(macSKK)には届くようにする
+keybind = ctrl+j=ignore

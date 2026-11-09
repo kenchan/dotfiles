@@ -2,3 +2,4 @@
 [dotfiles]
 "~/.config/git/config.os" = "os/macos/config/git/config.os"
 "~/.config/fish/conf.d/os.fish" = "os/macos/config/fish/conf.d/os.fish"
+"~/.config/ghostty/config" = "os/macos/config/ghostty/config"
