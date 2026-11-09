@@ -25,6 +25,11 @@ context() {
   [ -n "$ctx_pct" ] && printf 'ctx:%d%%' "${ctx_pct%.*}"
 }
 
+# Format a Unix timestamp: GNU date takes -d @SECONDS, BSD (macOS) date takes -r SECONDS
+fmt_epoch() {
+  date -d "@$1" "+$2" 2>/dev/null || date -r "$1" "+$2"
+}
+
 rl_part() {
   local pct=$1 resets=$2 label=$3
   [ -z "$pct" ] && return
@@ -32,11 +37,11 @@ rl_part() {
   if [ -n "$resets" ]; then
     # 7d reset: show MM/DD if not today, else HH:MM
     local today; today=$(date +%m/%d)
-    local rst_date; rst_date=$(date -d "@$resets" +%m/%d)
+    local rst_date; rst_date=$(fmt_epoch "$resets" %m/%d)
     if [ "$rst_date" = "$today" ]; then
-      printf '(→%s)' "$(date -d "@$resets" +%H:%M)"
+      printf '(→%s)' "$(fmt_epoch "$resets" %H:%M)"
     else
-      printf '(→%s)' "$(date -d "@$resets" +'%m/%d')"
+      printf '(→%s)' "$rst_date"
     fi
   fi
 }
