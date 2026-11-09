@@ -24,7 +24,7 @@ pnpm = "latest"
 "aqua:cli/cli" = "latest"
 
 "github:googleworkspace/cli" = "latest"
-"github:ogulcancelik/herdr" = "latest"
+herdr = "latest"
 ghq = "latest"
 hunk = "latest"
 apm = "latest"
