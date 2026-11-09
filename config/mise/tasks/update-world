@@ -66,4 +66,13 @@ elif command -v pacman &> /dev/null; then
         sudo find /var/cache/pacman/pkg -mindepth 1 -maxdepth 1 -type d -name 'download-*' -empty -delete
         sudo pacman -Sc --noconfirm
     fi
+elif command -v darwin-rebuild &> /dev/null; then
+    # nix-darwin の設定(github.com/kenchan/nix-config)の入力を上げて反映する。
+    # switch は Homebrew を上げない設定なので、cask はここで上げる
+    nix_config="$HOME/src/github.com/kenchan/nix-config"
+    nix flake update --flake "$nix_config"
+    sudo darwin-rebuild switch --flake "$nix_config#default"
+    brew update
+    brew upgrade
+    git -C "$nix_config" status --short flake.lock
 fi
