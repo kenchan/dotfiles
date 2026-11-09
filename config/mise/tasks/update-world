@@ -21,7 +21,7 @@ if command -v darwin-rebuild &> /dev/null; then
     nix flake update --flake "$nix_config" "${nix_opts[@]}"
     sudo darwin-rebuild switch --flake "$nix_config#default"
     brew update
-    brew upgrade
+    brew upgrade --yes   # Homebrew 7 からは確認を求めて止まるので
 fi
 
 # ディストリのパッケージとして入れた mise は self-update 無効でビルドされているので、パッケージマネージャ側の更新に任せる
