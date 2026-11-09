@@ -63,7 +63,7 @@
   "extraKnownMarketplaces": {},
   "advisorModel": "fable",
   "tui": "fullscreen",
-  "theme": "dark",
+  "theme": "auto",
   "remoteControlAtStartup": true,
   "agentPushNotifEnabled": true,
   "skipAutoPermissionPrompt": true,
