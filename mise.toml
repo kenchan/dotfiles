@@ -7,3 +7,11 @@
 "~/.claude" = { source = "claude", mode = "symlink-each" }
 "~/.local/bin" = { source = "bin", mode = "symlink-each" }
 "~/.apm" = { source = "apm", mode = "symlink-each" }
+
+# mise bootstrap の最後に実行される。毎回走るので何度実行しても同じ結果になるように書く
+[tasks.bootstrap]
+description = "fish のプラグインを fish_plugins のとおりに入れる(fisher が無ければ先に入れる)"
+run = '''
+command -v fish >/dev/null || exit 0
+fish -c 'type -q fisher; or curl -fsSL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source; and fisher update'
+'''
