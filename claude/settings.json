@@ -43,11 +43,11 @@
         "hooks": [
           {
             "type": "command",
-            "command": "jq -r '.tool_input.file_path' | xargs sed -i -e '$a\\'"
+            "command": "jq -j '.tool_input.file_path' | xargs -0 perl -pi -e '$_ .= \"\\n\" if eof && !/\\n\\z/'"
           },
           {
             "type": "command",
-            "command": "jq -r '.tool_input.file_path' | xargs sed -i 's/[[:space:]]*$//'"
+            "command": "jq -j '.tool_input.file_path' | xargs -0 perl -pi -e 's/[^\\S\\n]+$//'"
           }
         ]
       }
