@@ -48,8 +48,6 @@ if command -v herdr &> /dev/null; then
     if [[ -d "${CODEX_HOME:-$HOME/.codex}" ]]; then
         herdr integration install codex
     fi
-
-    herdr plugin install kenchan/herdr-ghq-open-agent --yes
 fi
 
 if command -v apm &> /dev/null; then
