@@ -31,7 +31,8 @@ fish with it (`brew install mise fish`).
 |---|---|---|
 | `config/` | `~/.config/` | symlink-each |
 | `nvim/` | `~/.config/nvim` | symlink (whole directory) |
-| `claude/` | `~/.claude/` | symlink-each |
+| `claude/` | `~/.claude/` | symlink-each (except `settings.json`) |
+| `claude/settings.json` | `~/.claude/settings.json` | merge (only the keys it contains) |
 | `bin/` | `~/.local/bin/` | symlink-each |
 | `apm/` | `~/.apm/` | symlink-each |
 
@@ -44,8 +45,17 @@ OS-specific files live in `os/wsl/` and `os/macos/` and are deployed by
 because `auto_env = true` is set in `.miserc.toml` (and globally in
 `~/.config/mise/miserc.toml`).
 
-`~/.claude/settings.json` is managed here, but Claude Code rewrites it; review
-its diff before committing so work-internal settings are not published.
+`~/.claude/settings.json` stays a regular file on each machine because Claude
+Code and herdr (`herdr integration install claude` adds a SessionStart hook
+with an absolute path) also write it. `mise dotfiles apply` merges in only the
+keys in `claude/settings.json`; other keys are left alone. Settings changed
+through Claude Code stay local until you copy them into `claude/settings.json`.
+Removing a key from `claude/settings.json` does not remove it from machines.
+
+Migrating a machine where `~/.claude/settings.json` is still a symlink into this
+repository: right after `git pull`, run `mise dotfiles apply` (it replaces the
+symlink with a copy), then `herdr integration install claude` to add the
+SessionStart hook back.
 
 ## Usage
 

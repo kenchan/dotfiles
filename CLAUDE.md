@@ -43,7 +43,8 @@ History: rcm → chezmoi (2026-01-05) → mise dotfiles (2026-07-14), full git h
 |---|---|---|
 | `config/` | `~/.config/` | `symlink-each` |
 | `nvim/` | `~/.config/nvim` | `symlink` (whole directory) |
-| `claude/` | `~/.claude/` | `symlink-each` |
+| `claude/` | `~/.claude/` | `symlink-each` (excludes `settings.json`) |
+| `claude/settings.json` | `~/.claude/settings.json` | `merge = true` (owns only its keys) |
 | `bin/` | `~/.local/bin/` | `symlink-each` |
 | `apm/` | `~/.apm/` | `symlink-each` |
 
@@ -74,14 +75,30 @@ Key properties:
   already-managed files. `mise dotfiles apply` is only needed when files are
   added to or removed from the repository.
 
-### IMPORTANT: review ~/.claude/settings.json diffs before committing
+### ~/.claude/settings.json is merged, not linked
 
-`~/.claude/settings.json` is managed here as `claude/settings.json` (deployed
-via `symlink-each`). Work-internal settings (plugin marketplaces, plugins,
-hooks) come from server-managed settings (`~/.claude/remote-settings.json`),
-not from this file, so they don't belong here. Claude Code rewrites this file
-via `/config`, plugin installs, etc.; before committing, review the diff and
-reject anything that must not be published (secrets or work-internal settings).
+`~/.claude/settings.json` is a regular file on each machine. `claude/settings.json`
+holds only the shared keys, and `mise dotfiles apply` merges them in
+(`"~/.claude/settings.json/shared"` with `merge = true`): nested objects merge
+key by key, arrays and scalars are replaced, and keys not in the source are
+never touched. Keep it that way because other writers own the rest of the file:
+
+- herdr's `herdr integration install claude` (run by `update-world`) adds a
+  `hooks.SessionStart` entry with an absolute path (`/home/kenchan` on WSL,
+  `/Users/kenchan` on macOS) and re-adds it if the command differs, so
+  `hooks.SessionStart` must not be in `claude/settings.json`.
+- Claude Code rewrites the file via `/config`, plugin installs, etc. Those
+  changes stay local; copy a setting into `claude/settings.json` to share it.
+
+Removing a key from `claude/settings.json` does not remove it from machines.
+On a machine where `~/.claude/settings.json` is still the old symlink into this
+repository, run `mise dotfiles apply` right after pulling (it replaces the
+symlink with a copy), then `herdr integration install claude` — before that,
+herdr would write its hook into the repository through the symlink.
+Work-internal settings (plugin marketplaces, plugins, hooks) come from
+server-managed settings (`~/.claude/remote-settings.json`) and must not be added
+here. Hook commands must work on both GNU and BSD userlands (use `perl -pi`
+rather than `sed -i`).
 
 ### Key Patterns
 

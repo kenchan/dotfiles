@@ -4,7 +4,10 @@
 # nvim だけディレクトリ丸ごと symlink にする。source の重なりを避けるため
 # リポジトリ側では config/ の外に置く
 "~/.config/nvim" = { source = "nvim", mode = "symlink" }
-"~/.claude" = { source = "claude", mode = "symlink-each" }
+"~/.claude" = { source = "claude", mode = "symlink-each", exclude = ["settings.json"] }
+# settings.json は Claude Code や herdr(SessionStart フックを絶対パスで足す)も書き換えるので
+# リンクせず各マシンの実ファイルにし、claude/settings.json にあるキーだけを書き込む
+"~/.claude/settings.json/shared" = { source = "claude/settings.json", merge = true }
 "~/.local/bin" = { source = "bin", mode = "symlink-each" }
 "~/.apm" = { source = "apm", mode = "symlink-each" }
 
