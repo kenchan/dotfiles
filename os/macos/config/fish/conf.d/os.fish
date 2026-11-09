@@ -7,3 +7,6 @@ set -l op_agent_sock ~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agen
 if test -S $op_agent_sock
   set -gx SSH_AUTH_SOCK $op_agent_sock
 end
+
+abbr -a c claude
+abbr -a cc "claude -c || claude"

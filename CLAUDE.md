@@ -58,9 +58,10 @@ environments (`auto_env = true`, set in the repo-root `.miserc.toml` and in
 environment in use. OS-specific mise tools go in `config/mise/config.<os>.toml`.
 
 Current OS-specific files: `~/.config/git/config.os` (1Password SSH signer,
-included from `config/git/config`), `~/.config/fish/conf.d/os.fish`,
-(macOS only) `~/.config/ghostty/config`, and (WSL only)
-`~/.claude/skills/wsl2-clipboard/`.
+included from `config/git/config`), `~/.config/fish/conf.d/os.fish` (also
+the `c`/`cc` Claude abbreviations, with `--chrome` only on WSL), (macOS only)
+`~/.config/ghostty/config`, and (WSL only) `~/.claude/skills/wsl2-clipboard/`
+and `~/.config/fish/functions/claude.fish`.
 
 Key properties:
 

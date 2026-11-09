@@ -9,3 +9,7 @@ if test -d "/mnt/c/Program Files/Oracle/VirtualBox"
   set -x PATH "/mnt/c/Program Files/Oracle/VirtualBox" $PATH
   set -x VAGRANT_WSL_ENABLE_WINDOWS_ACCESS 1
 end
+
+# WSL では Claude in Chrome を常に使う(functions/claude.fish も --chrome を付ける)
+abbr -a c "claude --chrome"
+abbr -a cc "claude --chrome -c || claude --chrome"
