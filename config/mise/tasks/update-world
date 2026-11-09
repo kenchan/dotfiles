@@ -2,22 +2,6 @@
 #MISE description="Update mise tools and system packages"
 set -euo pipefail
 
-if command -v darwin-rebuild &> /dev/null; then
-    # macOS: Touch ID(sudo)を聞かれる処理を先に済ませて、あとは放っておけるようにする。
-    # nix-darwin の設定(github.com/kenchan/nix-config)の入力を上げて反映し、switch では上げない
-    # 設定にしている Homebrew の cask もここで上げる(cask によっては sudo を聞かれる)
-    nix_config="$HOME/src/github.com/kenchan/nix-config"
-    nix flake update --flake "$nix_config"
-    sudo darwin-rebuild switch --flake "$nix_config#default"
-    brew update
-    brew upgrade
-fi
-
-# ディストリのパッケージとして入れた mise は self-update 無効でビルドされているので、パッケージマネージャ側の更新に任せる
-if [[ "$(mise doctor --json 2>/dev/null | jq '.self_update_available')" == "true" ]]; then
-    mise self-update -y
-fi
-
 if command -v gh &> /dev/null; then
     export GITHUB_TOKEN="$(gh auth token)"
     # mise は GitHub Enterprise の api_url を持つツールにも GITHUB_TOKEN を送り、401 で失敗する。
@@ -26,6 +10,27 @@ if command -v gh &> /dev/null; then
     if [[ -n "$ghe_hosts" && "$(wc -l <<<"$ghe_hosts")" -eq 1 ]]; then
         export MISE_GITHUB_ENTERPRISE_TOKEN="$(gh auth token --hostname "$ghe_hosts")"
     fi
+fi
+
+if command -v darwin-rebuild &> /dev/null; then
+    # macOS: Touch ID(sudo)を聞かれる処理を先に済ませて、あとは放っておけるようにする。
+    # nix-darwin の設定(github.com/kenchan/nix-config)の入力を上げて反映し、switch では上げない
+    # 設定にしている Homebrew の cask もここで上げる(cask によっては sudo を聞かれる)
+    nix_config="$HOME/src/github.com/kenchan/nix-config"
+    # 共有の IP だと GitHub API の未認証の回数制限にすぐ当たるので、gh のトークンを Nix にも渡す
+    nix_opts=()
+    if [[ -n "${GITHUB_TOKEN:-}" ]]; then
+        nix_opts=(--option access-tokens "github.com=$GITHUB_TOKEN")
+    fi
+    nix flake update --flake "$nix_config" "${nix_opts[@]}"
+    sudo darwin-rebuild switch --flake "$nix_config#default"
+    brew update
+    brew upgrade
+fi
+
+# ディストリのパッケージとして入れた mise は self-update 無効でビルドされているので、パッケージマネージャ側の更新に任せる
+if [[ "$(mise doctor --json 2>/dev/null | jq '.self_update_available')" == "true" ]]; then
+    mise self-update -y
 fi
 
 mise up
