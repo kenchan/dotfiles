@@ -80,10 +80,17 @@ elif command -v pacman &> /dev/null; then
     fi
 elif command -v darwin-rebuild &> /dev/null; then
     # Nix と Homebrew は先頭で上げ済み。
-    # Docker 用の Lima の VM(Ubuntu)。VM の中の sudo はパスワードなしで通る。セキュリティ更新は VM の中の unattended-upgrades が入れるが、
-    # Docker 社のリポジトリから入れた Docker 本体は対象外なので、ここでまとめて上げる
+    # Docker 用の Lima の VM(Ubuntu)。VM の中の sudo はパスワードなしで通る。セキュリティ更新は VM の中の
+    # unattended-upgrades が入れるが、Docker 社のリポジトリから入れた Docker 本体は対象外なので、ここでまとめて上げる。
+    # upgrade だと新しいカーネルのように別パッケージとして入る更新が保留のまま残るので full-upgrade にする。
+    # カーネルなどが上がって再起動が必要になったら、VM を再起動する(動いているコンテナは止まる)
     if command -v limactl &> /dev/null && [[ "$(limactl list --format '{{.Status}}' docker 2>/dev/null)" == "Running" ]]; then
-        limactl shell docker sudo sh -c 'apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y upgrade && apt-get -y autoremove'
+        limactl shell docker sudo sh -c 'apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y full-upgrade && apt-get -y autoremove'
+        if limactl shell docker test -e /var/run/reboot-required; then
+            echo "Lima の VM を再起動します"
+            limactl stop docker
+            limactl start --tty=false docker
+        fi
     fi
 
     git -C "$nix_config" status --short flake.lock
