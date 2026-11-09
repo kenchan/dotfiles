@@ -74,5 +74,12 @@ elif command -v darwin-rebuild &> /dev/null; then
     sudo darwin-rebuild switch --flake "$nix_config#default"
     brew update
     brew upgrade
+
+    # Docker 用の Lima の VM(Ubuntu)。セキュリティ更新は VM の中の unattended-upgrades が入れるが、
+    # Docker 社のリポジトリから入れた Docker 本体は対象外なので、ここでまとめて上げる
+    if command -v limactl &> /dev/null && [[ "$(limactl list --format '{{.Status}}' docker 2>/dev/null)" == "Running" ]]; then
+        limactl shell docker sudo sh -c 'apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y upgrade && apt-get -y autoremove'
+    fi
+
     git -C "$nix_config" status --short flake.lock
 fi
