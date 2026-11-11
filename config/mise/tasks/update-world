@@ -6,7 +6,7 @@ set -euo pipefail
 #   GITHUB_TOKEN=$(gh auth token) mise run update-world
 # GITHUB_TOKEN は mise と Nix(GitHub API の回数制限よけ)が使う。mise は GitHub Enterprise の
 # api_url を持つツールにも GITHUB_TOKEN を送って 401 になるので、そういうツールがあるマシンでは
-# MISE_GITHUB_ENTERPRISE_TOKEN も渡す
+# 環境変数 MISE_GITHUB_ENTERPRISE_TOKEN も渡す(行頭を「# MISE」にすると mise がタスクの設定として読んでしまう)
 
 if command -v darwin-rebuild &> /dev/null; then
     # macOS: Touch ID(sudo)を聞かれる処理を先に済ませて、あとは放っておけるようにする。
