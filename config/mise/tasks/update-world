@@ -19,7 +19,9 @@ if command -v darwin-rebuild &> /dev/null; then
         nix_opts=(--option access-tokens "github.com=$GITHUB_TOKEN")
     fi
     brew update
+    macskk_before=$(brew list --cask --versions macskk 2>/dev/null || true)
     brew upgrade --yes   # Homebrew 7 からは確認を求めて止まるので
+    macskk_after=$(brew list --cask --versions macskk 2>/dev/null || true)
     # switch は brew upgrade の後。macSKK の cask が上がると入力ソースの登録が外れるので、switch で登録し直す
     nix flake update --flake "$nix_config" "${nix_opts[@]}"
     sudo darwin-rebuild switch --flake "$nix_config#default"
@@ -95,4 +97,11 @@ elif command -v darwin-rebuild &> /dev/null; then
     fi
 
     git -C "$nix_config" status --short flake.lock
+
+    # 開いているアプリは古い macSKK につながったままで変換できなくなる。アプリを 1 つずつ開き直すより
+    # ログアウトのほうが確実なので、知らせるだけにする(自動でログアウトはしない)
+    if [[ "$macskk_before" != "$macskk_after" ]]; then
+        echo
+        echo "macSKK を更新しました(${macskk_before#macskk } → ${macskk_after#macskk })。ログアウトしてログインし直してください"
+    fi
 fi
