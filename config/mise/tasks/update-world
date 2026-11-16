@@ -18,10 +18,11 @@ if command -v darwin-rebuild &> /dev/null; then
     if [[ -n "${GITHUB_TOKEN:-}" ]]; then
         nix_opts=(--option access-tokens "github.com=$GITHUB_TOKEN")
     fi
-    nix flake update --flake "$nix_config" "${nix_opts[@]}"
-    sudo darwin-rebuild switch --flake "$nix_config#default"
     brew update
     brew upgrade --yes   # Homebrew 7 からは確認を求めて止まるので
+    # switch は brew upgrade の後。macSKK の cask が上がると入力ソースの登録が外れるので、switch で登録し直す
+    nix flake update --flake "$nix_config" "${nix_opts[@]}"
+    sudo darwin-rebuild switch --flake "$nix_config#default"
 fi
 
 # ディストリのパッケージとして入れた mise は self-update 無効でビルドされているので、パッケージマネージャ側の更新に任せる
