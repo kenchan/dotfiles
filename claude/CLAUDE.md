@@ -5,6 +5,7 @@
 - Use `/commit-commands:commit` skill for git commits
 - Send Slack messages as drafts. Confirm content with user before creating the draft.
 - Always use ghq to manage git repositories (clone with `ghq get`, stored under `ghq root`)
+- To investigate code on GitHub / GHES / GHEC, clone the repository with ghq and read it locally. Use the gh CLI for issue/PR operations and search (`gh search`), not for fetching file contents via `gh api .../contents`
 - Dotfiles are managed with mise (`[dotfiles]` in the repo-root mise.toml of ~/src/github.com/kenchan/dotfiles); deployed files are symlinks into that repo
 - For Google Workspace operations (Gmail, Google Calendar, Google Drive, etc.), use the gws CLI and its related skills (gws-gmail, gws-calendar, gws-drive, etc.). Do not use MCP auth tools (claude.ai Gmail/Google Calendar/Google Drive)
 - Parallel agent work and diff review are built on herdr + hunk — see the "herdr / hunk" section below
