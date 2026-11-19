@@ -6,6 +6,7 @@ prefix = "ctrl+t"
 [ui]
 agent_panel_sort = "priority"
 
+status_indicators = "symbols"
 [ui.sidebar.agents]
 rows = [
   ["state_icon", "workspace", "tab"],
@@ -17,3 +18,6 @@ delivery = "off"
 
 [experimental]
 pane_history = true
+
+[ui.sound]
+enabled = false
