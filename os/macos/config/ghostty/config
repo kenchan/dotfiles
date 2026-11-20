@@ -1,3 +1,6 @@
 # Ghostty は Ctrl+J を IME とターミナルの両方に渡すので、macSKK でひらがなに入ると同時に改行(LF)も送られてしまう。
 # ターミナル側だけ無視して、IME(macSKK)には届くようにする
 keybind = ctrl+j=ignore
+
+# フォントは nix-config(fonts.packages)で入れる。指定しないと日本語は macOS が選ぶフォントになり、見た目が揃わない
+font-family = UDEV Gothic NF
