@@ -26,9 +26,9 @@ if command -v darwin-rebuild &> /dev/null; then
     # switch は brew upgrade の後。macSKK の cask が上がると入力ソースの登録が外れるので、switch で登録し直す
     nix flake update --flake "$nix_config" "${nix_opts[@]}"
     sudo darwin-rebuild switch --flake "$nix_config#default"
-    # 世代を全部消すと switch で壊れたときに戻せないので、2 週間分は残す。
+    # 古い世代は残さない。設定は nix-config の git にあるので、戻すときは前のコミットで switch し直せばいい。
     # switch の直後なら sudo の Touch ID がまだ効いている
-    sudo "$(command -v nix-collect-garbage)" --delete-older-than 14d
+    sudo "$(command -v nix-collect-garbage)" --delete-old
 fi
 
 # ディストリのパッケージとして入れた mise は self-update 無効でビルドされているので、パッケージマネージャ側の更新に任せる
