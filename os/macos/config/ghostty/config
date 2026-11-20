@@ -2,5 +2,6 @@
 # ターミナル側だけ無視して、IME(macSKK)には届くようにする
 keybind = ctrl+j=ignore
 
-# フォントは nix-config(fonts.packages)で入れる。指定しないと日本語は macOS が選ぶフォントになり、見た目が揃わない
-font-family = UDEV Gothic NF
+# フォントは nix-config(fonts.packages)で入れる。英字と日本語の幅が 3:5 の 35 版は、英字と日本語の幅がずれて見えるので 1:2 の版にする
+font-family = Explex Console NF
+adjust-cell-height = 20%
