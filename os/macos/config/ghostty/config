@@ -7,4 +7,3 @@ keybind = ctrl+j=ignore
 font-family = UDEV Gothic 35NF
 # UDEV Gothic の行の高さは 1.16em で、JetBrains Mono(1.32em)より狭いので、それより少し広めにとる
 adjust-cell-height = 15%
-adjust-cell-width = 5%
