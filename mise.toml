@@ -8,6 +8,9 @@
 # settings.json は Claude Code や herdr(SessionStart フックを絶対パスで足す)も書き換えるので
 # リンクせず各マシンの実ファイルにし、claude/settings.json にあるキーだけを書き込む
 "~/.claude/settings.json/shared" = { source = "claude/settings.json", merge = true }
+# Herdr の keys.json もアプリが書き換える(ショートカットを既定に戻すときなど)ので、リンクせずにキーを書き込む。
+# keys.json があると Herdr は既定のショートカットを読まないので、変えたキーだけでなく全体を持つ
+"~/.config/herdr-app/keys.json/shared" = { source = "herdr-app/keys.json", merge = true }
 "~/.local/bin" = { source = "bin", mode = "symlink-each" }
 "~/.apm" = { source = "apm", mode = "symlink-each" }
 
