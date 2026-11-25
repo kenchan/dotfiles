@@ -8,7 +8,7 @@ targets:
 dependencies:
   apm:
   - "freee/freee-mcp/skills/freee-api-skill#>=0.36.0"
-  - "herdrdev/herdr/skills/herdr"
+  - "herdrdev/herdr-core/skills/herdr-core"
   mcp:
   - name: datadog-mcp
     registry: false
