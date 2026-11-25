@@ -21,3 +21,9 @@ pane_history = true
 
 [ui.sound]
 enabled = false
+
+[[keys.command]]
+key = "prefix+shift+o"
+type = "plugin_action"
+command = "kenchan.handoff.open"
+description = "handoff: これから何やる？"

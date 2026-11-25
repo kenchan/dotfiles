@@ -47,6 +47,13 @@ History: rcm → chezmoi (2026-01-05) → mise dotfiles (2026-07-14), full git h
 | `claude/settings.json` | `~/.claude/settings.json` | `merge = true` (owns only its keys) |
 | `bin/` | `~/.local/bin/` | `symlink-each` |
 | `apm/` | `~/.apm/` | `symlink-each` |
+| `herdr-plugins/<name>/` | herdr plugin registry | `herdr plugin link "$PWD/herdr-plugins/<name>"` once per machine (macOS only) |
+
+herdr plugins are not deployed by mise: herdr records the linked directory's
+absolute path in `~/.config/herdr/plugins.json` (machine state herdr owns), so
+link them directly from this repository; edits take effect without relinking.
+Key bindings for their actions live in `config/herdr/config.toml`
+(`herdr server reload-config` after editing).
 
 OS-specific files live under `os/wsl/` and `os/macos/` (same layout as the
 common directories, e.g. `os/wsl/config/git/config.os`) and are deployed by

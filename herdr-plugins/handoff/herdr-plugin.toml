@@ -1,0 +1,19 @@
+id = "kenchan.handoff"
+name = "Handoff"
+version = "0.2.0"
+min_herdr_version = "0.9.5"
+description = "これからやることを聞いて claude -p に振り分けさせ、herdr のタブに作業者を立てる"
+platforms = ["macos"]
+
+[[actions]]
+id = "open"
+title = "これから何やる？"
+command = ["bash", "open.sh"]
+
+[[panes]]
+id = "ask"
+title = "これから何やる？"
+placement = "popup"
+width = "70%"
+height = 10
+command = ["bash", "ask.sh"]
