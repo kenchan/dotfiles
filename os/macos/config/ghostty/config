@@ -1,9 +1,0 @@
-# Ghostty は Ctrl+J を IME とターミナルの両方に渡すので、macSKK でひらがなに入ると同時に改行(LF)も送られてしまう。
-# ターミナル側だけ無視して、IME(macSKK)には届くようにする
-keybind = ctrl+j=ignore
-
-# フォントは nix-config(fonts.packages)で入れる。英字と日本語の幅が 1:2 の版は英字の JetBrains Mono が細くなって窮屈なので、
-# JetBrains Mono を元の幅のまま使う 3:5 の 35 版にする
-font-family = UDEV Gothic 35NF
-# UDEV Gothic の行の高さは 1.16em で、JetBrains Mono(1.32em)より狭いので、それより少し広めにとる
-adjust-cell-height = 15%

@@ -66,8 +66,8 @@ environment in use. OS-specific mise tools go in `config/mise/config.<os>.toml`.
 
 Current OS-specific files: `~/.config/git/config.os` (1Password SSH signer,
 included from `config/git/config`), `~/.config/fish/conf.d/os.fish` (also
-the `c`/`cc` Claude abbreviations, with `--chrome` only on WSL), (macOS only)
-`~/.config/ghostty/config`, and (WSL only) `~/.claude/skills/wsl2-clipboard/`
+the `c`/`cc` Claude abbreviations, with `--chrome` only on WSL), and (WSL
+only) `~/.claude/skills/wsl2-clipboard/`
 and `~/.config/fish/functions/claude.fish`.
 
 Key properties:
